@@ -16,10 +16,10 @@
               <strong>100% PRACTICAL</strong> content that goes beyond the subject.
             </p>
             <div class="hero-buttons">
-              <router-link to="/courses" class="btn btn-primary btn-lg">
+              <router-link to="/courses" class="btn-primary-custom">
                 Explore Courses
               </router-link>
-              <router-link to="/contact" class="btn btn-outline-primary btn-lg">
+              <router-link to="/contact" class="btn-outline-primary-custom">
                 Contact Us
               </router-link>
             </div>
@@ -256,7 +256,7 @@ export default {
   background: linear-gradient(
     135deg,
     black 0%,
-    var(--secondary-color) 100%
+    black 100%
   );
   color: white;
   position: relative;
@@ -273,7 +273,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.35;
+  opacity: 0.4;
   pointer-events: none;
   z-index: 1;
 }
@@ -324,6 +324,49 @@ export default {
   z-index: 2;
 }
 
+/* Primary button */
+.btn-primary-custom {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color:  #ff8c00;       
+  color: black;                     
+  border: 1px solid  #ff8c00;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary-custom:hover {
+  background-color: black;      
+  border-color: #0b5ed7;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Outline button */
+.btn-outline-primary-custom {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #0d6efd;                 
+  border: 1px solid #0d6efd;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-outline-primary-custom:hover {
+  background-color: #ff8c00;      
+  color: black;
+  text-decoration: none;
+}
+
 .hero-image {
   text-align: center;
   position: relative;
@@ -353,7 +396,7 @@ export default {
 
 .image-placeholder i {
   font-size: 8rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
@@ -392,7 +435,7 @@ export default {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--accent-color);
+  background: #ff8c00;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -403,7 +446,7 @@ export default {
 
 .feature-icon {
   font-size: 3rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-bottom: 1.5rem;
 }
 
@@ -436,7 +479,7 @@ export default {
   position: absolute;
   top: -10px;
   right: 20px;
-  background: var(--accent-color);
+  background: #ff8c00;
   color: white;
   padding: 5px 15px;
   border-radius: 20px;
@@ -471,12 +514,12 @@ export default {
 }
 
 .course-features i {
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-right: 10px;
 }
 
 .btn-accent {
-  background: var(--accent-color);
+  background: #ff8c00;
   color: white;
   border: none;
   padding: 10px 25px;
@@ -489,7 +532,7 @@ export default {
 }
 
 .btn-accent:hover {
-  background: var(--primary-color);
+  background: black;
   color: white;
   transform: translateY(-2px);
 }
@@ -537,7 +580,7 @@ export default {
   
   /* Adjust matrix effect for mobile */
   .matrix-bg {
-    opacity: 0.35;
+    opacity: 0.4;
   }
 }
 

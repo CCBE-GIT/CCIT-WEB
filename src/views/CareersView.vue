@@ -658,12 +658,12 @@ export default {
       emailjs.init("MIgdDTa538ETb_5yl");
       
       // Show welcome toast on page load
-      setTimeout(() => {
-        toast.info("👋 Browse our current openings and apply to join our team!", {
-          timeout: 6000,
-          icon: "fas fa-hand-wave"
-        });
-      }, 1000);
+      // setTimeout(() => {
+      //   toast.info("👋 Browse our current openings and apply to join our team!", {
+      //     timeout: 6000,
+      //     icon: "fas fa-hand-wave"
+      //   });
+      // }, 1000);
     });
 
     return {
@@ -686,7 +686,7 @@ export default {
 <style scoped>
 /* Careers Hero Section */
 .careers-hero {
-  background: linear-gradient(135deg, black 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, black 0%, black 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -735,7 +735,7 @@ export default {
 
 .hero-icon i {
   font-size: 6rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
@@ -772,7 +772,7 @@ export default {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--accent-color);
+  background: #ff8c00;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -783,7 +783,7 @@ export default {
 
 .benefit-icon {
   font-size: 3rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-bottom: 1.5rem;
 }
 
@@ -821,7 +821,7 @@ export default {
 }
 
 .opening-type {
-  background: var(--accent-color);
+  background: #ff8c00;
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -862,7 +862,7 @@ export default {
 }
 
 .detail-item i {
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .opening-actions {
@@ -887,8 +887,8 @@ export default {
 }
 
 .btn-outline-accent {
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
+  border: 2px solid #ff8c00;
+  color: black;
   background: transparent;
   padding: 8px 20px;
   border-radius: 25px;
@@ -897,7 +897,7 @@ export default {
 }
 
 .btn-outline-accent:hover {
-  background: var(--accent-color);
+  background: black;
   color: white;
   transform: translateY(-2px);
 }
@@ -917,7 +917,7 @@ export default {
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent-color);
+  background: black;
   color: white;
   width: 30px;
   height: 30px;
@@ -931,7 +931,7 @@ export default {
 
 .step-icon {
   font-size: 2.5rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-bottom: 1rem;
 }
 
@@ -975,8 +975,8 @@ export default {
 .modal-header {
   background: linear-gradient(
     135deg,
-    var(--primary-color) 0%,
-    var(--secondary-color) 100%
+    black 0%,
+    black 100%
   );
   color: white;
   padding: 2rem;

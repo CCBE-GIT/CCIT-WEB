@@ -353,7 +353,7 @@ Contact us for more details!
 
 <style scoped>
 .courses-hero {
-  background: linear-gradient(135deg, black 0%, var(--primary-color) 100%);
+  background: linear-gradient(135deg, black 0%, black 100%);
   color: white;
 }
 
@@ -372,7 +372,7 @@ Contact us for more details!
 
 .hero-icon {
   font-size: 6rem;
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .highlight {
@@ -397,9 +397,9 @@ Contact us for more details!
 
 .category-tab.active,
 .category-tab:hover {
-  background: var(--primary-color);
+  background: #ff8c00;
   color: white;
-  border-color: var(--primary-color);
+  border-color: #ff8c00;
 }
 
 .course-card {
@@ -413,7 +413,7 @@ Contact us for more details!
 }
 
 .course-header {
-  background: var(--primary-color);
+  background: black;
   color: white;
   padding: 15px;
   display: flex;
@@ -474,7 +474,7 @@ Contact us for more details!
 }
 
 .course-features i {
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-right: 10px;
   margin-top: 3px;
   flex-shrink: 0;
@@ -495,7 +495,7 @@ Contact us for more details!
 }
 
 .detail-item i {
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .course-price {
@@ -522,7 +522,7 @@ Contact us for more details!
 
 .feature-icon {
   font-size: 2rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   flex-shrink: 0;
 }
 

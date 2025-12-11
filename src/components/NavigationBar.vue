@@ -85,6 +85,15 @@
           <li class="nav-item">
             <router-link 
               class="nav-link" 
+              to="/news_event" 
+              @click="closeMenu"
+            >
+              News & Events
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link 
+              class="nav-link" 
               to="/contact" 
               @click="closeMenu"
             >

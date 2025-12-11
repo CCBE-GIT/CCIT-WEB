@@ -2,6 +2,16 @@
   <div class="about-view">
     <!-- Hero Section -->
     <section class="about-hero py-5">
+      <!-- Simple Particles Container -->
+      <div class="particles-container">
+        <div 
+          v-for="(particle, index) in particles" 
+          :key="index"
+          :style="particle.style"
+          class="particle"
+        ></div>
+      </div>
+      
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -17,10 +27,6 @@
             </p>
           </div>
           <div class="col-lg-6">
-            <!-- <div class="hero-image-placeholder text-center">
-              <i class="fas fa-university"></i>
-            </div> -->
-
             <div class="hero-image-placeholder text-center">
               <img :src="logo" alt="CCIT Logo" class="logo-image" />
             </div>
@@ -38,7 +44,9 @@
               <div class="icon-wrapper mb-3">
                 <i class="fas fa-bullseye"></i>
               </div>
-              <h2 class="mb-3 text-black">Our <span class="highlight">Mission</span></h2>
+              <h2 class="mb-3 text-black">
+                Our <span class="highlight">Mission</span>
+              </h2>
               <p style="color: black">
                 To provide exceptional, practical IT education that empowers
                 students with the skills, knowledge, and confidence to excel in
@@ -51,7 +59,9 @@
               <div class="icon-wrapper mb-3">
                 <i class="fas fa-eye"></i>
               </div>
-              <h2 class="mb-3 text-black">Our <span class="highlight">Vision</span></h2>
+              <h2 class="mb-3 text-black">
+                Our <span class="highlight">Vision</span>
+              </h2>
               <p style="color: black">
                 To be Sri Lanka's premier institution for practical IT
                 education, recognized for producing highly skilled professionals
@@ -66,7 +76,9 @@
     <!-- Our Story -->
     <section class="our-story py-5">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Our <span class="highlight">Story</span></h2>
+        <h2 class="section-title text-center mb-5">
+          Our <span class="highlight">Story</span>
+        </h2>
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="card-theme p-4">
@@ -103,7 +115,9 @@
     <!-- Values -->
     <section class="values py-5 bg-light">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Our <span class="highlight">Core Values</span></h2>
+        <h2 class="section-title text-center mb-5">
+          Our <span class="highlight">Core Values</span>
+        </h2>
         <div class="row">
           <div
             class="col-md-4 mb-4"
@@ -125,7 +139,9 @@
     <!-- Team Section -->
     <section class="team py-5">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Meet <span class="highlight">Our Leadership</span></h2>
+        <h2 class="section-title text-center mb-5">
+          Meet <span class="highlight">Our Leadership</span>
+        </h2>
         <div class="row justify-content-center">
           <div
             class="col-md-4 mb-4"
@@ -154,6 +170,8 @@ export default {
   data() {
     return {
       logo: require("@/assets/images/CCIT - logo.png"),
+      particles: [],
+      particleCount: 30,
       values: [
         {
           icon: "fas fa-hands-helping",
@@ -214,17 +232,138 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.initParticles();
+    this.animateParticles();
+  },
+  beforeUnmount() {
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+    }
+  },
+  methods: {
+    initParticles() {
+      for (let i = 0; i < this.particleCount; i++) {
+        this.particles.push({
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 3 + 1,
+          speedX: (Math.random() - 0.5) * 0.5,
+          speedY: (Math.random() - 0.5) * 0.5,
+          opacity: Math.random() * 0.5 + 0.2,
+        });
+      }
+      this.updateParticleStyles();
+    },
+    
+    updateParticleStyles() {
+      this.particles.forEach(particle => {
+        particle.style = {
+          left: `${particle.x}%`,
+          top: `${particle.y}%`,
+          width: `${particle.size}px`,
+          height: `${particle.size}px`,
+          opacity: particle.opacity,
+          backgroundColor: '#ff8c00',
+          borderRadius: '50%',
+          position: 'absolute',
+        };
+      });
+    },
+    
+    animateParticles() {
+      this.particles.forEach(particle => {
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+        
+        if (particle.x <= 0 || particle.x >= 100) particle.speedX *= -1;
+        if (particle.y <= 0 || particle.y >= 100) particle.speedY *= -1;
+        
+        particle.x = Math.max(0, Math.min(100, particle.x));
+        particle.y = Math.max(0, Math.min(100, particle.y));
+      });
+      
+      this.updateParticleStyles();
+      this.animationFrame = requestAnimationFrame(this.animateParticles);
+    }
+  },
 };
 </script>
 
 <style scoped>
 .about-hero {
-  background: linear-gradient(
-    135deg,
-    black 0%,
-    var(--secondary-color) 100%
-  );
+  background: linear-gradient(135deg, black 0%, black 100%);
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+  /* Adding color properties */
+  background: radial-gradient(circle at center, 
+    rgba(255, 140, 0, 0.8) 0%, 
+    rgba(255, 107, 53, 0.6) 50%, 
+    rgba(255, 165, 0, 0.4) 100%);
+  box-shadow: 
+    0 0 10px rgba(255, 140, 0, 0.6),
+    0 0 20px rgba(255, 107, 53, 0.4);
+  /* Adding animation for glow effect */
+  animation: particle-glow 3s ease-in-out infinite alternate;
+}
+
+/* Glow animation for particles */
+@keyframes particle-glow {
+  0% {
+    box-shadow: 
+      0 0 5px rgba(255, 140, 0, 0.4),
+      0 0 10px rgba(255, 107, 53, 0.2);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 
+      0 0 15px rgba(255, 140, 0, 0.8),
+      0 0 25px rgba(255, 165, 0, 0.5);
+    opacity: 1;
+  }
+}
+
+/* Different particle colors (optional - you can use this or remove it) */
+.particle:nth-child(3n) {
+  background: radial-gradient(circle at center, 
+    rgba(255, 165, 0, 0.8) 0%, 
+    rgba(255, 140, 0, 0.6) 50%, 
+    rgba(255, 107, 53, 0.4) 100%);
+  box-shadow: 
+    0 0 10px rgba(255, 165, 0, 0.6),
+    0 0 20px rgba(255, 140, 0, 0.4);
+}
+
+.particle:nth-child(3n+1) {
+  background: radial-gradient(circle at center, 
+    rgba(255, 107, 53, 0.8) 0%, 
+    rgba(255, 165, 0, 0.6) 50%, 
+    rgba(255, 140, 0, 0.4) 100%);
+  box-shadow: 
+    0 0 10px rgba(255, 107, 53, 0.6),
+    0 0 20px rgba(255, 165, 0, 0.4);
+}
+
+.hero-title, .lead, .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -247,6 +386,8 @@ export default {
   width: 300px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image-placeholder {
@@ -256,7 +397,7 @@ export default {
 
 .icon-wrapper {
   font-size: 2.5rem;
-  color: var(--accent-color);
+  color: #ff8c00;
   display: inline-block;
 }
 
@@ -277,16 +418,16 @@ export default {
 
 .value-icon {
   font-size: 2.5rem;
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .team-avatar {
   font-size: 3rem;
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .text-accent {
-  color: var(--accent-color);
+  color: #ff8c00;
   font-weight: 600;
 }
 
@@ -302,9 +443,19 @@ export default {
   .hero-title {
     font-size: 2rem;
   }
-
+  
   .hero-image-placeholder {
     font-size: 5rem;
+  }
+  
+  .particle {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle {
+    animation: float 8s infinite ease-in-out;
   }
 }
 </style>

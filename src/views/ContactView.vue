@@ -204,7 +204,7 @@
                 
                 <button 
                   type="submit" 
-                  class="btn btn-primary btn-lg w-100"
+                  class="btn-primary-custom"
                   :disabled="formSubmitting"
                 >
                   <span v-if="formSubmitting">
@@ -235,7 +235,7 @@
               <a 
                 href="https://www.google.com/maps/place/Cambridge+College+of+Information+Technology+(Pvt)+Ltd/@6.2344923,80.0519568,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae18115f8c652d9:0x786c763eacf34d9c!8m2!3d6.234487!4d80.0545317!16s%2Fg%2F11l6twft7_?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" 
                 target="_blank"
-                class="btn btn-primary"
+                class="btn-primary-custom"
               >
                 <i class="fas fa-map-marker-alt"></i> Open in Google Maps
               </a>
@@ -457,7 +457,7 @@ export default {
 <style scoped>
 /* Your existing styles remain the same */
 .contact-hero {
-  background: linear-gradient(135deg, black 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, black 0%, black 100%);
   color: white;
 }
 
@@ -478,7 +478,7 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .contact-item {
@@ -490,7 +490,7 @@ export default {
 .contact-icon {
   width: 40px;
   height: 40px;
-  background: var(--primary-color);
+  background: #ff8c00;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -526,7 +526,7 @@ export default {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: var(--primary-color);
+  background: #ff8c00;
   color: white;
   border-radius: 50%;
   text-decoration: none;
@@ -534,7 +534,7 @@ export default {
 }
 
 .social-link:hover {
-  background: var(--accent-color);
+  background: black;
   transform: translateY(-3px);
 }
 
@@ -562,6 +562,28 @@ export default {
   cursor: not-allowed;
 }
 
+/* Primary button */
+.btn-primary-custom {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color:  #ff8c00;       
+  color: black;                     
+  border: 2px solid  #ff8c00;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary-custom:hover {
+  background-color: black;      
+  border-color: #0b5ed7;
+  text-decoration: none;
+  color: #fff;
+}
+
 .map-container {
   border-radius: 15px;
   height: 400px;
@@ -572,7 +594,7 @@ export default {
 }
 
 .map-placeholder i {
-  color: var(--accent-color);
+  color: #ff8c00;
 }
 
 .section-title {
@@ -598,8 +620,8 @@ export default {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: #ff8c00;
+  color: black;
   box-shadow: none;
 }
 
