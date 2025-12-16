@@ -108,6 +108,15 @@
               Contact
             </router-link>
           </li>
+          <!-- Make Payment Button -->
+          <li class="nav-item">
+            <button 
+              class="nav-btn btn-payment"
+              @click="handlePayment"
+            >
+              <i class="fas fa-credit-card"></i> Make Payment
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -129,6 +138,17 @@ export default {
     },
     closeMenu() {
       this.menuOpen = false;
+    },
+    handlePayment() {
+      // Close mobile menu first
+      this.closeMenu();
+      
+      // Then handle payment
+      this.makePayment();
+    },
+    makePayment() {
+      // Example 1: Open payment gateway in new tab
+      window.open('#Add gateway Link', '_blank');
     }
   },
   mounted() {
@@ -291,6 +311,7 @@ export default {
   position: relative;
 }
 
+/* Regular Navigation Links */
 .nav-link {
   color: var(--text-primary, #333);
   font-weight: 500;
@@ -329,6 +350,42 @@ export default {
   font-weight: 600;
 }
 
+/* Payment Button Styles */
+.nav-btn {
+  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  color: black;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+}
+
+.nav-btn i {
+  font-size: 0.9rem;
+}
+
+.nav-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+}
+
 /* ========== RESPONSIVE DESIGN ========== */
 
 /* Tablet (768px - 991px) */
@@ -355,6 +412,11 @@ export default {
   
   .nav-link {
     font-size: 0.95rem;
+  }
+  
+  .nav-btn {
+    font-size: 0.9rem;
+    padding: 0.45rem 1rem;
   }
 }
 
@@ -412,6 +474,14 @@ export default {
     display: none;
   }
   
+  .nav-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+  }
+  
   .logo-image {
     height: 45px;
   }
@@ -456,6 +526,10 @@ export default {
     width: 20px;
     height: 2px;
   }
+  
+  .nav-btn {
+    padding: 0.65rem 1rem;
+  }
 }
 
 /* Extra Small Mobile (Below 400px) */
@@ -473,6 +547,10 @@ export default {
   }
   
   .nav-link {
+    font-size: 1rem;
+  }
+  
+  .nav-btn {
     font-size: 1rem;
   }
 }
@@ -496,12 +574,17 @@ export default {
   .custom-toggler,
   .logo-image,
   .navbar-menu,
-  .toggler-icon {
+  .toggler-icon,
+  .nav-btn {
     transition: none;
   }
   
   .navbar-menu {
     transition: none;
+  }
+  
+  .nav-btn:hover {
+    transform: none;
   }
 }
 
@@ -531,6 +614,10 @@ export default {
   
   .nav-link {
     color: black !important;
+  }
+  
+  .nav-btn {
+    display: none !important;
   }
 }
 </style>
