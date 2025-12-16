@@ -78,7 +78,7 @@ export default {
   background: linear-gradient(
     135deg,
     black 0%,
-    var(--secondary-color) 100%
+    black 100%
   );
   color: white;
   padding: 3rem 0 1.5rem;
@@ -97,7 +97,7 @@ export default {
 }
 
 h4 {
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
@@ -114,7 +114,7 @@ h4 {
 }
 
 .contact-list i {
-  color: var(--accent-color);
+  color: #ff8c00;
   margin-right: 10px;
   margin-top: 3px;
   min-width: 20px;
