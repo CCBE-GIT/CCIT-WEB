@@ -6,7 +6,7 @@
           <h3 class="footer-logo">CCIT</h3>
           <p class="footer-text">
             Shaping the future through 100% practical IT education. 
-            We hone your child's ICT skills with content that goes beyond the subject..
+            We hone your child's ICT skills with content that goes beyond the subject.
           </p>
         </div>
         
