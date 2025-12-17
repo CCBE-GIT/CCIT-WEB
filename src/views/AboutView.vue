@@ -16,7 +16,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <h1 class="hero-title">
-              About test
+              About
               <span class="highlight"
                 >Cambridge College of Information Technology</span
               >
