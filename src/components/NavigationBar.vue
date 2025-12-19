@@ -226,7 +226,7 @@ export default {
 }
 
 .logo-text {
-  color: #ffa500;
+  color: #FFD700;
   font-weight: 700;
   margin: 0;
   font-size: 1.75rem;
@@ -331,7 +331,7 @@ export default {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--accent-color, #ffa500);
+  background-color: var(--accent-color, #FFD700);
   transition: width 0.3s ease;
 }
 
@@ -342,7 +342,7 @@ export default {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--accent-color, #ffa500);
+  color: var(--accent-color, #FFD700);
 }
 
 /* Active state for better UX */
@@ -352,7 +352,7 @@ export default {
 
 /* Payment Button Styles */
 .nav-btn {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 80%);
   color: black;
   border: none;
   padding: 0.5rem 1.25rem;
@@ -557,13 +557,13 @@ export default {
 
 /* Accessibility improvements */
 .nav-link:focus {
-  outline: 2px solid var(--accent-color, #ffa500);
+  outline: 2px solid var(--accent-color, #FFD700);
   outline-offset: 4px;
   border-radius: 4px;
 }
 
 .custom-toggler:focus-visible {
-  outline: 2px solid var(--accent-color, #ffa500);
+  outline: 2px solid var(--accent-color, #FFD700);
   outline-offset: 2px;
 }
 
