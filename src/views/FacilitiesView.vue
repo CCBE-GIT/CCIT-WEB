@@ -318,7 +318,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -328,7 +328,7 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .facility-card {
@@ -345,7 +345,7 @@ export default {
 
 .facility-icon {
   font-size: 3rem;
-  color: #ff8c00;
+  color: #FFD700;
   margin-bottom: 1.5rem;
 }
 
@@ -376,7 +376,7 @@ export default {
 }
 
 .facility-features i {
-  color: #ff8c00;
+  color: #FFD700;
   margin-right: 10px;
   flex-shrink: 0;
 }
@@ -392,7 +392,7 @@ export default {
 
 .gallery-placeholder {
   height: 200px;
-  background: linear-gradient(135deg, black 0%, #ff8c00 100%);
+  background: linear-gradient(135deg, black 0%, #FFD700 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +453,7 @@ export default {
 .feature-badge {
   width: 50px;
   height: 50px;
-  background: #ff8c00;
+  background: #FFD700;
   color: white;
   border-radius: 50%;
   display: flex;
