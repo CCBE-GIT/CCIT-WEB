@@ -271,7 +271,7 @@ export default {
 
 .contact-info {
   font-size: 18px;
-  color: #FFD700;
+  color: white;
   font-weight: 500;
   margin: 15px 0;
   display: block;
