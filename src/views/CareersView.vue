@@ -712,7 +712,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg,  #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -735,7 +735,7 @@ export default {
 
 .hero-icon i {
   font-size: 6rem;
-  color: #ff8c00;
+  color: #FFD700;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
@@ -772,7 +772,7 @@ export default {
   left: 0;
   right: 0;
   height: 4px;
-  background: #ff8c00;
+  background: #FFD700;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -783,7 +783,7 @@ export default {
 
 .benefit-icon {
   font-size: 3rem;
-  color: #ff8c00;
+  color: #FFD700;
   margin-bottom: 1.5rem;
 }
 
@@ -821,7 +821,7 @@ export default {
 }
 
 .opening-type {
-  background: #ff8c00;
+  background: #FFD700;
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -862,7 +862,7 @@ export default {
 }
 
 .detail-item i {
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .opening-actions {
@@ -887,7 +887,7 @@ export default {
 }
 
 .btn-outline-accent {
-  border: 2px solid #ff8c00;
+  border: 2px solid #FFD700;
   color: black;
   background: transparent;
   padding: 8px 20px;
@@ -931,7 +931,7 @@ export default {
 
 .step-icon {
   font-size: 2.5rem;
-  color: #ff8c00;
+  color: #FFD700;
   margin-bottom: 1rem;
 }
 
