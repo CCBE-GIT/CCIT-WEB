@@ -294,7 +294,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -331,9 +331,9 @@ export default {
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 8px;
-  background-color:  #ff8c00;       
+  background-color:  #FFD700;       
   color: black;                     
-  border: 1px solid  #ff8c00;
+  border: 1px solid  #FFD700;
   text-decoration: none;
   transition: 0.3s ease;
   text-align: center;
@@ -362,7 +362,7 @@ export default {
 }
 
 .btn-outline-primary-custom:hover {
-  background-color: #ff8c00;      
+  background-color: #FFD700;      
   color: black;
   text-decoration: none;
 }
@@ -396,7 +396,7 @@ export default {
 
 .image-placeholder i {
   font-size: 8rem;
-  color: #ff8c00;
+  color: #FFD700;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
@@ -435,7 +435,7 @@ export default {
   left: 0;
   right: 0;
   height: 4px;
-  background: #ff8c00;
+  background: #FFD700;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -446,7 +446,7 @@ export default {
 
 .feature-icon {
   font-size: 3rem;
-  color: #ff8c00;
+  color: #FFD700;
   margin-bottom: 1.5rem;
 }
 
@@ -479,8 +479,8 @@ export default {
   position: absolute;
   top: -10px;
   right: 20px;
-  background: #ff8c00;
-  color: white;
+  background: #FFD700;
+  color: black;
   padding: 5px 15px;
   border-radius: 20px;
   font-weight: 600;
@@ -514,13 +514,13 @@ export default {
 }
 
 .course-features i {
-  color: #ff8c00;
+  color: #FFD700;
   margin-right: 10px;
 }
 
 .btn-accent {
-  background: #ff8c00;
-  color: white;
+  background: #FFD700;
+  color: black;
   border: none;
   padding: 10px 25px;
   border-radius: 25px;
