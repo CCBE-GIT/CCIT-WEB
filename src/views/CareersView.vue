@@ -822,7 +822,7 @@ export default {
 
 .opening-type {
   background: #FFD700;
-  color: white;
+  color: black;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
