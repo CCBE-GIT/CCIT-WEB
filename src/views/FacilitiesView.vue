@@ -77,7 +77,7 @@
                 <div class="col-md-6" v-for="(resource, index) in resources" :key="index">
                   <div class="resource-item mb-3">
                     <div class="d-flex align-items-center mb-2">
-                      <i :class="resource.icon" class="text-primary me-2"></i>
+                      <i :class="resource.icon" class="text-gold me-2"></i>
                       <h5 class="mb-0">{{ resource.category }}</h5>
                     </div>
                     <ul class="resource-details">
@@ -437,6 +437,10 @@ export default {
   color: var(--accent-color);
   position: absolute;
   left: 0;
+}
+
+.text-gold {
+  color: #FFD700;
 }
 
 .environment-card {
