@@ -13,7 +13,7 @@
             <h1 class="hero-title">Shaping Your Future with <span class="highlight">CCIT</span></h1>
             <p class="hero-subtitle">
               The national IT school that hones your child's ICT skills with 
-              <strong class="highlight">100% PRACTICAL</strong> content that goes beyond the subject.
+              <strong class="highlight">100% PRACTICAL</strong> content that goes beyond the subject..
             </p>
             <div class="hero-buttons">
               <router-link to="/courses" class="btn-primary-custom">
