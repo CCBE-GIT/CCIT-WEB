@@ -10,6 +10,23 @@
         </strong>
       </div>
       
+      <!-- Social Media Icons -->
+      <div class="social-media-section">
+        <div class="social-icons">
+          <a 
+            v-for="(social, index) in socialLinks" 
+            :key="index"
+            :href="social.url" 
+            :aria-label="social.name"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+          >
+            <i :class="social.icon"></i>
+          </a>
+        </div>
+      </div>
+      
       <div class="logos-container">
         <div class="logos-grid">
           <div class="logo-item" v-for="(logo, index) in logos" :key="index">
@@ -29,17 +46,6 @@
       </div>
       
       <div class="footer-legal-section">
-        <!-- <div class="cert-badges">
-          <div class="cert-badge">
-            <div class="cert-badge-header">We prepare for</div>
-            <div class="cert-badge-title">Cambridge English Qualifications</div>
-          </div>
-          <div class="cert-badge">
-            <div class="cert-badge-title">Cambridge English School</div>
-            <div class="cert-badge-subtitle">using Cambridge English teams & materials</div>
-          </div>
-        </div> -->
-        
         <div class="policy-links">
           <button class="privacy-link" @click="openPopup('privacy')">Privacy Policy</button>
           <span class="separator">|</span>
@@ -53,7 +59,7 @@
       </div>
     </div>
 
-    <!-- Popups remain the same -->
+    <!-- Privacy Policy Popup -->
     <div v-if="showPrivacyPopup" class="popup-overlay" @click="closePopup">
       <div class="popup-content" @click.stop>
         <div class="popup-header">
@@ -91,6 +97,7 @@
       </div>
     </div>
 
+    <!-- Terms of Service Popup -->
     <div v-if="showTermsPopup" class="popup-overlay" @click="closePopup">
       <div class="popup-content" @click.stop>
         <div class="popup-header">
@@ -151,26 +158,60 @@ export default {
       {
         src: require("@/assets/images/CCIT - logo.png"),
         alt: 'CCIT Logo',
-        width: 180,  // Custom width for CCIT logo
-        height: 150   // Custom height for CCIT logo
+        width: 180,
+        height: 150
       },
       {
         src: require("@/assets/images/lable.jpeg"),
         alt: 'English Qu Label',
-        width: 160,  // Custom width for English Qu label
-        height: 90   // Custom height for English Qu label
+        width: 160,
+        height: 90
       },
       {
         src: require("@/assets/images/IELTS_up.png"),
-        alt: 'Sample Partner Logo 3', 
-        width: 150,  // Custom width for logo 3
-        height: 70   // Custom height for logo 3
+        alt: 'IELTS Logo', 
+        width: 150,
+        height: 70
       },
       {
         src: require("@/assets/images/CES.png"),
-        alt: 'Sample Partner Logo 4',
-        width: 170,  // Custom width for logo 4
-        height: 85   // Custom height for logo 4
+        alt: 'Cambridge English School Logo',
+        width: 170,
+        height: 85
+      }
+    ])
+    
+    // Social Media Links - Update these with your actual links
+    const socialLinks = ref([
+      {
+        name: 'Facebook',
+        icon: 'fab fa-facebook-f',
+        url: 'https://www.facebook.com/share/1DEPXGQbA3/'
+      },
+      // {
+      //   name: 'Instagram',
+      //   icon: 'fab fa-instagram',
+      //   url: 'https://instagram.com/yourpage'
+      // },
+      // {
+      //   name: 'Twitter',
+      //   icon: 'fab fa-twitter',
+      //   url: 'https://twitter.com/yourpage'
+      // },
+      {
+        name: 'LinkedIn',
+        icon: 'fab fa-linkedin-in',
+        url: 'https://www.linkedin.com/company/cambridge-college-of-information-technology/'
+      },
+      {
+        name: 'YouTube',
+        icon: 'fab fa-youtube',
+        url: 'https://www.youtube.com/@Cambridigit'
+      },
+      {
+        name: 'WhatsApp',
+        icon: 'fab fa-whatsapp',
+        url: `https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`
       }
     ])
     
@@ -195,6 +236,7 @@ export default {
       whatsapp,
       email,
       logos,
+      socialLinks,
       showPrivacyPopup,
       showTermsPopup,
       openPopup,
@@ -225,7 +267,6 @@ export default {
   color: #ffffff;
   font-weight: 700;
   margin-bottom: 10px;
-  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
 }
 
 .contact-info {
@@ -236,13 +277,59 @@ export default {
   display: block;
 }
 
+.contact-info a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .highlight {
-  background: linear-gradient(135deg,  #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   display: inline-block;
+}
+
+/* Social Media Section */
+.social-media-section {
+  margin: 20px 0 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon:hover {
+  background: #FFD700;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  border-color: #FFD700;
 }
 
 /* Logos Container - White Box */
@@ -297,54 +384,6 @@ export default {
   padding: 25px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Certification Badges */
-.cert-badges {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-}
-
-.cert-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #FFD700;
-  padding: 20px 25px;
-  border-radius: 0 8px 8px 0;
-  text-align: left;
-  min-width: 280px;
-  transition: all 0.3s ease;
-}
-
-.cert-badge:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.cert-badge-header {
-  color: #FFD700;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cert-badge-title {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.cert-badge-subtitle {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  margin-top: 5px;
-  line-height: 1.4;
 }
 
 /* Policy Links */
@@ -403,7 +442,7 @@ export default {
   padding: 0 20px;
 }
 
-/* Popup Styles - Dark Theme */
+/* Popup Styles */
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -423,19 +462,19 @@ export default {
   max-height: 80vh;
   overflow-y: auto;
   animation: slideUp 0.3s ease;
-  color: #212121; 
+  color: #212121;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* HEADER */
+/* Popup Header */
 .popup-header {
-  background: black; 
+  background: black;
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -447,7 +486,7 @@ export default {
   font-size: 24px;
 }
 
-/* CLOSE BUTTON */
+/* Popup Close Button */
 .popup-close {
   background: none;
   border: none;
@@ -458,8 +497,8 @@ export default {
   height: 32px;
   border-radius: 50%;
   display: flex;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s;
 }
 
@@ -468,10 +507,10 @@ export default {
   color: #FFD700;
 }
 
-/* BODY */
+/* Popup Body */
 .popup-body {
   padding: 25px;
-  text-align: left;  
+  text-align: left;
 }
 
 .popup-body h4 {
@@ -496,7 +535,7 @@ export default {
 .popup-body li {
   margin-bottom: 8px;
   line-height: 1.5;
-  color: #333; 
+  color: #333;
 }
 
 .policy-date {
@@ -506,7 +545,6 @@ export default {
   margin-top: 2rem;
   text-align: left;
 }
-
 
 /* Animations */
 @keyframes fadeIn {
@@ -536,12 +574,8 @@ export default {
     gap: 20px;
   }
   
-  .cert-badges {
-    gap: 20px;
-  }
-  
-  .cert-badge {
-    min-width: 250px;
+  .social-icons {
+    gap: 15px;
   }
 }
 
@@ -563,14 +597,14 @@ export default {
     padding: 12px;
   }
   
-  .cert-badges {
-    flex-direction: column;
-    align-items: center;
+  .social-icons {
+    gap: 12px;
   }
   
-  .cert-badge {
-    width: 100%;
-    max-width: 350px;
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
 
@@ -596,8 +630,14 @@ export default {
     min-height: 90px;
   }
   
-  .cert-badge-title {
-    font-size: 16px;
+  .social-icons {
+    gap: 10px;
+  }
+  
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
   }
   
   .policy-links {
