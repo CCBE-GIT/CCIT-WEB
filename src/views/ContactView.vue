@@ -85,20 +85,20 @@
                   <h4>Business Hours</h4>
                   <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
                   <p>Saturday: 8:00 AM - 1:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>Sunday: 8:00 AM - 1:00 PM</p>
                 </div>
               </div>
               
               <div class="social-links mt-5">
                 <h4 class="mb-3">Follow Us</h4>
                 <div class="d-flex gap-3">
-                  <a href="#" class="social-link">
+                  <a href="https://www.facebook.com/share/1DEPXGQbA3/" class="social-link">
                     <i class="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#" class="social-link">
+                  <a href="https://www.youtube.com/@Cambridigit" class="social-link">
                     <i class="fab fa-youtube"></i>
                   </a>
-                  <a href="#" class="social-link">
+                  <a href="https://www.linkedin.com/company/cambridge-college-of-information-technology/" class="social-link">
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a href="#" class="social-link">
