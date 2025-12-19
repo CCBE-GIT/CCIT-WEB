@@ -372,11 +372,11 @@ Contact us for more details!
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -397,9 +397,9 @@ Contact us for more details!
 
 .category-tab.active,
 .category-tab:hover {
-  background: #ff8c00;
-  color: white;
-  border-color: #ff8c00;
+  background: #FFD700;
+  color: black;
+  border-color: #FFD700;
 }
 
 .course-card {
@@ -474,7 +474,7 @@ Contact us for more details!
 }
 
 .course-features i {
-  color: #ff8c00;
+  color: #FFD700;
   margin-right: 10px;
   margin-top: 3px;
   flex-shrink: 0;
@@ -495,7 +495,7 @@ Contact us for more details!
 }
 
 .detail-item i {
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .course-price {
@@ -522,7 +522,7 @@ Contact us for more details!
 
 .feature-icon {
   font-size: 2rem;
-  color: #ff8c00;
+  color: #FFD700;
   flex-shrink: 0;
 }
 
