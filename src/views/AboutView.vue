@@ -373,7 +373,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -397,7 +397,7 @@ export default {
 
 .icon-wrapper {
   font-size: 2.5rem;
-  color: #ff8c00;
+  color: #FFD700;
   display: inline-block;
 }
 
@@ -418,16 +418,16 @@ export default {
 
 .value-icon {
   font-size: 2.5rem;
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .team-avatar {
   font-size: 3rem;
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .text-accent {
-  color: #ff8c00;
+  color: #FFD700;
   font-weight: 600;
 }
 
