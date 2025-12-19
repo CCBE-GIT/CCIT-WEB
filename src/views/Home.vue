@@ -309,7 +309,7 @@ export default {
   opacity: 0.95;
   position: relative;
   z-index: 2;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
 }
 
 .hero-subtitle strong {
