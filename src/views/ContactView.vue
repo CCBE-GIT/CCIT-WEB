@@ -468,7 +468,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35 0%, #ffa500 50%, #ff8c00 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -478,7 +478,7 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .contact-item {
@@ -490,7 +490,7 @@ export default {
 .contact-icon {
   width: 40px;
   height: 40px;
-  background: #ff8c00;
+  background: #FFD700;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -526,7 +526,7 @@ export default {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #ff8c00;
+  background: #FFD700;
   color: white;
   border-radius: 50%;
   text-decoration: none;
@@ -569,9 +569,9 @@ export default {
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 8px;
-  background-color:  #ff8c00;       
+  background-color:  #FFD700;       
   color: black;                     
-  border: 2px solid  #ff8c00;
+  border: 2px solid  #FFD700;
   text-decoration: none;
   transition: 0.3s ease;
   text-align: center;
@@ -594,7 +594,7 @@ export default {
 }
 
 .map-placeholder i {
-  color: #ff8c00;
+  color: #FFD700;
 }
 
 .section-title {
@@ -620,7 +620,7 @@ export default {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #ff8c00;
+  background-color: #FFD700;
   color: black;
   box-shadow: none;
 }
