@@ -278,7 +278,7 @@ export default {
 }
 
 .contact-info a {
-  color: #FFD700;
+  color: #ff5f15;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -289,7 +289,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
