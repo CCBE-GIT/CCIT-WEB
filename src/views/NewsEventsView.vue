@@ -697,7 +697,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -718,7 +718,7 @@ export default {
 
 .hero-icon i {
   font-size: 6rem;
-  color: #FFD700;
+  color: #ff5f15;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
