@@ -226,7 +226,7 @@ export default {
 }
 
 .logo-text {
-  color: #FFD700;
+  color: #ff5f15;
   font-weight: 700;
   margin: 0;
   font-size: 1.75rem;

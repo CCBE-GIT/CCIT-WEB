@@ -83,13 +83,13 @@
         <h2 class="section-title mb-4">Ready to Start Your <span class="highlight">IT Journey?</span></h2>
         <p class="mb-4 text-black">Contact us today to learn more about our programs and enrollment.</p>
         <div class="cta-buttons">
-          <a :href="`tel:${mobile}`" class="btn btn-primary btn-lg">
+          <a :href="`tel:${mobile}`" class="btn btn-primary-custom btn-lg">
             <i class="fas fa-phone"></i> Call Now
           </a>
           <a :href="`https://wa.me/${whatsapp.replace('+', '')}`" target="_blank" class="btn btn-success btn-lg">
             <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
-          <a :href="`mailto:${email}`" class="btn btn-outline-primary btn-lg">
+          <a :href="`mailto:${email}`" class="btn btn-outline-primary-custom1 btn-lg">
             <i class="fas fa-envelope"></i> Email Us
           </a>
         </div>
@@ -294,7 +294,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -367,6 +367,26 @@ export default {
   text-decoration: none;
 }
 
+.btn-outline-primary-custom1 {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: transparent;
+  color: black;                 
+  border: 1px solid #FFD700;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-outline-primary-custom1:hover {
+  background-color: #FFD700;      
+  color: black;
+  text-decoration: none;
+}
+
 .hero-image {
   text-align: center;
   position: relative;
@@ -396,7 +416,7 @@ export default {
 
 .image-placeholder i {
   font-size: 8rem;
-  color: #FFD700;
+  color: #ff5f15;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
@@ -514,7 +534,7 @@ export default {
 }
 
 .course-features i {
-  color: #FFD700;
+  color: #ff5f15;
   margin-right: 10px;
 }
 
