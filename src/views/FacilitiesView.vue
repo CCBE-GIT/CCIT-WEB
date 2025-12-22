@@ -318,7 +318,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg,  #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -328,7 +328,7 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: #FFD700;
+  color: #ff5f15;
 }
 
 .facility-card {
@@ -376,7 +376,7 @@ export default {
 }
 
 .facility-features i {
-  color: #FFD700;
+  color: #ff5f15;
   margin-right: 10px;
   flex-shrink: 0;
 }
@@ -440,7 +440,7 @@ export default {
 }
 
 .text-gold {
-  color: #FFD700;
+  color: #ff5f15;
 }
 
 .environment-card {
