@@ -136,13 +136,13 @@
           Get in touch with our HR team for more information
         </p>
         <div class="cta-buttons">
-          <a href="mailto:careers@ccit.lk" class="btn btn-primary btn-lg">
+          <a href="mailto:careers@ccit.lk" class="btn btn-primary-custom btn-lg">
             <i class="fas fa-envelope"></i> Email HR
           </a>
-          <a href="tel:+94112233445" class="btn btn-outline-primary btn-lg">
+          <a href="tel:+94112233445" class="btn btn-accent btn-lg">
             <i class="fas fa-phone"></i> Call HR
           </a>
-          <button class="btn btn-accent btn-lg" @click="openApplicationModal()">
+          <button class="btn btn-primary-custom btn-lg" @click="openApplicationModal()">
             <i class="fas fa-file-alt"></i> Quick Apply
           </button>
         </div>
@@ -712,7 +712,7 @@ export default {
 }
 
 .highlight {
-  background: linear-gradient(135deg,  #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg,   #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -735,7 +735,7 @@ export default {
 
 .hero-icon i {
   font-size: 6rem;
-  color: #FFD700;
+  color: #ff5f15;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
@@ -872,8 +872,8 @@ export default {
 }
 
 .btn-accent {
-  background: var(--accent-color);
-  color: white;
+  background: #ff5f15;
+  color: black;
   border: none;
   padding: 8px 20px;
   border-radius: 25px;
@@ -882,7 +882,7 @@ export default {
 }
 
 .btn-accent:hover {
-  background: var(--primary-color);
+  background: #FFD700;
   transform: translateY(-2px);
 }
 
@@ -1160,6 +1160,27 @@ export default {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.btn-primary-custom {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color:  #FFD700;       
+  color: black;                     
+  border: 1px solid  #FFD700;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary-custom:hover {
+  background-color: black;      
+  border-color: #0b5ed7;
+  text-decoration: none;
+  color: #fff;
 }
 
 /* Responsive Design */
