@@ -83,7 +83,7 @@
         <h2 class="section-title mb-4">Ready to Start Your <span class="highlight">IT Journey?</span></h2>
         <p class="mb-4 text-black">Contact us today to learn more about our programs and enrollment.</p>
         <div class="cta-buttons">
-          <a :href="`tel:${mobile}`" class="btn btn-primary-custom btn-lg">
+          <a :href="`tel:${mobile}`" class="btn btn-primary-custom1 btn-lg">
             <i class="fas fa-phone"></i> Call Now
           </a>
           <a :href="`https://wa.me/${whatsapp.replace('+', '')}`" target="_blank" class="btn btn-success btn-lg">
@@ -341,6 +341,27 @@ export default {
 
 .btn-primary-custom:hover {
   background: black;      
+  border-color: #0b5ed7;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-primary-custom1 {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #FFD700;      
+  color: black;                     
+  border: 1px solid  #FFD700;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary-custom1:hover {
+  background-color: black;      
   border-color: #0b5ed7;
   text-decoration: none;
   color: #fff;
