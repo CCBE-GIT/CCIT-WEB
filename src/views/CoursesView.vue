@@ -134,7 +134,7 @@
         <h2 class="mb-4">Ready to <span class="highlight">Start Your IT Journey?</span></h2>
         <p class="mb-4">Limited seats available. Enroll today to secure your spot.</p>
         <div class="cta-buttons">
-          <router-link to="/contact" class="btn btn-primary btn-lg">
+          <router-link to="/contact" class="btn btn-primary-custom btn-lg">
             <i class="fas fa-calendar-alt"></i> Schedule Consultation
           </router-link>
           <a :href="`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`" target="_blank" class="btn btn-success btn-lg">
@@ -372,11 +372,11 @@ Contact us for more details!
 
 .hero-icon {
   font-size: 6rem;
-  color: #FFD700;
+  color: #ff5f15;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -474,7 +474,7 @@ Contact us for more details!
 }
 
 .course-features i {
-  color: #FFD700;
+  color: #ff5f15;
   margin-right: 10px;
   margin-top: 3px;
   flex-shrink: 0;
@@ -536,6 +536,27 @@ Contact us for more details!
   display: flex;
   justify-content: center; 
   gap: 1rem;
+}
+
+.btn-primary-custom {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color:  #FFD700;       
+  color: black;                     
+  border: 1px solid  #FFD700;
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary-custom:hover {
+  background-color: black;      
+  border-color: #0b5ed7;
+  text-decoration: none;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
