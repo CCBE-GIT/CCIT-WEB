@@ -1,10 +1,14 @@
 <template>
   <div class="home-page">
-    <!-- Hero Section with Matrix Background -->
+    <!-- Hero Section with Video Background -->
     <section class="hero-section">
-      <!-- Matrix Canvas Background -->
-      <div class="matrix-bg">
-        <canvas ref="matrixCanvas"></canvas>
+      <!-- Video Background -->
+      <div class="video-bg">
+        <video ref="videoBg" autoplay muted loop playsinline>
+        <source src="/videos/smart-city.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
       </div>
       
       <div class="container">
@@ -24,13 +28,7 @@
               </router-link>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="hero-image">
-              <div class="image-placeholder">
-                <i class="fas fa-laptop-code"></i>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -108,8 +106,7 @@ export default {
     const whatsapp = '+94705205666'
     const email = 'email.ccit@gmail.com'
     
-    const matrixCanvas = ref(null)
-    const matrixInterval = ref(null)
+    const videoBg = ref(null)
     
     const features = ref([
       {
@@ -153,87 +150,36 @@ export default {
       }
     ])
     
-    // Matrix Rain Effect Functions
-    const initMatrix = () => {
-      const canvas = matrixCanvas.value
-      if (!canvas) return
-      
-      const ctx = canvas.getContext('2d')
-      
-      // Set canvas size to match hero section
-      const heroSection = document.querySelector('.hero-section')
-      if (heroSection) {
-        canvas.width = heroSection.clientWidth
-        canvas.height = heroSection.clientHeight
-      } else {
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight * 0.8
+    // Video background handling
+    const initVideoBg = () => {
+      if (videoBg.value) {
+        videoBg.value.play().catch(() => {
+          console.log("Autoplay prevented, waiting for user interaction");
+        });
       }
-      
-      // Matrix characters - IT themed
-      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&<>*+-/\\=^~|"
-      const charArray = chars.split("")
-      const fontSize = 14
-      const columns = Math.floor(canvas.width / fontSize)
-      
-      // Array of drops - one per column
-      const drops = []
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.floor(Math.random() * canvas.height / fontSize)
-      }
-      
-      // Drawing function
-      const draw = () => {
-        // Semi-transparent black rectangle for trail effect
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)"
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
-        
-        // Green color for matrix effect
-        ctx.fillStyle = "#0F0"
-        ctx.font = `${fontSize}px monospace`
-        
-        // Loop over drops
-        for (let i = 0; i < drops.length; i++) {
-          // Random character
-          const text = charArray[Math.floor(Math.random() * charArray.length)]
-          
-          // Draw the character
-          ctx.fillText(text, i * fontSize, drops[i] * fontSize)
-          
-          // Move drop down
-          drops[i]++
-          
-          // Reset drop if it goes below canvas
-          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0
-          }
-        }
-      }
-      
-      // Start animation
-      matrixInterval.value = setInterval(draw, 35)
     }
     
     const handleResize = () => {
-      if (matrixInterval.value) {
-        clearInterval(matrixInterval.value)
-      }
-      initMatrix()
+      // Video will automatically adjust with CSS
     }
     
     // Lifecycle hooks
     onMounted(() => {
-      // Wait for DOM to be ready
+      // Initialize video background
       setTimeout(() => {
-        initMatrix()
+        initVideoBg()
         window.addEventListener('resize', handleResize)
       }, 100)
+      
+      // Try to autoplay video on user interaction
+      document.addEventListener('click', () => {
+        if (videoBg.value && videoBg.value.paused) {
+          videoBg.value.play().catch(console.error);
+        }
+      }, { once: true });
     })
     
     onBeforeUnmount(() => {
-      if (matrixInterval.value) {
-        clearInterval(matrixInterval.value)
-      }
       window.removeEventListener('resize', handleResize)
     })
     
@@ -243,7 +189,7 @@ export default {
       email,
       features,
       courses,
-      matrixCanvas
+      videoBg,
     }
   }
 }
@@ -253,11 +199,7 @@ export default {
 /* Hero Section */
 .hero-section {
   padding: 100px 0;
-  background: linear-gradient(
-    135deg,
-    black 0%,
-    black 100%
-  );
+  background: black;
   color: white;
   position: relative;
   overflow: hidden;
@@ -266,22 +208,34 @@ export default {
   align-items: center;
 }
 
-/* Matrix Background */
-.matrix-bg {
+/* Video Background */
+.video-bg {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.matrix-bg canvas {
   width: 100%;
   height: 100%;
-  display: block;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text readability */
+  z-index: 2;
 }
 
 .hero-title {
@@ -289,27 +243,26 @@ export default {
   font-weight: 700;
   margin-bottom: 1.5rem;
   position: relative;
-  z-index: 2;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  z-index: 3;
+  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); */
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: #ff5f15;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   display: inline-block;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: 0.95;
   position: relative;
-  z-index: 2;
-  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
+  z-index: 3;
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); */
 }
 
 .hero-subtitle strong {
@@ -321,7 +274,7 @@ export default {
   gap: 1rem;
   flex-wrap: wrap;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Primary button */
@@ -411,7 +364,7 @@ export default {
 .hero-image {
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .image-placeholder {
@@ -444,7 +397,7 @@ export default {
 /* Container for hero content */
 .hero-section .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Section Titles */
@@ -601,6 +554,10 @@ export default {
     font-size: 2.5rem;
   }
   
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
   .hero-buttons {
     flex-direction: column;
   }
@@ -619,9 +576,39 @@ export default {
     font-size: 5rem;
   }
   
-  /* Adjust matrix effect for mobile */
-  .matrix-bg {
-    opacity: 0.4;
+  /* Optimize video for mobile */
+  .video-bg video {
+    object-position: 50% 50%;
+  }
+  
+  /* Reduce overlay darkness for better visibility on mobile */
+  .video-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .btn-primary-custom,
+  .btn-outline-primary-custom,
+  .btn-primary-custom1,
+  .btn-outline-primary-custom1 {
+    padding: 8px 20px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-buttons {
+    gap: 0.5rem;
   }
 }
 
@@ -637,8 +624,37 @@ export default {
     transition: none;
   }
   
-  .matrix-bg {
+  .video-bg video {
+    animation: none;
+  }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 600px;
+    padding: 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Prevent video from displaying on very small screens */
+@media (max-width: 320px) {
+  .video-bg {
     display: none;
+  }
+  
+  .hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
   }
 }
 </style>
