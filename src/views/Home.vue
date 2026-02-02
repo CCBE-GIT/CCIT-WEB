@@ -28,7 +28,13 @@
               </router-link>
             </div>
           </div>
-          
+          <div class="col-lg-6">
+            <div class="hero-image">
+              <div class="image-placeholder">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
