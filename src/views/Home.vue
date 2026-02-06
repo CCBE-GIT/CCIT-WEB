@@ -240,7 +240,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text readability */
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
   z-index: 2;
 }
 
@@ -589,7 +589,7 @@ export default {
   
   /* Reduce overlay darkness for better visibility on mobile */
   .video-overlay {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 
