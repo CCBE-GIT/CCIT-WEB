@@ -290,7 +290,7 @@ export default {
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);      
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);      
   color: black;                     
   border: 1px solid  #FFD700;
   text-decoration: none;
@@ -342,7 +342,7 @@ export default {
 }
 
 .btn-outline-primary-custom:hover {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);   ;      
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);   ;      
   color: black;
   text-decoration: none;
 }
