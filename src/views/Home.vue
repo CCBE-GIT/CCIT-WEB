@@ -5,7 +5,7 @@
       <!-- Video Background -->
       <div class="video-bg">
         <video ref="videoBg" autoplay muted loop playsinline>
-        <source src="/videos/smart-city.mp4" type="video/mp4">
+        <source src="/videos/typing video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
