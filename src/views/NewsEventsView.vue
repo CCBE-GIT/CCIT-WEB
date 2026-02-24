@@ -719,7 +719,7 @@ export default {
 .hero-icon i {
   font-size: 6rem;
   color: #ff5f15;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); */
 }
 
 /* Events Section - Simplified */
