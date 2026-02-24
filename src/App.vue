@@ -10,14 +10,14 @@
 <script>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import ThemeToggle from '@/components/ThemeToggle.vue'
+//import ThemeToggle from '@/components/ThemeToggle.vue'
 import NavigationBar from '@/components/NavigationBar.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    ThemeToggle,
+    // ThemeToggle,
     NavigationBar,
     FooterComponent
   },

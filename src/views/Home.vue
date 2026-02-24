@@ -56,7 +56,7 @@
         </div>
       </div>
     </section>
-
+    <StatsbannerPage></StatsbannerPage>
     <!-- Courses Preview -->
     <section class="courses-section py-5 bg-light">
       <div class="container">
@@ -101,12 +101,15 @@
     </section>
   </div>
 </template>
-
 <script>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import StatsbannerPage from "./Statsbanner.vue";
 
 export default {
   name: 'HomeView',
+  components: {
+    StatsbannerPage,
+  },
   setup() {
     const mobile = '0718864477'
     const whatsapp = '+94705205666'

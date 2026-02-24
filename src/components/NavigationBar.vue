@@ -101,6 +101,26 @@
           <li class="nav-item">
             <router-link 
               class="nav-link" 
+              to="/gallery" 
+              @click="closeMenu"
+              :class="{ 'active': $route.path === '/gallery' }"
+            >
+              Gallery
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link 
+              class="nav-link" 
+              to="/testimonials" 
+              @click="closeMenu"
+              :class="{ 'active': $route.path === '/testimonials' }"
+            >
+              Testimonials
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link 
+              class="nav-link" 
               to="/contact" 
               @click="closeMenu"
               :class="{ 'active': $route.path === '/contact' }"
