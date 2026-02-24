@@ -244,7 +244,7 @@ export default {
   right: 0;
   bottom: 0;
   /* Dark overlay for better text readability */
-  background: rgba(0, 0, 0, 0.3); 
+  /* background: rgba(0, 0, 0, 0.3);  */
   z-index: 2;
 }
 
