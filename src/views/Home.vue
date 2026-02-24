@@ -4,8 +4,8 @@
     <section class="hero-section">
       <!-- Video Background -->
       <div class="video-bg">
-        <video ref="videoBg" autoplay muted loop playsinline>
-        <source src="https://ik.imagekit.io/kp5tixhur/ccit-video/typing%20video.mp4" type="video/mp4">
+        <video ref="videoBg" autoplay muted loop playsinline webkit-playsinline>
+          <source src="https://ik.imagekit.io/kp5tixhur/ccit-video/typing%20video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
@@ -240,7 +240,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+  /* Dark overlay for better text readability */
+  background: rgba(0, 0, 0, 0.3); 
   z-index: 2;
 }
 
@@ -250,7 +251,6 @@ export default {
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 3;
-  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); */
 }
 
 .highlight {
@@ -268,7 +268,6 @@ export default {
   margin-bottom: 2rem;
   position: relative;
   z-index: 3;
-  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); */
 }
 
 .hero-subtitle strong {
@@ -342,7 +341,7 @@ export default {
 }
 
 .btn-outline-primary-custom:hover {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);   ;      
+  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);      
   color: black;
   text-decoration: none;
 }
@@ -654,7 +653,7 @@ export default {
 }
 
 /* Prevent video from displaying on very small screens */
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   .video-bg {
     display: none;
   }
