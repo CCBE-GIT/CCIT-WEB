@@ -617,6 +617,17 @@ export default {
   }
 }
 
+@media (max-width: 991px) {
+  .hero-image {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
 /* Performance optimization for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .image-placeholder {
