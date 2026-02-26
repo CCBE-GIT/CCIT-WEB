@@ -81,8 +81,41 @@
       </div>
     </section>
 
+    <!-- Parent Testimonials -->
+    <section class="parent-testimonials py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">What <span class="highlight">Parents</span> Say</h2>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="parent-grid">
+              <div 
+                class="parent-card card-theme mb-4" 
+                v-for="(parent, index) in parentTestimonials" 
+                :key="index"
+              >
+                <div class="parent-quote-icon">
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="parent-quote">"{{ parent.quote }}"</p>
+                <div class="parent-info d-flex align-items-center">
+                  <div class="parent-avatar me-3">
+                    <i :class="parent.avatar"></i>
+                  </div>
+                  <div>
+                    <h4 class="parent-name">{{ parent.name }}</h4>
+                    <p class="parent-child mb-0">Parent of {{ parent.childName }}</p>
+                    <p class="parent-course">{{ parent.childCourse }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact CTA -->
-    <section class="contact-cta py-5">
+    <section class="contact-cta py-5 bg-light">
       <div class="container text-center">
         <h2 class="section-title mb-4">Ready to Start Your <span class="highlight">IT Journey?</span></h2>
         <p class="mb-4 text-black">Contact us today to learn more about our programs and enrollment.</p>
@@ -158,6 +191,8 @@ export default {
         features: ['Network Security', 'Ethical Hacking', 'Risk Management', '4 Months Duration']
       }
     ])
+
+    
     
     // Video background handling
     const initVideoBg = () => {
@@ -199,7 +234,41 @@ export default {
       features,
       courses,
       videoBg,
+
+
+      parentTestimonials: [
+        {
+          quote: "I've seen tremendous growth in my son's confidence and technical skills. The supportive environment and dedicated instructors made all the difference.",
+          name: "Robert Chen",
+          childName: "Michael Chen",
+          childCourse: "Web Development Program",
+          avatar: "fas fa-user-circle"
+        },
+        {
+          quote: "As a parent, I was concerned about my daughter's career choices. This institute provided her with practical skills and real-world experience. She's now thriving in her IT career.",
+          name: "Linda Johnson",
+          childName: "Sarah Johnson",
+          childCourse: "Full Stack Development",
+          avatar: "fas fa-user-circle"
+        },
+        {
+          quote: "The communication from instructors and staff is excellent. We always knew how our child was progressing. The career guidance was exceptional.",
+          name: "David Patel",
+          childName: "Priya Patel",
+          childCourse: "Python Programming",
+          avatar: "fas fa-user-circle"
+        },
+        {
+          quote: "Worth every penny. My son not only learned technical skills but also developed problem-solving abilities and professional etiquette.",
+          name: "Maria Rodriguez",
+          childName: "Alex Rodriguez",
+          childCourse: "IT Support Specialist Program",
+          avatar: "fas fa-user-circle"
+        }
+      ],
     }
+
+    
   }
 }
 </script>
@@ -283,6 +352,60 @@ export default {
   flex-wrap: wrap;
   position: relative;
   z-index: 3;
+}
+
+.parent-card {
+  padding: 2rem;
+  border-radius: 15px;
+  position: relative;
+}
+
+.parent-quote-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 4rem;
+  color: rgba(255, 95, 21, 0.1);
+}
+
+.parent-quote {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.parent-avatar {
+  width: 50px;
+  height: 50px;
+  background: #FFD700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.parent-name {
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.parent-child {
+  color: #ff5f15;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.parent-course {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 /* Primary button */
