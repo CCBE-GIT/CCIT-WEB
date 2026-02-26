@@ -16,6 +16,14 @@
           </div>
         </div>
       </router-link>
+
+      <!-- Make Payment Button - Top right -->
+      <button 
+        class="nav-btn btn-payment btn-payment-top"
+        @click="handlePayment"
+      >
+        <i class="fas fa-credit-card"></i> Make Payment
+      </button>
       
       <!-- Hamburger menu for mobile -->
       <button 
@@ -138,10 +146,10 @@
               Contact
             </router-link>
           </li>
-          <!-- Make Payment Button -->
-          <li class="nav-item">
+          <!-- Make Payment Button - Mobile menu only -->
+          <li class="nav-item nav-item-payment-mobile">
             <button 
-              class="nav-btn btn-payment"
+              class="nav-btn btn-payment btn-payment-mobile"
               @click="handlePayment"
             >
               <i class="fas fa-credit-card"></i> Make Payment
@@ -331,7 +339,7 @@ export default {
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 3rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -400,7 +408,7 @@ export default {
 
 .nav-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+  /* box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3); */
 }
 
 .nav-btn:active {
@@ -414,6 +422,18 @@ export default {
 .nav-btn:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+}
+
+/* Top-right payment button - shown on desktop, hidden on mobile */
+.btn-payment-top {
+  margin-left: auto;
+  margin-right: 0rem;
+  flex-shrink: 0;
+}
+
+/* Mobile-only payment button - hidden on desktop, shown in mobile menu */
+.nav-item-payment-mobile {
+  display: none;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -437,7 +457,7 @@ export default {
   }
   
   .nav-list {
-    gap: 1rem;
+    gap: 0.5rem;
   }
   
   .nav-link {
@@ -454,6 +474,24 @@ export default {
 @media (max-width: 767px) {
   .custom-toggler {
     display: flex;
+  }
+
+  /* Hide top-right button on mobile; show inside menu instead */
+  .btn-payment-top {
+    display: none;
+  }
+
+  /* Show payment button inside mobile menu */
+  .nav-item-payment-mobile {
+    display: block;
+  }
+
+  .btn-payment-mobile {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
   }
   
   .navbar-menu {
@@ -479,7 +517,7 @@ export default {
   
   .nav-list {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.5rem;
     width: 100%;
     max-width: 300px;
   }
@@ -502,14 +540,6 @@ export default {
   
   .nav-link::after {
     display: none;
-  }
-  
-  .nav-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0 0 0;
-    font-size: 1.1rem;
   }
   
   .logo-image {
