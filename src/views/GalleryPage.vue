@@ -214,39 +214,39 @@ export default {
       currentImageSet: [],
       currentImageIndex: 0,
       categories: [
-        { label: 'All Photos', value: 'all' },
-        { label: 'Campus', value: 'campus' },
-        { label: 'Labs', value: 'labs' },
-        { label: 'Events', value: 'events' },
-        { label: 'Student Life', value: 'student-life' },
-        { label: 'Graduation', value: 'graduation' }
+        // { label: 'All Photos', value: 'all' },
+        // { label: 'Campus', value: 'campus' },
+        // { label: 'Labs', value: 'labs' },
+        // { label: 'Events', value: 'events' },
+        // { label: 'Student Life', value: 'student-life' },
+        // { label: 'Graduation', value: 'graduation' }
       ],
       
       // UPDATED: allImages now with multiple images per item
       allImages: [
         // Campus Category - with multiple images
         {
-          title: 'Main Campus Building',
-          description: 'Front view of our main campus building with modern architecture',
-          category: 'campus',
+          title: 'Cambrians Day',
+          description: 'Celebrating Unity, Talent & the Spirit of Cambrians',
+          // category: 'campus',
           icon: 'fas fa-university',
           gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          date: 'Jan 15, 2024',
+          date: '2026',
           // photographer: 'Campus Media Team',
           featured: true,
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Main Building - Front View',
-              description: 'Beautiful front facade with glass entrance',
-              date: 'Jan 15, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9732.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
               // photographer: 'John Smith'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Main Building - Side View',
-              description: 'Architectural details on the east side',
-              date: 'Jan 15, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9412.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
               // photographer: 'John Smith'
             },
             {
@@ -261,7 +261,7 @@ export default {
         {
           title: 'Central Plaza',
           description: 'Students gathering at the central plaza during break time',
-          category: 'campus',
+          // category: 'campus',
           icon: 'fas fa-tree',
           gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
           date: 'Feb 3, 2024',
@@ -287,7 +287,7 @@ export default {
         {
           title: 'Library Exterior',
           description: 'Beautiful sunset view of the library building',
-          category: 'campus',
+          // category: 'campus',
           icon: 'fas fa-book',
           gradient: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
           date: 'Mar 10, 2024',
@@ -327,7 +327,7 @@ export default {
         {
           title: 'Campus Garden',
           description: 'Peaceful garden area for relaxation and study',
-          category: 'campus',
+          // category: 'campus',
           icon: 'fas fa-leaf',
           gradient: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)',
           date: 'Apr 5, 2024',
@@ -353,7 +353,7 @@ export default {
         {
           title: 'Sports Complex',
           description: 'Outdoor sports facilities and recreation area',
-          category: 'campus',
+          // category: 'campus',
           icon: 'fas fa-futbol',
           gradient: 'linear-gradient(135deg, #f12711 0%, #f5af19 100%)',
           date: 'Apr 12, 2024',
@@ -388,7 +388,7 @@ export default {
         {
           title: 'Computer Lab A',
           description: 'Modern computer lab with 30 high-performance workstations',
-          category: 'labs',
+          // category: 'labs',
           icon: 'fas fa-desktop',
           gradient: 'linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)',
           date: 'Feb 20, 2024',
@@ -428,7 +428,7 @@ export default {
         {
           title: 'Robotics Lab',
           description: 'Students working on robotics projects',
-          category: 'labs',
+          // category: 'labs',
           icon: 'fas fa-robot',
           gradient: 'linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%)',
           date: 'Mar 5, 2024',
@@ -461,7 +461,7 @@ export default {
         {
           title: 'Networking Lab',
           description: 'CISCO networking equipment setup',
-          category: 'labs',
+          // category: 'labs',
           icon: 'fas fa-network-wired',
           gradient: 'linear-gradient(135deg, #ff0084 0%, #33001b 100%)',
           date: 'Mar 18, 2024',
@@ -487,7 +487,7 @@ export default {
         {
           title: 'Hardware Workshop',
           description: 'Students learning hardware assembly',
-          category: 'labs',
+          // category: 'labs',
           icon: 'fas fa-microchip',
           gradient: 'linear-gradient(135deg, #43cea2 0%, #185a9d 100%)',
           date: 'Apr 2, 2024',
@@ -506,7 +506,7 @@ export default {
         {
           title: 'VR Lab',
           description: 'Virtual reality development setup',
-          category: 'labs',
+          // category: 'labs',
           icon: 'fas fa-vr-cardboard',
           gradient: 'linear-gradient(135deg, #ff6a88 0%, #ff99ac 100%)',
           date: 'Apr 8, 2024',
@@ -534,7 +534,7 @@ export default {
         {
           title: 'Hackathon 2024',
           description: 'Annual coding competition with 200+ participants',
-          category: 'events',
+          // category: 'events',
           icon: 'fas fa-laptop-code',
           gradient: 'linear-gradient(135deg, #ff512f 0%, #dd2476 100%)',
           date: 'Jan 28, 2024',
@@ -581,7 +581,7 @@ export default {
         {
           title: 'Career Fair',
           description: 'Tech companies recruiting our students',
-          category: 'events',
+          // category: 'events',
           icon: 'fas fa-briefcase',
           gradient: 'linear-gradient(135deg, #00c6fb 0%, #005bea 100%)',
           date: 'Feb 15, 2024',
@@ -614,7 +614,7 @@ export default {
         {
           title: 'Guest Lecture',
           description: 'Industry expert speaking about AI trends',
-          category: 'events',
+          // category: 'events',
           icon: 'fas fa-chalkboard-teacher',
           gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
           date: 'Mar 22, 2024',
@@ -640,7 +640,7 @@ export default {
         {
           title: 'Tech Symposium',
           description: 'Student research presentations',
-          category: 'events',
+          // category: 'events',
           icon: 'fas fa-microphone-alt',
           gradient: 'linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%)',
           date: 'Apr 1, 2024',
@@ -661,7 +661,7 @@ export default {
         {
           title: 'Study Group',
           description: 'Students collaborating on a project',
-          category: 'student-life',
+          // category: 'student-life',
           icon: 'fas fa-users',
           gradient: 'linear-gradient(135deg, #ff4b1f 0%, #1fddff 100%)',
           date: 'Feb 10, 2024',
@@ -694,7 +694,7 @@ export default {
         {
           title: 'Cafeteria',
           description: 'Students enjoying lunch together',
-          category: 'student-life',
+          // category: 'student-life',
           icon: 'fas fa-utensils',
           gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
           date: 'Mar 12, 2024',
@@ -720,7 +720,7 @@ export default {
         {
           title: 'Sports Day',
           description: 'Annual sports competition',
-          category: 'student-life',
+          // category: 'student-life',
           icon: 'fas fa-running',
           gradient: 'linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%)',
           date: 'Mar 25, 2024',
@@ -748,7 +748,7 @@ export default {
         {
           title: 'Graduation Ceremony',
           description: 'Class of 2024 graduation day',
-          category: 'graduation',
+          // category: 'graduation',
           icon: 'fas fa-graduation-cap',
           gradient: 'linear-gradient(135deg, #f857a6 0%, #ff5858 100%)',
           date: 'Dec 15, 2023',
@@ -788,7 +788,7 @@ export default {
         {
           title: 'Cap Throwing',
           description: 'Graduates celebrating their achievement',
-          category: 'graduation',
+          // category: 'graduation',
           icon: 'fas fa-hat-wizard',
           gradient: 'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
           date: 'Dec 15, 2023',
@@ -814,7 +814,7 @@ export default {
         {
           title: 'Award Winners',
           description: 'Students receiving academic excellence awards',
-          category: 'graduation',
+          // category: 'graduation',
           icon: 'fas fa-award',
           gradient: 'linear-gradient(135deg, #c31432 0%, #240b36 100%)',
           date: 'Dec 16, 2023',
