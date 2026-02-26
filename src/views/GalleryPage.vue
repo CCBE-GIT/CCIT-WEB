@@ -82,9 +82,9 @@
                   <span class="meta-item">
                     <i class="far fa-calendar-alt"></i> {{ image.date }}
                   </span>
-                  <span class="meta-item">
+                  <!-- <span class="meta-item">
                     <i class="far fa-user"></i> {{ image.photographer }}
-                  </span>
+                  </span> -->
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@ export default {
           icon: 'fas fa-university',
           gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           date: 'Jan 15, 2024',
-          photographer: 'Campus Media Team',
+          // photographer: 'Campus Media Team',
           featured: true,
           images: [
             {
@@ -240,21 +240,21 @@ export default {
               title: 'Main Building - Front View',
               description: 'Beautiful front facade with glass entrance',
               date: 'Jan 15, 2024',
-              photographer: 'John Smith'
+              // photographer: 'John Smith'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
               title: 'Main Building - Side View',
               description: 'Architectural details on the east side',
               date: 'Jan 15, 2024',
-              photographer: 'John Smith'
+              // photographer: 'John Smith'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
               title: 'Main Building - Entrance Hall',
               description: 'Grand entrance with student information desk',
               date: 'Jan 16, 2024',
-              photographer: 'Sarah Johnson'
+              // photographer: 'Sarah Johnson'
             }
           ]
         },
@@ -265,7 +265,7 @@ export default {
           icon: 'fas fa-tree',
           gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
           date: 'Feb 3, 2024',
-          photographer: 'Student Photography Club',
+          // photographer: 'Student Photography Club',
           featured: true,
           images: [
             {
@@ -273,14 +273,14 @@ export default {
               title: 'Central Plaza - Day View',
               description: 'Students relaxing between classes',
               date: 'Feb 3, 2024',
-              photographer: 'Maria Garcia'
+              // photographer: 'Maria Garcia'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/plaza-2.jpg',
               title: 'Central Plaza - Fountain',
               description: 'The iconic fountain at plaza center',
               date: 'Feb 3, 2024',
-              photographer: 'Maria Garcia'
+              // photographer: 'Maria Garcia'
             }
           ]
         },
@@ -291,7 +291,7 @@ export default {
           icon: 'fas fa-book',
           gradient: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
           date: 'Mar 10, 2024',
-          photographer: 'John Smith',
+          // photographer: 'John Smith',
           featured: true,
           images: [
             {
@@ -299,28 +299,28 @@ export default {
               title: 'Library - Sunset View',
               description: 'Beautiful sunset behind the library',
               date: 'Mar 10, 2024',
-              photographer: 'John Smith'
+              // photographer: 'John Smith'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-2.jpg',
               title: 'Library - Main Entrance',
               description: 'Grand entrance with columns',
               date: 'Mar 10, 2024',
-              photographer: 'John Smith'
+              // photographer: 'John Smith'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-3.jpg',
               title: 'Library - Reading Room',
               description: 'Interior view of main reading room',
               date: 'Mar 11, 2024',
-              photographer: 'Jane Doe'
+              // photographer: 'Jane Doe'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-4.jpg',
               title: 'Library - Study Area',
               description: 'Quiet study carrels',
               date: 'Mar 11, 2024',
-              photographer: 'Jane Doe'
+              // photographer: 'Jane Doe'
             }
           ]
         },
@@ -331,7 +331,7 @@ export default {
           icon: 'fas fa-leaf',
           gradient: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)',
           date: 'Apr 5, 2024',
-          photographer: 'Maria Garcia',
+          // photographer: 'Maria Garcia',
           featured: false,
           images: [
             {
@@ -339,14 +339,14 @@ export default {
               title: 'Garden Overview',
               description: 'Main garden area with benches',
               date: 'Apr 5, 2024',
-              photographer: 'Maria Garcia'
+              // photographer: 'Maria Garcia'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/garden-2.jpg',
               title: 'Flower Garden',
               description: 'Colorful flowers in bloom',
               date: 'Apr 5, 2024',
-              photographer: 'Maria Garcia'
+              // photographer: 'Maria Garcia'
             }
           ]
         },
@@ -357,7 +357,7 @@ export default {
           icon: 'fas fa-futbol',
           gradient: 'linear-gradient(135deg, #f12711 0%, #f5af19 100%)',
           date: 'Apr 12, 2024',
-          photographer: 'Sports Club',
+          // photographer: 'Sports Club',
           featured: false,
           images: [
             {
@@ -365,21 +365,21 @@ export default {
               title: 'Football Field',
               description: 'Main football field with stands',
               date: 'Apr 12, 2024',
-              photographer: 'Sports Club'
+              // photographer: 'Sports Club'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/sports-2.jpg',
               title: 'Basketball Courts',
               description: 'Outdoor basketball courts',
               date: 'Apr 12, 2024',
-              photographer: 'Sports Club'
+              // photographer: 'Sports Club'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/sports-3.jpg',
               title: 'Tennis Courts',
               description: 'Well-maintained tennis courts',
               date: 'Apr 13, 2024',
-              photographer: 'Sports Club'
+              // photographer: 'Sports Club'
             }
           ]
         },
@@ -392,7 +392,7 @@ export default {
           icon: 'fas fa-desktop',
           gradient: 'linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%)',
           date: 'Feb 20, 2024',
-          photographer: 'Tech Department',
+          // photographer: 'Tech Department',
           featured: true,
           images: [
             {
@@ -400,28 +400,28 @@ export default {
               title: 'Main Lab Area',
               description: 'Overview of the main computer lab',
               date: 'Feb 20, 2024',
-              photographer: 'Tech Department'
+              // photographer: 'Tech Department'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/computer-lab-2.jpg',
               title: 'Workstations',
               description: 'Individual workstations with dual monitors',
               date: 'Feb 20, 2024',
-              photographer: 'Tech Department'
+              // photographer: 'Tech Department'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/computer-lab-3.jpg',
               title: 'Teaching Area',
               description: 'Instructor station with projection system',
               date: 'Feb 21, 2024',
-              photographer: 'Tech Department'
+              // photographer: 'Tech Department'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/computer-lab-4.jpg',
               title: 'Collaboration Zone',
               description: 'Group work area with whiteboards',
               date: 'Feb 21, 2024',
-              photographer: 'Tech Department'
+              // photographer: 'Tech Department'
             }
           ]
         },
@@ -432,7 +432,7 @@ export default {
           icon: 'fas fa-robot',
           gradient: 'linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%)',
           date: 'Mar 5, 2024',
-          photographer: 'Robotics Club',
+          // photographer: 'Robotics Club',
           featured: true,
           images: [
             {
@@ -440,21 +440,21 @@ export default {
               title: 'Robotics Lab Overview',
               description: 'Full view of the robotics workspace',
               date: 'Mar 5, 2024',
-              photographer: 'Robotics Club'
+              // photographer: 'Robotics Club'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-2.jpg',
               title: 'Robot Assembly',
               description: 'Students assembling robot components',
               date: 'Mar 5, 2024',
-              photographer: 'Robotics Club'
+              // photographer: 'Robotics Club'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-3.jpg',
               title: 'Programming Station',
               description: 'Coding and testing area',
               date: 'Mar 6, 2024',
-              photographer: 'Robotics Club'
+              // photographer: 'Robotics Club'
             }
           ]
         },
@@ -465,7 +465,7 @@ export default {
           icon: 'fas fa-network-wired',
           gradient: 'linear-gradient(135deg, #ff0084 0%, #33001b 100%)',
           date: 'Mar 18, 2024',
-          photographer: 'Network Team',
+          // photographer: 'Network Team',
           featured: true,
           images: [
             {
@@ -473,14 +473,14 @@ export default {
               title: 'Network Racks',
               description: 'CISCO equipment in server racks',
               date: 'Mar 18, 2024',
-              photographer: 'Network Team'
+              // photographer: 'Network Team'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/networking-2.jpg',
               title: 'Configuration Stations',
               description: 'Workstations for network configuration',
               date: 'Mar 18, 2024',
-              photographer: 'Network Team'
+              // photographer: 'Network Team'
             }
           ]
         },
@@ -491,7 +491,7 @@ export default {
           icon: 'fas fa-microchip',
           gradient: 'linear-gradient(135deg, #43cea2 0%, #185a9d 100%)',
           date: 'Apr 2, 2024',
-          photographer: 'Workshop Instructor',
+          // photographer: 'Workshop Instructor',
           featured: false,
           images: [
             {
@@ -499,7 +499,7 @@ export default {
               title: 'Hardware Workshop',
               description: 'Students working on hardware projects',
               date: 'Apr 2, 2024',
-              photographer: 'Workshop Instructor'
+              // photographer: 'Workshop Instructor'
             }
           ]
         },
@@ -510,7 +510,7 @@ export default {
           icon: 'fas fa-vr-cardboard',
           gradient: 'linear-gradient(135deg, #ff6a88 0%, #ff99ac 100%)',
           date: 'Apr 8, 2024',
-          photographer: 'VR Team',
+          // photographer: 'VR Team',
           featured: false,
           images: [
             {
@@ -518,14 +518,14 @@ export default {
               title: 'VR Setup',
               description: 'VR headsets and tracking area',
               date: 'Apr 8, 2024',
-              photographer: 'VR Team'
+              // photographer: 'VR Team'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/vr-2.jpg',
               title: 'Development Stations',
               description: 'Workstations for VR development',
               date: 'Apr 8, 2024',
-              photographer: 'VR Team'
+              // photographer: 'VR Team'
             }
           ]
         },
@@ -538,7 +538,7 @@ export default {
           icon: 'fas fa-laptop-code',
           gradient: 'linear-gradient(135deg, #ff512f 0%, #dd2476 100%)',
           date: 'Jan 28, 2024',
-          photographer: 'Event Team',
+          // photographer: 'Event Team',
           featured: true,
           images: [
             {
@@ -546,35 +546,35 @@ export default {
               title: 'Opening Ceremony',
               description: 'Kickoff of Hackathon 2024',
               date: 'Jan 28, 2024',
-              photographer: 'Event Team'
+              // photographer: 'Event Team'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
               title: 'Teams Coding',
               description: 'Participants working on projects',
               date: 'Jan 28, 2024',
-              photographer: 'Event Team'
+              // photographer: 'Event Team'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-3.jpg',
               title: 'Mentor Session',
               description: 'Mentors helping teams',
               date: 'Jan 29, 2024',
-              photographer: 'Event Team'
+              // photographer: 'Event Team'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-4.jpg',
               title: 'Project Presentations',
               description: 'Teams presenting their projects',
               date: 'Jan 29, 2024',
-              photographer: 'Event Team'
+              // photographer: 'Event Team'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-5.jpg',
               title: 'Award Ceremony',
               description: 'Winners announced',
               date: 'Jan 30, 2024',
-              photographer: 'Event Team'
+              // photographer: 'Event Team'
             }
           ]
         },
@@ -585,7 +585,7 @@ export default {
           icon: 'fas fa-briefcase',
           gradient: 'linear-gradient(135deg, #00c6fb 0%, #005bea 100%)',
           date: 'Feb 15, 2024',
-          photographer: 'Career Services',
+          // photographer: 'Career Services',
           featured: true,
           images: [
             {
@@ -593,21 +593,21 @@ export default {
               title: 'Company Booths',
               description: 'Employers setting up booths',
               date: 'Feb 15, 2024',
-              photographer: 'Career Services'
+              // photographer: 'Career Services'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/career-fair-2.jpg',
               title: 'Networking',
               description: 'Students networking with recruiters',
               date: 'Feb 15, 2024',
-              photographer: 'Career Services'
+              // photographer: 'Career Services'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/career-fair-3.jpg',
               title: 'Interview Sessions',
               description: 'On-site interviews',
               date: 'Feb 16, 2024',
-              photographer: 'Career Services'
+              // photographer: 'Career Services'
             }
           ]
         },
@@ -618,7 +618,7 @@ export default {
           icon: 'fas fa-chalkboard-teacher',
           gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
           date: 'Mar 22, 2024',
-          photographer: 'Academic Affairs',
+          // photographer: 'Academic Affairs',
           featured: true,
           images: [
             {
@@ -626,14 +626,14 @@ export default {
               title: 'Speaker Session',
               description: 'Guest speaker presenting',
               date: 'Mar 22, 2024',
-              photographer: 'Academic Affairs'
+              // photographer: 'Academic Affairs'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/guest-lecture-2.jpg',
               title: 'Audience',
               description: 'Students attending the lecture',
               date: 'Mar 22, 2024',
-              photographer: 'Academic Affairs'
+              // photographer: 'Academic Affairs'
             }
           ]
         },
@@ -644,7 +644,7 @@ export default {
           icon: 'fas fa-microphone-alt',
           gradient: 'linear-gradient(135deg, #9d50bb 0%, #6e48aa 100%)',
           date: 'Apr 1, 2024',
-          photographer: 'Research Dept',
+          // photographer: 'Research Dept',
           featured: false,
           images: [
             {
@@ -652,7 +652,7 @@ export default {
               title: 'Presentations',
               description: 'Students presenting research',
               date: 'Apr 1, 2024',
-              photographer: 'Research Dept'
+              // photographer: 'Research Dept'
             }
           ]
         },
@@ -665,7 +665,7 @@ export default {
           icon: 'fas fa-users',
           gradient: 'linear-gradient(135deg, #ff4b1f 0%, #1fddff 100%)',
           date: 'Feb 10, 2024',
-          photographer: 'Student Life',
+          // photographer: 'Student Life',
           featured: true,
           images: [
             {
@@ -673,21 +673,21 @@ export default {
               title: 'Group Study',
               description: 'Students working together',
               date: 'Feb 10, 2024',
-              photographer: 'Student Life'
+              // photographer: 'Student Life'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/study-group-2.jpg',
               title: 'Discussion',
               description: 'Active discussion session',
               date: 'Feb 10, 2024',
-              photographer: 'Student Life'
+              // photographer: 'Student Life'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/study-group-3.jpg',
               title: 'Whiteboard Session',
               description: 'Planning on whiteboard',
               date: 'Feb 11, 2024',
-              photographer: 'Student Life'
+              // photographer: 'Student Life'
             }
           ]
         },
@@ -698,7 +698,7 @@ export default {
           icon: 'fas fa-utensils',
           gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
           date: 'Mar 12, 2024',
-          photographer: 'Campus Life',
+          // photographer: 'Campus Life',
           featured: true,
           images: [
             {
@@ -706,14 +706,14 @@ export default {
               title: 'Lunch Time',
               description: 'Busy cafeteria during lunch',
               date: 'Mar 12, 2024',
-              photographer: 'Campus Life'
+              // photographer: 'Campus Life'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/cafeteria-2.jpg',
               title: 'Food Court',
               description: 'Various food options',
               date: 'Mar 12, 2024',
-              photographer: 'Campus Life'
+              // photographer: 'Campus Life'
             }
           ]
         },
@@ -724,7 +724,7 @@ export default {
           icon: 'fas fa-running',
           gradient: 'linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%)',
           date: 'Mar 25, 2024',
-          photographer: 'Sports Club',
+          // photographer: 'Sports Club',
           featured: false,
           images: [
             {
@@ -732,14 +732,14 @@ export default {
               title: 'Race Event',
               description: 'Students participating in races',
               date: 'Mar 25, 2024',
-              photographer: 'Sports Club'
+              // photographer: 'Sports Club'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/sports-day-2.jpg',
               title: 'Award Ceremony',
               description: 'Winners receiving medals',
               date: 'Mar 25, 2024',
-              photographer: 'Sports Club'
+              // photographer: 'Sports Club'
             }
           ]
         },
@@ -752,7 +752,7 @@ export default {
           icon: 'fas fa-graduation-cap',
           gradient: 'linear-gradient(135deg, #f857a6 0%, #ff5858 100%)',
           date: 'Dec 15, 2023',
-          photographer: 'Official Photographer',
+          // photographer: 'Official Photographer',
           featured: true,
           images: [
             {
@@ -760,28 +760,28 @@ export default {
               title: 'Procession',
               description: 'Graduates walking in',
               date: 'Dec 15, 2023',
-              photographer: 'Official Photographer'
+              // photographer: 'Official Photographer'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/ceremony-2.jpg',
               title: 'Degree Presentation',
               description: 'Receiving diplomas',
               date: 'Dec 15, 2023',
-              photographer: 'Official Photographer'
+              // photographer: 'Official Photographer'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/ceremony-3.jpg',
               title: 'Group Photo',
               description: 'Class of 2024 group photo',
               date: 'Dec 15, 2023',
-              photographer: 'Official Photographer'
+              // photographer: 'Official Photographer'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/ceremony-4.jpg',
               title: 'Family Moments',
               description: 'Graduates with families',
               date: 'Dec 15, 2023',
-              photographer: 'Official Photographer'
+              // photographer: 'Official Photographer'
             }
           ]
         },
@@ -792,7 +792,7 @@ export default {
           icon: 'fas fa-hat-wizard',
           gradient: 'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
           date: 'Dec 15, 2023',
-          photographer: 'Official Photographer',
+          // photographer: 'Official Photographer',
           featured: true,
           images: [
             {
@@ -800,14 +800,14 @@ export default {
               title: 'Cap Toss',
               description: 'Traditional cap throwing moment',
               date: 'Dec 15, 2023',
-              photographer: 'Official Photographer'
+              // photographer: 'Official Photographer'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/cap-throw-2.jpg',
               title: 'Celebration',
               description: 'Graduates celebrating',
               date: 'Dec 15, 2023',
-              photographer: 'Official Photographer'
+              // photographer: 'Official Photographer'
             }
           ]
         },
@@ -818,7 +818,7 @@ export default {
           icon: 'fas fa-award',
           gradient: 'linear-gradient(135deg, #c31432 0%, #240b36 100%)',
           date: 'Dec 16, 2023',
-          photographer: 'Academic Office',
+          // photographer: 'Academic Office',
           featured: false,
           images: [
             {
@@ -826,7 +826,7 @@ export default {
               title: 'Award Ceremony',
               description: 'Students receiving awards',
               date: 'Dec 16, 2023',
-              photographer: 'Academic Office'
+              // photographer: 'Academic Office'
             }
           ]
         }
