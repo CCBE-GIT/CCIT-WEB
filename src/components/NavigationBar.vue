@@ -81,16 +81,6 @@
           <li class="nav-item">
             <router-link 
               class="nav-link" 
-              to="/careers" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/careers' }"
-            >
-              Careers
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
               to="/news_event" 
               @click="closeMenu"
               :class="{ 'active': $route.path === '/news_event' }"
@@ -111,11 +101,31 @@
           <li class="nav-item">
             <router-link 
               class="nav-link" 
+              to="/careers" 
+              @click="closeMenu"
+              :class="{ 'active': $route.path === '/careers' }"
+            >
+              Careers
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link 
+              class="nav-link" 
               to="/testimonials" 
               @click="closeMenu"
               :class="{ 'active': $route.path === '/testimonials' }"
             >
               Testimonials
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link 
+              class="nav-link" 
+              to="/blogs" 
+              @click="closeMenu"
+              :class="{ 'active': $route.path === '/blogs' }"
+            >
+              Blogs
             </router-link>
           </li>
           <li class="nav-item">
