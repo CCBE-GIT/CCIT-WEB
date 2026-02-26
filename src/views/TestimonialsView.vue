@@ -179,7 +179,7 @@ export default {
         {
           rating: 5,
           quote: "The instructors here are amazing! They don't just teach theory; they ensure you understand how to apply everything in real-world scenarios. I landed a job even before completing my course.",
-          name: "Sarah Johnson",
+          name: "Name",
           role: "Full Stack Developer",
           course: "Web Development Bootcamp",
           avatar: "fas fa-user-circle"
@@ -187,7 +187,7 @@ export default {
         {
           rating: 5,
           quote: "The project-based learning approach helped me build a strong portfolio. The career support team was instrumental in preparing me for interviews.",
-          name: "Michael Chen",
+          name: "Name",
           role: "Software Engineer",
           course: "Advanced JavaScript Course",
           avatar: "fas fa-user-circle"
@@ -195,7 +195,7 @@ export default {
         {
           rating: 5,
           quote: "Coming from a non-technical background, I was nervous. But the supportive environment and step-by-step curriculum made learning to code accessible and fun.",
-          name: "Priya Patel",
+          name: "Name",
           role: "Frontend Developer",
           course: "Python Programming",
           avatar: "fas fa-user-circle"
@@ -203,7 +203,7 @@ export default {
         {
           rating: 5,
           quote: "The networking opportunities and industry connections provided through this program are invaluable. I'm now working at a tech startup thanks to them.",
-          name: "James Wilson",
+          name: "Name",
           role: "DevOps Engineer",
           course: "Cloud Computing Course",
           avatar: "fas fa-user-circle"
@@ -211,7 +211,7 @@ export default {
         {
           rating: 5,
           quote: "Flexible class timings allowed me to work while studying. The online resources and recorded sessions helped me catch up when needed.",
-          name: "Emma Davis",
+          name: "Name",
           role: "Data Analyst",
           course: "Data Science Program",
           avatar: "fas fa-user-circle"
@@ -219,7 +219,7 @@ export default {
         {
           rating: 4,
           quote: "Great curriculum and hands-on projects. The only reason for 4 stars is that I wish the course was longer to cover more advanced topics.",
-          name: "Alex Rodriguez",
+          name: "Name",
           role: "IT Support Specialist",
           course: "Networking Fundamentals",
           avatar: "fas fa-user-circle"
@@ -250,29 +250,29 @@ export default {
       parentTestimonials: [
         {
           quote: "I've seen tremendous growth in my son's confidence and technical skills. The supportive environment and dedicated instructors made all the difference.",
-          name: "Robert Chen",
-          childName: "Michael Chen",
+          name: "Name",
+          childName: "chlid name",
           childCourse: "Web Development Program",
           avatar: "fas fa-user-circle"
         },
         {
           quote: "As a parent, I was concerned about my daughter's career choices. This institute provided her with practical skills and real-world experience. She's now thriving in her IT career.",
-          name: "Linda Johnson",
-          childName: "Sarah Johnson",
+          name: "Name",
+          childName: "child name",
           childCourse: "Full Stack Development",
           avatar: "fas fa-user-circle"
         },
         {
           quote: "The communication from instructors and staff is excellent. We always knew how our child was progressing. The career guidance was exceptional.",
-          name: "David Patel",
-          childName: "Priya Patel",
+          name: "Name",
+          childName: "child name",
           childCourse: "Python Programming",
           avatar: "fas fa-user-circle"
         },
         {
           quote: "Worth every penny. My son not only learned technical skills but also developed problem-solving abilities and professional etiquette.",
-          name: "Maria Rodriguez",
-          childName: "Alex Rodriguez",
+          name: "Name",
+          childName: "child name",
           childCourse: "IT Support Specialist Program",
           avatar: "fas fa-user-circle"
         }
