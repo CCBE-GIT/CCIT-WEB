@@ -40,7 +40,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section py-5">
+    <section class="features-section py-5 bg-light">
       <div class="container">
         <h2 class="section-title text-center mb-5">Why Choose <span class="highlight">CCIT?</span></h2>
         <div class="row">
@@ -58,7 +58,7 @@
     </section>
     <StatsbannerPage></StatsbannerPage>
     <!-- Courses Preview -->
-    <section class="courses-section py-5 bg-light">
+    <section class="courses-section py-5">
       <div class="container">
         <h2 class="section-title text-center mb-5">Popular <span class="highlight">Courses</span></h2>
         <div class="row">
@@ -82,7 +82,7 @@
     </section>
 
     <!-- Parent Testimonials -->
-    <section class="parent-testimonials py-5">
+    <section class="parent-testimonials py-5 bg-light">
       <div class="container">
         <h2 class="section-title text-center mb-5">What <span class="highlight">Parents</span> Say</h2>
         <div class="row">

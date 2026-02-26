@@ -90,7 +90,7 @@ export default {
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255, 95, 21, 0.08) 0%, transparent 70%);
+  /* background: radial-gradient(circle, rgba(255, 95, 21, 0.08) 0%, transparent 70%); */
   top: -50px;
   left: -100px;
   border-radius: 50%;
