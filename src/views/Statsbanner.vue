@@ -32,6 +32,11 @@ export default {
     return {
       stats: [
         {
+          icon: 'fas fa-building',
+          value: '01',
+          label: 'Branches'
+        },
+        {
           icon: 'fas fa-user-graduate',
           value: '500+',
           label: 'Students Trained'
@@ -45,11 +50,6 @@ export default {
           icon: 'fas fa-award',
           value: '5',
           label: 'Years of Excellence'
-        },
-        {
-          icon: 'fas fa-briefcase',
-          value: '92%',
-          label: 'Employment Rate'
         }
       ]
     }
