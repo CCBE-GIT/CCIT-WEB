@@ -64,7 +64,7 @@
                   class="btn btn-outline-primary mt-3"
                   @click="viewEventDetails(event)"
                 >
-                  <i class="fas fa-info-circle"></i> Learn More
+                  <i class="fas fa-info-circle"></i> See More 
                 </button>
               </div>
             </div>
