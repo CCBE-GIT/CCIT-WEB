@@ -243,85 +243,337 @@ export default {
               // photographer: 'John Smith'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9412.jpg',
+              url: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE6.jpeg',
               title: 'Cambrians Day',
               description: '',
               date: '2026',
               // photographer: 'John Smith'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Main Building - Entrance Hall',
-              description: 'Grand entrance with student information desk',
-              date: 'Jan 16, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9882.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9410.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9429.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR0003.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410643.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D419664.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410494.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR0301.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410017.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410292.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR0047.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR0859.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR0904.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410295.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9853.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR0155.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D411555.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+             {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410469.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+             {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9910.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+             {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D410911.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D419741.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/5D419672.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
+              // photographer: 'Sarah Johnson'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/gallery/CONR9412.jpg',
+              title: 'Cambrians Day',
+              description: '',
+              date: '2026',
               // photographer: 'Sarah Johnson'
             }
           ]
         },
         {
-          title: 'Central Plaza',
-          description: 'Students gathering at the central plaza during break time',
+          title: 'Staff Wellness & Medical Screening Program',
+          description: 'Caring for Our Team, Building a Healthier CCBE',
           // category: 'campus',
           icon: 'fas fa-tree',
           gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
-          date: 'Feb 3, 2024',
+          date: '2025',
           // photographer: 'Student Photography Club',
           featured: true,
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/plaza-1.jpg',
-              title: 'Central Plaza - Day View',
-              description: 'Students relaxing between classes',
-              date: 'Feb 3, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/8.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
               // photographer: 'Maria Garcia'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/plaza-2.jpg',
-              title: 'Central Plaza - Fountain',
-              description: 'The iconic fountain at plaza center',
-              date: 'Feb 3, 2024',
+              url: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE4.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
               // photographer: 'Maria Garcia'
-            }
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/5.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/10.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+             {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/3.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+             {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/4.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/9.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/WhatsApp%20Image%202026-02-23%20at%202.38.15%20PM.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/2.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/6.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/WhatsApp%20Image%202026-02-23%20at%203.03.59%20PM.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Staff%20Wellness/7.jpeg',
+              title: 'Staff Wellness & Medical Screening Program',
+              description: '',
+              date: '2025',
+              // photographer: 'Maria Garcia'
+            },
           ]
         },
         {
-          title: 'Library Exterior',
-          description: 'Beautiful sunset view of the library building',
+          title: 'A Decade of Dedication',
+          description: '',
           // category: 'campus',
           icon: 'fas fa-book',
           gradient: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
-          date: 'Mar 10, 2024',
+          date: '2025',
           // photographer: 'John Smith',
           featured: true,
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-1.jpg',
-              title: 'Library - Sunset View',
-              description: 'Beautiful sunset behind the library',
-              date: 'Mar 10, 2024',
+              url: 'https://ik.imagekit.io/u3wbiya66/Highlights/2.jpg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
               // photographer: 'John Smith'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-2.jpg',
-              title: 'Library - Main Entrance',
-              description: 'Grand entrance with columns',
-              date: 'Mar 10, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/4.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
               // photographer: 'John Smith'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-3.jpg',
-              title: 'Library - Reading Room',
-              description: 'Interior view of main reading room',
-              date: 'Mar 11, 2024',
-              // photographer: 'Jane Doe'
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/WhatsApp%20Image%202026-02-23%20at%203.25.57%20PM.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
+              // photographer: 'John Smith'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/library-4.jpg',
-              title: 'Library - Study Area',
-              description: 'Quiet study carrels',
-              date: 'Mar 11, 2024',
-              // photographer: 'Jane Doe'
-            }
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/6.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
+              // photographer: 'John Smith'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/3.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
+              // photographer: 'John Smith'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/2.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
+              // photographer: 'John Smith'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/5.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
+              // photographer: 'John Smith'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Dedication/7.jpeg',
+              title: 'A Decade of Dedication',
+              description: '',
+              date: '2025',
+              // photographer: 'John Smith'
+            },
           ]
         },
         // {
