@@ -324,32 +324,32 @@ export default {
             }
           ]
         },
-        {
-          title: 'Campus Garden',
-          description: 'Peaceful garden area for relaxation and study',
-          // category: 'campus',
-          icon: 'fas fa-leaf',
-          gradient: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)',
-          date: 'Apr 5, 2024',
-          // photographer: 'Maria Garcia',
-          featured: false,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/garden-1.jpg',
-              title: 'Garden Overview',
-              description: 'Main garden area with benches',
-              date: 'Apr 5, 2024',
-              // photographer: 'Maria Garcia'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/garden-2.jpg',
-              title: 'Flower Garden',
-              description: 'Colorful flowers in bloom',
-              date: 'Apr 5, 2024',
-              // photographer: 'Maria Garcia'
-            }
-          ]
-        },
+        // {
+        //   title: 'Campus Garden',
+        //   description: 'Peaceful garden area for relaxation and study',
+        //   // category: 'campus',
+        //   icon: 'fas fa-leaf',
+        //   gradient: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)',
+        //   date: 'Apr 5, 2024',
+        //   // photographer: 'Maria Garcia',
+        //   featured: false,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/garden-1.jpg',
+        //       title: 'Garden Overview',
+        //       description: 'Main garden area with benches',
+        //       date: 'Apr 5, 2024',
+        //       // photographer: 'Maria Garcia'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/garden-2.jpg',
+        //       title: 'Flower Garden',
+        //       description: 'Colorful flowers in bloom',
+        //       date: 'Apr 5, 2024',
+        //       // photographer: 'Maria Garcia'
+        //     }
+        //   ]
+        // },
         {
           title: 'Sports Complex',
           description: 'Outdoor sports facilities and recreation area',
@@ -425,39 +425,39 @@ export default {
             }
           ]
         },
-        {
-          title: 'Robotics Lab',
-          description: 'Students working on robotics projects',
-          // category: 'labs',
-          icon: 'fas fa-robot',
-          gradient: 'linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%)',
-          date: 'Mar 5, 2024',
-          // photographer: 'Robotics Club',
-          featured: true,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-1.jpg',
-              title: 'Robotics Lab Overview',
-              description: 'Full view of the robotics workspace',
-              date: 'Mar 5, 2024',
-              // photographer: 'Robotics Club'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-2.jpg',
-              title: 'Robot Assembly',
-              description: 'Students assembling robot components',
-              date: 'Mar 5, 2024',
-              // photographer: 'Robotics Club'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-3.jpg',
-              title: 'Programming Station',
-              description: 'Coding and testing area',
-              date: 'Mar 6, 2024',
-              // photographer: 'Robotics Club'
-            }
-          ]
-        },
+        // {
+        //   title: 'Robotics Lab',
+        //   description: 'Students working on robotics projects',
+        //   // category: 'labs',
+        //   icon: 'fas fa-robot',
+        //   gradient: 'linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%)',
+        //   date: 'Mar 5, 2024',
+        //   // photographer: 'Robotics Club',
+        //   featured: true,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-1.jpg',
+        //       title: 'Robotics Lab Overview',
+        //       description: 'Full view of the robotics workspace',
+        //       date: 'Mar 5, 2024',
+        //       // photographer: 'Robotics Club'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-2.jpg',
+        //       title: 'Robot Assembly',
+        //       description: 'Students assembling robot components',
+        //       date: 'Mar 5, 2024',
+        //       // photographer: 'Robotics Club'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/robotics-3.jpg',
+        //       title: 'Programming Station',
+        //       description: 'Coding and testing area',
+        //       date: 'Mar 6, 2024',
+        //       // photographer: 'Robotics Club'
+        //     }
+        //   ]
+        // },
         {
           title: 'Networking Lab',
           description: 'CISCO networking equipment setup',
@@ -503,81 +503,81 @@ export default {
             }
           ]
         },
-        {
-          title: 'VR Lab',
-          description: 'Virtual reality development setup',
-          // category: 'labs',
-          icon: 'fas fa-vr-cardboard',
-          gradient: 'linear-gradient(135deg, #ff6a88 0%, #ff99ac 100%)',
-          date: 'Apr 8, 2024',
-          // photographer: 'VR Team',
-          featured: false,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/vr-1.jpg',
-              title: 'VR Setup',
-              description: 'VR headsets and tracking area',
-              date: 'Apr 8, 2024',
-              // photographer: 'VR Team'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/vr-2.jpg',
-              title: 'Development Stations',
-              description: 'Workstations for VR development',
-              date: 'Apr 8, 2024',
-              // photographer: 'VR Team'
-            }
-          ]
-        },
+        // {
+        //   title: 'VR Lab',
+        //   description: 'Virtual reality development setup',
+        //   // category: 'labs',
+        //   icon: 'fas fa-vr-cardboard',
+        //   gradient: 'linear-gradient(135deg, #ff6a88 0%, #ff99ac 100%)',
+        //   date: 'Apr 8, 2024',
+        //   // photographer: 'VR Team',
+        //   featured: false,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/vr-1.jpg',
+        //       title: 'VR Setup',
+        //       description: 'VR headsets and tracking area',
+        //       date: 'Apr 8, 2024',
+        //       // photographer: 'VR Team'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/labs/vr-2.jpg',
+        //       title: 'Development Stations',
+        //       description: 'Workstations for VR development',
+        //       date: 'Apr 8, 2024',
+        //       // photographer: 'VR Team'
+        //     }
+        //   ]
+        // },
         
         // Events Category - with multiple images
-        {
-          title: 'Hackathon 2024',
-          description: 'Annual coding competition with 200+ participants',
-          // category: 'events',
-          icon: 'fas fa-laptop-code',
-          gradient: 'linear-gradient(135deg, #ff512f 0%, #dd2476 100%)',
-          date: 'Jan 28, 2024',
-          // photographer: 'Event Team',
-          featured: true,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Opening Ceremony',
-              description: 'Kickoff of Hackathon 2024',
-              date: 'Jan 28, 2024',
-              // photographer: 'Event Team'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Teams Coding',
-              description: 'Participants working on projects',
-              date: 'Jan 28, 2024',
-              // photographer: 'Event Team'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-3.jpg',
-              title: 'Mentor Session',
-              description: 'Mentors helping teams',
-              date: 'Jan 29, 2024',
-              // photographer: 'Event Team'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-4.jpg',
-              title: 'Project Presentations',
-              description: 'Teams presenting their projects',
-              date: 'Jan 29, 2024',
-              // photographer: 'Event Team'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-5.jpg',
-              title: 'Award Ceremony',
-              description: 'Winners announced',
-              date: 'Jan 30, 2024',
-              // photographer: 'Event Team'
-            }
-          ]
-        },
+        // {
+        //   title: 'Hackathon 2024',
+        //   description: 'Annual coding competition with 200+ participants',
+        //   // category: 'events',
+        //   icon: 'fas fa-laptop-code',
+        //   gradient: 'linear-gradient(135deg, #ff512f 0%, #dd2476 100%)',
+        //   date: 'Jan 28, 2024',
+        //   // photographer: 'Event Team',
+        //   featured: true,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
+        //       title: 'Opening Ceremony',
+        //       description: 'Kickoff of Hackathon 2024',
+        //       date: 'Jan 28, 2024',
+        //       // photographer: 'Event Team'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
+        //       title: 'Teams Coding',
+        //       description: 'Participants working on projects',
+        //       date: 'Jan 28, 2024',
+        //       // photographer: 'Event Team'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-3.jpg',
+        //       title: 'Mentor Session',
+        //       description: 'Mentors helping teams',
+        //       date: 'Jan 29, 2024',
+        //       // photographer: 'Event Team'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-4.jpg',
+        //       title: 'Project Presentations',
+        //       description: 'Teams presenting their projects',
+        //       date: 'Jan 29, 2024',
+        //       // photographer: 'Event Team'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/hackathon-5.jpg',
+        //       title: 'Award Ceremony',
+        //       description: 'Winners announced',
+        //       date: 'Jan 30, 2024',
+        //       // photographer: 'Event Team'
+        //     }
+        //   ]
+        // },
         {
           title: 'Career Fair',
           description: 'Tech companies recruiting our students',
@@ -611,32 +611,32 @@ export default {
             }
           ]
         },
-        {
-          title: 'Guest Lecture',
-          description: 'Industry expert speaking about AI trends',
-          // category: 'events',
-          icon: 'fas fa-chalkboard-teacher',
-          gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
-          date: 'Mar 22, 2024',
-          // photographer: 'Academic Affairs',
-          featured: true,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/guest-lecture-1.jpg',
-              title: 'Speaker Session',
-              description: 'Guest speaker presenting',
-              date: 'Mar 22, 2024',
-              // photographer: 'Academic Affairs'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/guest-lecture-2.jpg',
-              title: 'Audience',
-              description: 'Students attending the lecture',
-              date: 'Mar 22, 2024',
-              // photographer: 'Academic Affairs'
-            }
-          ]
-        },
+        // {
+        //   title: 'Guest Lecture',
+        //   description: 'Industry expert speaking about AI trends',
+        //   // category: 'events',
+        //   icon: 'fas fa-chalkboard-teacher',
+        //   gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
+        //   date: 'Mar 22, 2024',
+        //   // photographer: 'Academic Affairs',
+        //   featured: true,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/guest-lecture-1.jpg',
+        //       title: 'Speaker Session',
+        //       description: 'Guest speaker presenting',
+        //       date: 'Mar 22, 2024',
+        //       // photographer: 'Academic Affairs'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/events/guest-lecture-2.jpg',
+        //       title: 'Audience',
+        //       description: 'Students attending the lecture',
+        //       date: 'Mar 22, 2024',
+        //       // photographer: 'Academic Affairs'
+        //     }
+        //   ]
+        // },
         {
           title: 'Tech Symposium',
           description: 'Student research presentations',
@@ -691,32 +691,32 @@ export default {
             }
           ]
         },
-        {
-          title: 'Cafeteria',
-          description: 'Students enjoying lunch together',
-          // category: 'student-life',
-          icon: 'fas fa-utensils',
-          gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
-          date: 'Mar 12, 2024',
-          // photographer: 'Campus Life',
-          featured: true,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/cafeteria-1.jpg',
-              title: 'Lunch Time',
-              description: 'Busy cafeteria during lunch',
-              date: 'Mar 12, 2024',
-              // photographer: 'Campus Life'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/cafeteria-2.jpg',
-              title: 'Food Court',
-              description: 'Various food options',
-              date: 'Mar 12, 2024',
-              // photographer: 'Campus Life'
-            }
-          ]
-        },
+        // {
+        //   title: 'Cafeteria',
+        //   description: 'Students enjoying lunch together',
+        //   // category: 'student-life',
+        //   icon: 'fas fa-utensils',
+        //   gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
+        //   date: 'Mar 12, 2024',
+        //   // photographer: 'Campus Life',
+        //   featured: true,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/cafeteria-1.jpg',
+        //       title: 'Lunch Time',
+        //       description: 'Busy cafeteria during lunch',
+        //       date: 'Mar 12, 2024',
+        //       // photographer: 'Campus Life'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/cafeteria-2.jpg',
+        //       title: 'Food Court',
+        //       description: 'Various food options',
+        //       date: 'Mar 12, 2024',
+        //       // photographer: 'Campus Life'
+        //     }
+        //   ]
+        // },
         {
           title: 'Sports Day',
           description: 'Annual sports competition',
@@ -785,32 +785,32 @@ export default {
             }
           ]
         },
-        {
-          title: 'Cap Throwing',
-          description: 'Graduates celebrating their achievement',
-          // category: 'graduation',
-          icon: 'fas fa-hat-wizard',
-          gradient: 'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
-          date: 'Dec 15, 2023',
-          // photographer: 'Official Photographer',
-          featured: true,
-          images: [
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/cap-throw-1.jpg',
-              title: 'Cap Toss',
-              description: 'Traditional cap throwing moment',
-              date: 'Dec 15, 2023',
-              // photographer: 'Official Photographer'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/cap-throw-2.jpg',
-              title: 'Celebration',
-              description: 'Graduates celebrating',
-              date: 'Dec 15, 2023',
-              // photographer: 'Official Photographer'
-            }
-          ]
-        },
+        // {
+        //   title: 'Cap Throwing',
+        //   description: 'Graduates celebrating their achievement',
+        //   // category: 'graduation',
+        //   icon: 'fas fa-hat-wizard',
+        //   gradient: 'linear-gradient(135deg, #4776e6 0%, #8e54e9 100%)',
+        //   date: 'Dec 15, 2023',
+        //   // photographer: 'Official Photographer',
+        //   featured: true,
+        //   images: [
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/cap-throw-1.jpg',
+        //       title: 'Cap Toss',
+        //       description: 'Traditional cap throwing moment',
+        //       date: 'Dec 15, 2023',
+        //       // photographer: 'Official Photographer'
+        //     },
+        //     {
+        //       url: 'https://ik.imagekit.io/kp5tixhur/gallery/graduation/cap-throw-2.jpg',
+        //       title: 'Celebration',
+        //       description: 'Graduates celebrating',
+        //       date: 'Dec 15, 2023',
+        //       // photographer: 'Official Photographer'
+        //     }
+        //   ]
+        // },
         {
           title: 'Award Winners',
           description: 'Students receiving academic excellence awards',
