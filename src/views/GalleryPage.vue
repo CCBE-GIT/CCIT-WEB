@@ -1096,17 +1096,17 @@ export default {
           gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/event-1.jpg',
-              title: 'Welcome Party'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/6.jpeg',
+              //title: ''
             },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/event-2.jpg',
-              title: 'Cultural Fest'
-            },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/event-3.jpg',
-              title: 'Movie Night'
-            }
+            // {
+            //   url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/event-2.jpg',
+            //   title: 'Cultural Fest'
+            // },
+            // {
+            //   url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/event-3.jpg',
+            //   title: 'Movie Night'
+            // }
           ]
         },
         {
@@ -1115,13 +1115,13 @@ export default {
           gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Coffee Shop'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/4.jpeg',
+              //title: ''
             },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
-              title: 'Study Break'
-            }
+            // {
+            //   url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/S1.jpg',
+            //   title: 'Study Break'
+            // }
           ]
         },
         {
@@ -1130,21 +1130,21 @@ export default {
           gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/fun-1.jpg',
-              title: 'Game Night'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/7.jpeg',
+              //title: 'Game Night'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/fun-2.jpg',
-              title: 'Picnic'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/1.jpeg',
+              //title: 'Picnic'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/fun-3.jpg',
-              title: 'Talent Show'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/2.jpeg',
+              //title: 'Talent Show'
             },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/fun-4.jpg',
-              title: 'Dance Party'
-            }
+            // {
+            //   url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/fun-4.jpg',
+            //   title: 'Dance Party'
+            // }
           ]
         },
         {
@@ -1153,12 +1153,12 @@ export default {
           gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/food-1.jpg',
-              title: 'Food Festival'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/3.jpeg',
+              //title: 'Food Festival'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/food-2.jpg',
-              title: 'Cooking Class'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/7.jpeg',
+              //title: 'Cooking Class'
             }
           ]
         },
@@ -1168,8 +1168,8 @@ export default {
           gradient: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/gaming-1.jpg',
-              title: 'Gaming Tournament'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/9.jpeg',
+              //title: 'Gaming Tournament'
             },
             {
               url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/gaming-2.jpg',
@@ -1183,17 +1183,17 @@ export default {
           gradient: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/music-1.jpg',
-              title: 'Band Practice'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/5.jpeg',
+              //title: 'Band Practice'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/music-2.jpg',
-              title: 'Open Mic Night'
+              url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/8.jpeg',
+              //title: 'Open Mic Night'
             },
-            {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/music-3.jpg',
-              title: 'Music Festival'
-            }
+            // {
+            //   url: 'https://ik.imagekit.io/kp5tixhur/gallery/student-life/music-3.jpg',
+            //   title: 'Music Festival'
+            // }
           ]
         }
       ]
