@@ -117,7 +117,7 @@
     >
       <div class="modal-content event-content" @click.stop>
         <div class="modal-header">
-          <h2 class="modal-title">Event Details</h2>
+          <h2 class="modal-title">Event Details: </h2> 
           <p class="modal-subtitle">
             {{ selectedEvent?.title }}
           </p>
@@ -277,53 +277,53 @@ export default {
     const upcomingEvents = ref([
       {
         id: 1,
-        title: 'Free Python Workshop for Beginners',
-        description: 'Hands-on introduction to Python programming. No prior experience required.',
-        date: { day: '15', month: 'MAR' },
-        type: 'Workshop',
+        title: 'CAMBRIANS DAY',
+        description: 'Celebrating Unity, Talent & the Spirit of Cambrians',
+        date: { day: '', month: '2026' },
+        type: 'Teamwork',
         color: '#4CAF50',
-        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        image: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE1.jpeg',
         // Optional detailed information (only shown in modal)
-        fullDescription: 'This comprehensive workshop is designed for absolute beginners who want to start their programming journey with Python. Learn the fundamentals in a hands-on environment with practical examples.',
-        details: {
-          time: '6:00 PM - 8:00 PM',
-          location: 'CCIT Main Campus, Colombo',
-          seats: 25,
-          instructor: 'Dr. Sanjaya Perera',
-          requirements: 'Laptop with Python installed'
-        },
+        fullDescription: 'Cambrians Day 2026 was a vibrant celebration that brought together staff members from all branches to honor the true spirit of being a Cambrian. The day was filled with engaging activities, inspiring moments, and unforgettable memories that strengthened our sense of unity and teamwork. This event highlighted the strong bond and collaboration that connects the entire CCBE staff community. Thank you to everyone who contributed to making Cambrians Day 2026 a meaningful and joyful celebration. Together, we continue to grow stronger as one team.',
+        // details: {
+        //   time: '6:00 PM - 8:00 PM',
+        //   location: 'CCIT Main Campus, Colombo',
+        //   seats: 25,
+        //   instructor: 'Dr. Sanjaya Perera',
+        //   requirements: 'Laptop with Python installed'
+        // },
         showRegistration: true
       },
       {
         id: 2,
-        title: 'Career Fair 2024',
-        description: 'Connect with top IT companies and explore job opportunities.',
-        date: { day: '22', month: 'MAR' },
-        type: 'Career Fair',
+        title: 'Staff Wellness & Medical Screening Program',
+        description: 'Caring for Our Team, Building a Healthier CCBE',
+        date: { day: '', month: '2026' },
+        type: 'Staff Wellness',
         color: '#2196F3',
-        image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        fullDescription: 'Meet representatives from leading tech companies and discover exciting career opportunities. Perfect for students and professionals looking to advance their careers in IT.',
-        details: {
-          time: '9:00 AM - 4:00 PM',
-          location: 'Colombo Convention Center',
-          seats: 150
-        },
+        image: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE2.jpeg',
+        fullDescription: 'The Staff Wellness & Medical Screening Program 2025 was organized to promote the health and well-being of our dedicated staff members across all branches. This initiative aimed to encourage a healthier lifestyle and early detection of health concerns. At CCBE, we believe that a strong institution begins with a healthy team. We extend our sincere appreciation to all medical professionals and staff who took part in making this program a meaningful step towards a healthier and happier working environment.',
+        // details: {
+        //   time: '9:00 AM - 4:00 PM',
+        //   location: 'Colombo Convention Center',
+        //   seats: 150
+        // },
         showRegistration: true
       },
       {
         id: 3,
-        title: 'Cybersecurity Awareness Session',
-        description: 'Learn about latest cyber threats and protection methods.',
-        date: { day: '05', month: 'APR' },
-        type: 'Webinar',
+        title: 'Cambrians Fit to Fight',
+        description: 'Standing Together to Support Flood-Affected Communities',
+        date: { day: '', month: '2025' },
+        type: 'Power of Unity',
         color: '#FF9800',
-        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        fullDescription: 'Join our cybersecurity experts as they discuss current threats and best practices for online safety. Essential knowledge for everyone in the digital age.',
-        details: {
-          time: '4:00 PM - 6:00 PM',
-          location: 'Online via Zoom',
-          seats: 100
-        },
+        image: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE3.jpeg',
+        fullDescription: 'Cambrians Fit to Fight 2025 was a meaningful humanitarian initiative organized by CCBE and CCIT to support families affected by recent floods. Through collective effort and compassion, our Cambrians community: including students, parents, and all staff members from every branch came together to provide essential aid and extend a helping hand to those facing difficult times. This project reflects our commitment to social responsibility and the power of unity in moments of need. We sincerely thank everyone who contributed their time, effort, and support to make this initiative a success. Together, we stand strong with our communities.',
+        // details: {
+        //   time: '4:00 PM - 6:00 PM',
+        //   location: 'Online via Zoom',
+        //   seats: 100
+        // },
         showRegistration: true
       },
       {
@@ -344,18 +344,18 @@ export default {
       },
       {
         id: 5,
-        title: 'Web Development Hackathon',
-        description: '24-hour coding competition with exciting prizes.',
-        date: { day: '20', month: 'APR' },
-        type: 'Competition',
+        title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+        description: 'ස්වර්ණමාලි මහා සෑය – අනුරාධපුරය',
+        date: { day: '', month: '2025' },
+        type: 'Religious Programme',
         color: '#F44336',
-        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        fullDescription: 'Challenge your coding skills in our annual hackathon. Work in teams to create innovative web solutions. Great prizes await the winners!',
-        details: {
-          time: '10:00 AM (Day 1) - 10:00 AM (Day 2)',
-          location: 'CCIT Computer Lab',
-          seats: 40
-        },
+        image: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE5.jpeg',
+        fullDescription: '2025 වසරේදී අනුරාධපුර ශ්‍රී ස්වර්ණමාලි මහා සෑය වෙත කංචුක පූජාව, කිරිපිඬු දානය සහ අෂ්ඨපාන පූජාව භක්තිසම්පන්නව පැවැත්වුණි.',
+        // details: {
+        //   time: '10:00 AM (Day 1) - 10:00 AM (Day 2)',
+        //   location: 'CCIT Computer Lab',
+        //   seats: 40
+        // },
         showRegistration: true
       },
       {
@@ -374,22 +374,22 @@ export default {
         },
         showRegistration: true
       },
-      {
-        id: 7,
-        title: 'Industry Expert Talk: AI in 2024',
-        description: 'Insights from leading AI professionals on current trends.',
-        date: { day: '28', month: 'APR' },
-        type: 'Talk',
-        color: '#00BCD4',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        fullDescription: 'Get insights into the latest trends in Artificial Intelligence from industry experts. Perfect for students and professionals interested in AI.',
-        details: {
-          time: '5:30 PM - 7:00 PM',
-          location: 'CCIT Seminar Hall',
-          seats: 80
-        },
-        showRegistration: true
-      }
+      // {
+      //   id: 7,
+      //   title: 'Industry Expert Talk: AI in 2024',
+      //   description: 'Insights from leading AI professionals on current trends.',
+      //   date: { day: '28', month: 'APR' },
+      //   type: 'Talk',
+      //   color: '#00BCD4',
+      //   image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      //   fullDescription: 'Get insights into the latest trends in Artificial Intelligence from industry experts. Perfect for students and professionals interested in AI.',
+      //   details: {
+      //     time: '5:30 PM - 7:00 PM',
+      //     location: 'CCIT Seminar Hall',
+      //     seats: 80
+      //   },
+      //   showRegistration: true
+      // }
     ]);
 
     const featuredNews = ref({
@@ -910,6 +910,7 @@ export default {
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1rem;
+  text-align: justify;
 }
 
 .event-date-display {
