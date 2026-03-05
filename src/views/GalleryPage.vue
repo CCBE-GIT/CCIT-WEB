@@ -510,7 +510,7 @@ export default {
         },
         {
           title: 'A Decade of Dedication',
-          description: '',
+          description: 'CCBE - 10th Anniversary Celebration',
           // category: 'campus',
           icon: 'fas fa-book',
           gradient: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
@@ -603,34 +603,104 @@ export default {
         //   ]
         // },
         {
-          title: 'Sports Complex',
-          description: 'Outdoor sports facilities and recreation area',
+          title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+          description: 'ස්වර්ණමාලි මහා සෑය – අනුරාධපුරය',
           // category: 'campus',
           icon: 'fas fa-futbol',
           gradient: 'linear-gradient(135deg, #f12711 0%, #f5af19 100%)',
-          date: 'Apr 12, 2024',
+          date: '2025',
           // photographer: 'Sports Club',
           featured: false,
           images: [
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/sports-1.jpg',
-              title: 'Football Field',
-              description: 'Main football field with stands',
-              date: 'Apr 12, 2024',
+              url: 'https://ik.imagekit.io/u3wbiya66/News&Events/NE5.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
               // photographer: 'Sports Club'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/sports-2.jpg',
-              title: 'Basketball Courts',
-              description: 'Outdoor basketball courts',
-              date: 'Apr 12, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/6.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
               // photographer: 'Sports Club'
             },
             {
-              url: 'https://ik.imagekit.io/kp5tixhur/gallery/campus/sports-3.jpg',
-              title: 'Tennis Courts',
-              description: 'Well-maintained tennis courts',
-              date: 'Apr 13, 2024',
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/3.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/16.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/5.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/17.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/8.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/2.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/9.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/4.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/15.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/11.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
+              // photographer: 'Sports Club'
+            },
+            {
+              url: 'https://ik.imagekit.io/kp5tixhur/Anuradhapura/1.jpeg',
+              title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
+              description: '',
+              date: '2025',
               // photographer: 'Sports Club'
             }
           ]
