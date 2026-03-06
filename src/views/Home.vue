@@ -5,7 +5,7 @@
       <!-- Video Background -->
       <div class="video-bg">
         <video ref="videoBg" autoplay muted loop playsinline webkit-playsinline>
-          <source src="https://ik.imagekit.io/kp5tixhur/ccit-video/typing%20video.mp4" type="video/mp4">
+          <source src="https://ik.imagekit.io/kp5tixhur/ccit-video/mixkit-little-girl-doing-homework-on-a-laptop-4757-hd-ready.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
@@ -313,7 +313,7 @@ export default {
   right: 0;
   bottom: 0;
   /* Dark overlay for better text readability */
-  /* background: rgba(0, 0, 0, 0.3);  */
+  background: rgba(0, 0, 0, 0.45);
   z-index: 2;
 }
 
@@ -714,7 +714,7 @@ export default {
   
   /* Reduce overlay darkness for better visibility on mobile */
   .video-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.45);
   }
 }
 
