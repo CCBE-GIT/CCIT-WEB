@@ -65,6 +65,14 @@
           <div class="col-md-4 mb-4" v-for="(course, index) in courses" :key="index">
             <div class="course-card card-theme">
               <div class="course-badge">{{ course.level }}</div>
+              <div class="course-image" style="margin: -2rem -2rem 1.5rem -2rem; overflow: hidden;">
+                <img 
+                  :src="course.image" 
+                  :alt="course.title" 
+                  class="img-fluid w-100"
+                  style="height: 200px; object-fit: cover;"
+                />
+              </div>
               <h3>{{ course.title }}</h3>
               <p>{{ course.description }}</p>
               <ul class="course-features">
@@ -171,24 +179,27 @@ export default {
     const courses = ref([
       {
         id: 'programming',
-        title: 'Programming Fundamentals',
-        level: 'Beginner',
-        description: 'Learn coding basics with Python, Java, and web development.',
-        features: ['Python Basics', 'Web Development', 'Problem Solving', '3 Months Duration']
+        image:"https://ik.imagekit.io/kp5tixhur/ccit-web/1-1.jpg",
+        title: 'PER SCHOOLERS',
+        level: 'Starters',
+        description: 'AGE RANGE: 5 Years',
+        features: ['Basic Technology', 'Digital Typing', 'Digital Painting', 'Fun Activities','100% Practical Oriented']
       },
       {
         id: 'web-dev',
-        title: 'Full Stack Web Development',
-        level: 'Intermediate',
-        description: 'Master modern web technologies for frontend and backend development.',
-        features: ['HTML/CSS/JS', 'Vue.js', 'Node.js', 'Database Design', '6 Months Duration']
+        image:"https://ik.imagekit.io/kp5tixhur/ccit-web/5.jpg",
+        title: 'GRADE 04 & 05',
+        level: 'Experts',
+        description: 'AGE RANGE: 9 / 10 Years',
+        features: ['Complex Software', 'History of ICT', 'Making Presentation', 'Programming Software', 'Online Behaviour']
       },
       {
         id: 'cyber',
-        title: 'Cybersecurity Essentials',
-        level: 'Advanced',
-        description: 'Learn to protect systems and networks from digital threats.',
-        features: ['Network Security', 'Ethical Hacking', 'Risk Management', '4 Months Duration']
+        image:"https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg",
+        title: 'GRADE 6 - GRADE 11',
+        level: 'KFS_ICT',
+        description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+        features: ['Theory', 'Practical', 'Study Guide', 'Exam Booster', 'Practical Book']
       }
     ])
 

@@ -167,7 +167,8 @@ export default {
         { id: 'creators', name: 'Creators' },
         { id: 'recers', name: 'Recers' },
         { id: 'genius', name: 'Genius' },
-        { id: 'experts', name: 'Experts' }
+        { id: 'experts', name: 'Experts' },
+        { id: 'kfs_ict', name: 'KFS_ICT' }
       ],
       courses: [
         {
@@ -186,7 +187,8 @@ export default {
             'Basic Technology',
             'Digital Typing',
             'Digital Painting',
-            'Fun Activities'
+            'Fun Activities',
+            '100% Practical Oriented'
           ]
         },
         {
@@ -205,7 +207,8 @@ export default {
             'Basic Technology Skill',
             'Computer Operation',
             'Internet Safety',
-            'Creativity Thinking'
+            'Creativity Thinking',
+            '100% Practical Oriented'
           ]
         },
         {
@@ -224,7 +227,8 @@ export default {
             'Technology Skill',
             'Advanced Computer Functions',
             'Basic Online Searching',
-            'Basic Programming'
+            'Basic Programming',
+            '100% Practical Oriented'
           ]
         },
         {
@@ -244,7 +248,8 @@ export default {
             'Software Application',
             'Multimedia Tools',
             'Safe Online Behavior',
-            'Basic Programming'
+            'Basic Programming',
+            '100% Practical Oriented'
           ]
         },
         {
@@ -264,29 +269,30 @@ export default {
             'History of ICT',
             'Making Presentation',
             'Programming Software',
-            'Online Behaviour'
+            'Online Behaviour',
+            '100% Practical Oriented'
           ]
         },
-        // {
-        //   // id: 6,
-        //   // category: 'certification',
-        //   // level: 'Certification',
-        //   // title: 'CISCO CCNA Preparation',
-        //   // description: 'Prepare for CISCO Certified Network Associate certification with hands-on lab sessions.',
-        //   // duration: '4 Months',
-        //   // maxStudents: 10,
-        //   // certification: 'CCIT Network Certificate + CCNA Prep',
-        //   //price: 80000,
-        //   //installment: 'LKR 20,000 x 4 months',
-        //   // features: [
-        //   //   'Network Fundamentals',
-        //   //   'Routing & Switching',
-        //   //   'WAN Technologies',
-        //   //   'Network Security',
-        //   //   'CISCO IOS',
-        //   //   'Exam Preparation'
-        //   // ]
-        // }
+        {
+          id: 6,
+          category: 'kfs_ict',
+          level: 'KFS_ICT',
+          title: 'GRADE 6 - GRADE 11',
+          description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
+          // price: 80000,
+          // installment: 'LKR 20,000 x 4 months',
+          features: [
+            'Theory',
+            'Practical',
+            'Study Guide',
+            'Exam Booster',
+            'Practical Book'
+          ]
+        }
       ],
       uniqueFeatures: [
         {
@@ -454,6 +460,11 @@ Contact us for more details!
 .course-level.Experts {
   background: #2927b0;
 }
+
+.course-level.KFS_ICT {
+  background: #f77903;
+}
+
 
 .course-duration {
   font-size: 0.9rem;
