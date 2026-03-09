@@ -53,6 +53,14 @@
                   <i class="far fa-clock"></i> {{ course.duration }}
                 </span>
               </div>
+              <div class="course-image">
+                <img 
+                  :src="course.image" 
+                  :alt="course.title" 
+                  class="img-fluid w-100"
+                  style="height: 200px; object-fit: cover;"
+                />
+              </div>
               <div class="course-body p-4">
                 <h3 class="course-title mb-3">{{ course.title }}</h3>
                 <p class="course-description mb-4">{{ course.description }}</p>
@@ -155,132 +163,130 @@ export default {
       activeCategory: 'all',
       categories: [
         { id: 'all', name: 'All Courses' },
-        { id: 'beginner', name: 'Beginner' },
-        { id: 'intermediate', name: 'Intermediate' },
-        { id: 'advanced', name: 'Advanced' },
-        { id: 'certification', name: 'Certification' }
+        { id: 'starters', name: 'Starters' },
+        { id: 'creators', name: 'Creators' },
+        { id: 'recers', name: 'Recers' },
+        { id: 'genius', name: 'Genius' },
+        { id: 'experts', name: 'Experts' }
       ],
       courses: [
         {
           id: 1,
-          category: 'beginner',
-          level: 'Beginner',
-          title: 'Computer Fundamentals & Office Automation',
-          description: 'Master essential computer skills including Microsoft Office, internet basics, and file management.',
-          duration: '2 Months',
-          maxStudents: 20,
+          category: 'starters',
+          level: 'Starters',
+          title: 'PER SCHOOLERS',
+          description: 'AGE RANGE: 5 Years',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/1-1.jpg',
+          maxStudents: 35,
           certification: 'CCIT Certificate',
           //price: 15000,
           //installment: 'LKR 8,000 x 2 months',
           features: [
-            'Windows/Mac OS Basics',
-            'Microsoft Word & Excel',
-            'PowerPoint Presentations',
-            'Internet & Email Basics',
-            'File Management',
-            'Typing Skills'
+            'Basic Technology',
+            'Digital Typing',
+            'Digital Painting',
+            'Fun Activities'
           ]
         },
         {
           id: 2,
-          category: 'beginner',
-          level: 'Beginner',
-          title: 'Programming Basics with Python',
-          description: 'Introduction to programming concepts using Python. Perfect for absolute beginners.',
-          duration: '3 Months',
-          maxStudents: 15,
-          certification: 'CCIT Python Certificate',
+          category: 'creators',
+          level: 'Creators',
+          title: 'GRADE 01',
+          description: 'AGE RANGE: 6 Years',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/2.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
           //price: 25000,
           //installment: 'LKR 9,000 x 3 months',
           features: [
-            'Python Syntax & Basics',
-            'Variables & Data Types',
-            'Conditional Statements',
-            'Loops & Functions',
-            'Basic Algorithms',
-            'Mini Projects'
+            'Basic Technology Skill',
+            'Computer Operation',
+            'Internet Safety',
+            'Creativity Thinking'
           ]
         },
         {
           id: 3,
-          category: 'intermediate',
-          level: 'Intermediate',
-          title: 'Web Development Fundamentals',
-          description: 'Learn to build responsive websites using HTML5, CSS3, and JavaScript.',
-          duration: '4 Months',
-          maxStudents: 15,
-          certification: 'CCIT Web Developer Certificate',
+          category: 'recers',
+          level: 'Recers',
+          title: 'GRADE 02',
+          description: 'AGE RANGE: 7 Years',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/3.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
           //price: 35000,
           //installment: 'LKR 12,000 x 3 months',
           features: [
-            'HTML5 & Semantic Markup',
-            'CSS3 & Flexbox/Grid',
-            'JavaScript Fundamentals',
-            'Responsive Design',
-            'Git & GitHub Basics',
-            'Portfolio Project'
+            'Technology Skill',
+            'Advanced Computer Functions',
+            'Basic Online Searching',
+            'Basic Programming'
           ]
         },
         {
           id: 4,
-          category: 'intermediate',
-          level: 'Intermediate',
-          title: 'Full Stack Development with Vue.js & Node.js',
-          description: 'Become a full-stack developer with modern JavaScript frameworks.',
-          duration: '6 Months',
-          maxStudents: 12,
-          certification: 'CCIT Full Stack Developer Certificate',
+          category: 'genius',
+          level: 'Genius',
+          title: 'GRADE 03',
+          description: 'AGE RANGE: 8 Years',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/4.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
           //price: 65000,
           //installment: 'LKR 12,000 x 6 months',
           features: [
-            'Vue.js Framework',
-            'Node.js & Express',
-            'MongoDB Database',
-            'RESTful APIs',
-            'Authentication & Security',
-            'Complete Project'
+            'Digital Literacy',
+            'Software Application',
+            'Multimedia Tools',
+            'Safe Online Behavior',
+            'Basic Programming'
           ]
         },
         {
           id: 5,
-          category: 'advanced',
-          level: 'Advanced',
-          title: 'Cybersecurity Professional',
-          description: 'Comprehensive cybersecurity training covering network security, ethical hacking, and defense strategies.',
-          duration: '5 Months',
-          maxStudents: 10,
-          certification: 'CCIT Cybersecurity Certificate',
+          category: 'experts',
+          level: 'Experts',
+          title: 'GRADE 04 & GRADE 05',
+          description: 'AGE RANGE: 9 / 10 Years',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/5.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
           //price: 75000,
           //installment: 'LKR 16,000 x 5 months',
           features: [
-            'Network Security',
-            'Ethical Hacking',
-            'Cryptography',
-            'Penetration Testing',
-            'Security Auditing',
-            'Incident Response'
+            'Complex Software',
+            'History of ICT',
+            'Making Presentation',
+            'Programming Software',
+            'Online Behaviour'
           ]
         },
-        {
-          id: 6,
-          category: 'certification',
-          level: 'Certification',
-          title: 'CISCO CCNA Preparation',
-          description: 'Prepare for CISCO Certified Network Associate certification with hands-on lab sessions.',
-          duration: '4 Months',
-          maxStudents: 10,
-          certification: 'CCIT Network Certificate + CCNA Prep',
-          //price: 80000,
-          //installment: 'LKR 20,000 x 4 months',
-          features: [
-            'Network Fundamentals',
-            'Routing & Switching',
-            'WAN Technologies',
-            'Network Security',
-            'CISCO IOS',
-            'Exam Preparation'
-          ]
-        }
+        // {
+        //   // id: 6,
+        //   // category: 'certification',
+        //   // level: 'Certification',
+        //   // title: 'CISCO CCNA Preparation',
+        //   // description: 'Prepare for CISCO Certified Network Associate certification with hands-on lab sessions.',
+        //   // duration: '4 Months',
+        //   // maxStudents: 10,
+        //   // certification: 'CCIT Network Certificate + CCNA Prep',
+        //   //price: 80000,
+        //   //installment: 'LKR 20,000 x 4 months',
+        //   // features: [
+        //   //   'Network Fundamentals',
+        //   //   'Routing & Switching',
+        //   //   'WAN Technologies',
+        //   //   'Network Security',
+        //   //   'CISCO IOS',
+        //   //   'Exam Preparation'
+        //   // ]
+        // }
       ],
       uniqueFeatures: [
         {
@@ -335,6 +341,7 @@ export default {
       const details = `
 Course: ${course.title}
 Duration: ${course.duration}
+Image:${course.image}
 Level: ${course.level}
 Price: LKR ${course.price.toLocaleString()}
 Max Students: ${course.maxStudents}
@@ -428,20 +435,24 @@ Contact us for more details!
   font-weight: 600;
 }
 
-.course-level.Beginner {
+.course-level.Starters {
   background: #4CAF50;
 }
 
-.course-level.Intermediate {
+.course-level.Creators {
   background: #FF9800;
 }
 
-.course-level.Advanced {
+.course-level.Recers {
   background: #F44336;
 }
 
-.course-level.Certification {
+.course-level.Genius {
   background: #9C27B0;
+}
+
+.course-level.Experts {
+  background: #2927b0;
 }
 
 .course-duration {
