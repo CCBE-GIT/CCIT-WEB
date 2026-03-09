@@ -265,41 +265,41 @@ export default {
       particleCount: 30,
       values: [
         {
-          icon: "fas fa-hands-helping",
-          title: "Excellence",
+          //icon: "fas fa-hands-helping",
+          title: "100% Practical Enviornment",
           description: "We strive for the highest standards in education and student outcomes.",
           image: "url"
         },
         {
-          icon: "fas fa-lightbulb",
-          title: "Innovation",
-          description: "Continuously updating our methods to reflect industry advancements.",
+          //icon: "fas fa-lightbulb",
+          title: "Standard Safe Enviornment",
+          description: "text",
           image: "url"
         },
         {
-          icon: "fas fa-users",
-          title: "Community",
-          description: "Building a supportive learning environment for all students.",
+          //icon: "fas fa-users",
+          title: "Individual Attention Qualified Panel",
+          description: "text",
           image: "url"
         },
         {
-          icon: "fas fa-handshake",
-          title: "Integrity",
-          description: "Maintaining honesty and ethical standards in all our interactions.",
+          //icon: "fas fa-handshake",
+          title: "Continues Evaluation Plan",
+          description: "text",
           image: "url"
         },
-        {
-          icon: "fas fa-graduation-cap",
-          title: "Practicality",
-          description: "Focusing on real-world applications and hands-on learning.",
-          image: "url"
-        },
-        {
-          icon: "fas fa-heart",
-          title: "Passion",
-          description: "Inspiring students through dedicated teaching and mentorship.",
-          image: "url"
-        },
+        // {
+        //   icon: "fas fa-graduation-cap",
+        //   title: "Practicality",
+        //   description: "Focusing on real-world applications and hands-on learning.",
+        //   image: "url"
+        // },
+        // {
+        //   icon: "fas fa-heart",
+        //   title: "Passion",
+        //   description: "Inspiring students through dedicated teaching and mentorship.",
+        //   image: "url"
+        // },
       ],
       team: [
         {
