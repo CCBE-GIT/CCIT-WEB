@@ -208,6 +208,14 @@
             :key="index"
           >
             <div class="value-card card-theme text-center p-4 h-100 text-black">
+              <div class="value-card-image" v-if="value.image">
+                <img 
+                  :src="value.image" 
+                  :alt="value.title" 
+                  class="img-fluid w-100"
+                  style="height: 160px; object-fit: cover;"
+                />
+              </div>
               <div class="value-icon mb-3">
                 <i :class="value.icon"></i>
               </div>
@@ -259,38 +267,38 @@ export default {
         {
           icon: "fas fa-hands-helping",
           title: "Excellence",
-          description:
-            "We strive for the highest standards in education and student outcomes.",
+          description: "We strive for the highest standards in education and student outcomes.",
+          image: "url"
         },
         {
           icon: "fas fa-lightbulb",
           title: "Innovation",
-          description:
-            "Continuously updating our methods to reflect industry advancements.",
+          description: "Continuously updating our methods to reflect industry advancements.",
+          image: "url"
         },
         {
           icon: "fas fa-users",
           title: "Community",
-          description:
-            "Building a supportive learning environment for all students.",
+          description: "Building a supportive learning environment for all students.",
+          image: "url"
         },
         {
           icon: "fas fa-handshake",
           title: "Integrity",
-          description:
-            "Maintaining honesty and ethical standards in all our interactions.",
+          description: "Maintaining honesty and ethical standards in all our interactions.",
+          image: "url"
         },
         {
           icon: "fas fa-graduation-cap",
           title: "Practicality",
-          description:
-            "Focusing on real-world applications and hands-on learning.",
+          description: "Focusing on real-world applications and hands-on learning.",
+          image: "url"
         },
         {
           icon: "fas fa-heart",
           title: "Passion",
-          description:
-            "Inspiring students through dedicated teaching and mentorship.",
+          description: "Inspiring students through dedicated teaching and mentorship.",
+          image: "url"
         },
       ],
       team: [
@@ -494,6 +502,12 @@ export default {
 
 .value-card:hover {
   transform: translateY(-10px);
+}
+
+.value-card-image {
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
 }
 
 .value-icon {

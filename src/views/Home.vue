@@ -80,9 +80,9 @@
                   <i class="fas fa-check"></i> {{ feature }}
                 </li>
               </ul>
-              <router-link :to="`/courses#${course.id}`" class="btn btn-accent">
+              <!-- <router-link :to="`/courses#${course.id}`" class="btn btn-accent">
                 Learn More
-              </router-link>
+              </router-link> -->
             </div>
           </div>
         </div>
