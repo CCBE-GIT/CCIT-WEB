@@ -268,25 +268,25 @@ export default {
           //icon: "fas fa-hands-helping",
           title: "100% Practical Enviornment",
           description: "We strive for the highest standards in education and student outcomes.",
-          image: "url"
+          image: "https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/4.jpeg"
         },
         {
           //icon: "fas fa-lightbulb",
           title: "Standard Safe Enviornment",
           description: "text",
-          image: "url"
+          image: "https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/6.jpeg"
         },
         {
           //icon: "fas fa-users",
           title: "Individual Attention Qualified Panel",
           description: "text",
-          image: "url"
+          image: "https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/2.jpeg"
         },
         {
           //icon: "fas fa-handshake",
           title: "Continues Evaluation Plan",
           description: "text",
-          image: "url"
+          image: "https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/7.jpeg"
         },
         // {
         //   icon: "fas fa-graduation-cap",
@@ -303,21 +303,21 @@ export default {
       ],
       team: [
         {
-          name: "Dr. Anil Perera",
-          position: "Principal & Founder",
-          bio: "PhD in Computer Science with 15+ years of teaching experience",
+          name: "Mr. Mahesh Prasanga",
+          position: "Founder",
+          bio: "Qualification",
           avatar: "fas fa-user-tie",
         },
         {
-          name: "Ms. Nimali Silva",
+          name: "Name",
           position: "Head of Academics",
-          bio: "MSc in Information Technology, specializing in curriculum development",
+          bio: "Qualification",
           avatar: "fas fa-chalkboard-teacher",
         },
         {
-          name: "Mr. Rajith Fernando",
+          name: "Name",
           position: "Technical Director",
-          bio: "Industry expert with 20+ years in software development",
+          bio: "Qualification",
           avatar: "fas fa-laptop-code",
         },
       ],
