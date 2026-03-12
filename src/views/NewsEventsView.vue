@@ -276,7 +276,55 @@ export default {
     // Data - Updated with images and simplified structure
     const upcomingEvents = ref([
       {
-        id: 1,
+        id: 7,
+        title: "INTERNATIONAL WOMEN'S DAY 2026",
+        description: 'International Women’s Day 2026 was celebrated at CCIT',
+        date: { day: '', month: '2026' },
+        type: 'Women’s Day',
+        color: '#9C27B0',
+        image: 'https://ik.imagekit.io/kp5tixhur/WOMENS%20DAY%202026/post%201.jpeg',
+        fullDescription: 'International Women’s Day 2026 was proudly celebrated at CCIT, honoring the strength, achievements, and inspiration of women everywhere. The occasion highlighted our commitment to empowering women through education, opportunity, and a supportive learning environment that encourages growth and success.',
+        // details: {
+        //   time: '3:00 PM - 6:00 PM',
+        //   location: 'CCIT Auditorium',
+        //   seats: 200
+        // },
+        showRegistration: true
+      },
+      {
+        id: 6,
+        title: "INTERNATIONAL WOMEN'S DAY 2026",
+        description: 'International Women’s Day 2026 was celebrated at CCIT',
+        date: { day: '', month: '2026' },
+        type: 'Women’s Day',
+        color: '#9C27B0',
+        image: 'https://ik.imagekit.io/kp5tixhur/WOMENS%20DAY%202026/post%203.jpeg',
+        fullDescription: 'International Women’s Day 2026 was proudly celebrated at CCIT, honoring the strength, achievements, and inspiration of women everywhere. The occasion highlighted our commitment to empowering women through education, opportunity, and a supportive learning environment that encourages growth and success.',
+        // details: {
+        //   time: '3:00 PM - 6:00 PM',
+        //   location: 'CCIT Auditorium',
+        //   seats: 200
+        // },
+        showRegistration: true
+      },
+      {
+        id: 5,
+        title: "INTERNATIONAL WOMEN'S DAY 2026",
+        description: 'International Women’s Day 2026 was celebrated at CCIT',
+        date: { day: '', month: '2026' },
+        type: 'Women’s Day',
+        color: '#9C27B0',
+        image: 'https://ik.imagekit.io/kp5tixhur/WOMENS%20DAY%202026/post%202.jpeg',
+        fullDescription: 'International Women’s Day 2026 was proudly celebrated at CCIT, honoring the strength, achievements, and inspiration of women everywhere. The occasion highlighted our commitment to empowering women through education, opportunity, and a supportive learning environment that encourages growth and success.',
+        // details: {
+        //   time: '3:00 PM - 6:00 PM',
+        //   location: 'CCIT Auditorium',
+        //   seats: 200
+        // },
+        showRegistration: true
+      },
+      {
+        id: 4,
         title: 'CAMBRIANS DAY',
         description: 'Celebrating Unity, Talent & the Spirit of Cambrians',
         date: { day: '', month: '2026' },
@@ -295,7 +343,7 @@ export default {
         showRegistration: true
       },
       {
-        id: 2,
+        id: 3,
         title: 'Staff Wellness & Medical Screening Program',
         description: 'Caring for Our Team, Building a Healthier CCBE',
         date: { day: '', month: '2026' },
@@ -311,7 +359,7 @@ export default {
         showRegistration: true
       },
       {
-        id: 3,
+        id: 2,
         title: 'Cambrians Fit to Fight',
         description: 'Standing Together to Support Flood-Affected Communities',
         date: { day: '', month: '2025' },
@@ -327,23 +375,7 @@ export default {
         showRegistration: true
       },
       {
-        id: 4,
-        title: 'Graduation Ceremony - Batch 23',
-        description: 'Celebrating the achievements of our graduating students.',
-        date: { day: '12', month: 'APR' },
-        type: 'Ceremony',
-        color: '#9C27B0',
-        image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        fullDescription: 'Join us in celebrating the success of our students as they complete their IT education journey. Proud moment for students, families, and faculty.',
-        details: {
-          time: '3:00 PM - 6:00 PM',
-          location: 'CCIT Auditorium',
-          seats: 200
-        },
-        showRegistration: false
-      },
-      {
-        id: 5,
+        id: 1,
         title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
         description: 'ස්වර්ණමාලි මහා සෑය – අනුරාධපුරය',
         date: { day: '', month: '2025' },
@@ -358,38 +390,6 @@ export default {
         // },
         showRegistration: true
       },
-      {
-        id: 6,
-        title: 'Industry Expert Talk: AI in 2024',
-        description: 'Insights from leading AI professionals on current trends.',
-        date: { day: '28', month: 'APR' },
-        type: 'Talk',
-        color: '#00BCD4',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        fullDescription: 'Get insights into the latest trends in Artificial Intelligence from industry experts. Perfect for students and professionals interested in AI.',
-        details: {
-          time: '5:30 PM - 7:00 PM',
-          location: 'CCIT Seminar Hall',
-          seats: 80
-        },
-        showRegistration: true
-      },
-      // {
-      //   id: 7,
-      //   title: 'Industry Expert Talk: AI in 2024',
-      //   description: 'Insights from leading AI professionals on current trends.',
-      //   date: { day: '28', month: 'APR' },
-      //   type: 'Talk',
-      //   color: '#00BCD4',
-      //   image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      //   fullDescription: 'Get insights into the latest trends in Artificial Intelligence from industry experts. Perfect for students and professionals interested in AI.',
-      //   details: {
-      //     time: '5:30 PM - 7:00 PM',
-      //     location: 'CCIT Seminar Hall',
-      //     seats: 80
-      //   },
-      //   showRegistration: true
-      // }
     ]);
 
     const featuredNews = ref({
@@ -882,7 +882,7 @@ export default {
 }
 
 .event-details-content .event-image-large {
-  height: 300px;
+  height: 350px;
   overflow: hidden;
 }
 
