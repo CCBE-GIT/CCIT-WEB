@@ -4,6 +4,7 @@
     <NavigationBar />
     <router-view />
     <FooterComponent />
+    <BackToTop />
   </div>
 </template>
 
@@ -13,13 +14,15 @@ import { useStore } from 'vuex'
 //import ThemeToggle from '@/components/ThemeToggle.vue'
 import NavigationBar from '@/components/NavigationBar.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+import BackToTop from '@/components/BackToTop.vue'
 
 export default {
   name: 'App',
   components: {
     // ThemeToggle,
     NavigationBar,
-    FooterComponent
+    FooterComponent,
+    BackToTop
   },
   setup() {
     const store = useStore()
