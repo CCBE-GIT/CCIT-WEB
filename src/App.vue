@@ -5,6 +5,7 @@
     <router-view />
     <FooterComponent />
     <BackToTop />
+    <CookieConsent /> 
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import { useStore } from 'vuex'
 import NavigationBar from '@/components/NavigationBar.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import BackToTop from '@/components/BackToTop.vue'
+import CookieConsent from '@/components/CookieConsent.vue';
 
 export default {
   name: 'App',
@@ -22,7 +24,8 @@ export default {
     // ThemeToggle,
     NavigationBar,
     FooterComponent,
-    BackToTop
+    BackToTop,
+    CookieConsent
   },
   setup() {
     const store = useStore()
