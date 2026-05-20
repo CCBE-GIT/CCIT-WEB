@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 
+const BASE_URL = 'https://www.ccit.lk'
+
 const routes = [
   {
     path: '/',
@@ -10,6 +12,7 @@ const routes = [
       title: 'Cambridge College of Information Technology - CCIT',
       description: 'Welcome to Cambridge College of Information Technology (CCIT) – a leading institution offering world-class IT education, industry-relevant courses, and career-focused training.',
       keywords: 'CCIT, Cambridge College of Information Technology, IT college, technology education, computer science, IT courses',
+      canonical: `${BASE_URL}/`
     }
   },
   {
@@ -20,6 +23,7 @@ const routes = [
       title: 'About Us | CCIT - Cambridge College of Information Technology',
       description: 'Learn about CCIT\'s mission, vision, history, and the dedicated team behind Cambridge College of Information Technology.',
       keywords: 'about CCIT, CCIT history, IT college mission, Cambridge College of Information Technology team',
+      canonical: `${BASE_URL}/about`
     }
   },
   {
@@ -29,7 +33,8 @@ const routes = [
     meta: {
       title: 'Courses | CCIT - Cambridge College of Information Technology',
       description: 'Explore a wide range of IT and technology courses at CCIT. From programming to networking, find the right course to launch your tech career.',
-      keywords: 'IT courses, technology programs, CCIT courses, computer science programs, programming courses, networking courses',
+      keywords: 'IT courses, technology programs, CCIT courses, programming courses, networking courses',
+      canonical: `${BASE_URL}/courses`
     }
   },
   {
@@ -40,6 +45,7 @@ const routes = [
       title: 'Facilities | CCIT - Cambridge College of Information Technology',
       description: 'Discover the state-of-the-art facilities at CCIT including modern computer labs, high-speed internet, smart classrooms, and more.',
       keywords: 'CCIT facilities, computer labs, smart classrooms, IT infrastructure, college amenities',
+      canonical: `${BASE_URL}/facilities`
     }
   },
   {
@@ -50,6 +56,7 @@ const routes = [
       title: 'Careers | CCIT - Cambridge College of Information Technology',
       description: 'Explore career opportunities and job placements at CCIT. We connect graduates with top employers in the technology industry.',
       keywords: 'CCIT careers, IT jobs, tech job placement, technology careers, CCIT graduates',
+      canonical: `${BASE_URL}/careers`
     }
   },
   {
@@ -60,6 +67,7 @@ const routes = [
       title: 'News & Events | CCIT - Cambridge College of Information Technology',
       description: 'Stay updated with the latest news, upcoming events, seminars, and workshops at Cambridge College of Information Technology.',
       keywords: 'CCIT news, CCIT events, technology seminars, IT workshops, college events',
+      canonical: `${BASE_URL}/news_event`
     }
   },
   {
@@ -70,6 +78,7 @@ const routes = [
       title: 'Contact Us | CCIT - Cambridge College of Information Technology',
       description: 'Get in touch with CCIT. Find our location, phone number, email, and contact form to reach Cambridge College of Information Technology.',
       keywords: 'contact CCIT, CCIT address, CCIT phone number, reach Cambridge College of Information Technology',
+      canonical: `${BASE_URL}/contact`
     }
   },
   {
@@ -80,6 +89,7 @@ const routes = [
       title: 'Gallery | CCIT - Cambridge College of Information Technology',
       description: 'Browse photos and media from CCIT\'s campus life, events, graduation ceremonies, and student activities.',
       keywords: 'CCIT gallery, campus photos, CCIT events photos, student life, college gallery',
+      canonical: `${BASE_URL}/gallery`
     }
   },
   {
@@ -90,6 +100,7 @@ const routes = [
       title: 'Testimonials | CCIT - Cambridge College of Information Technology',
       description: 'Read what our students and alumni say about their experience at CCIT. Real success stories from Cambridge College of Information Technology graduates.',
       keywords: 'CCIT testimonials, student reviews, alumni feedback, CCIT success stories, college reviews',
+      canonical: `${BASE_URL}/testimonials`
     }
   },
   {
@@ -100,6 +111,7 @@ const routes = [
       title: 'Blogs | CCIT - Cambridge College of Information Technology',
       description: 'Read the latest articles, tech insights, and educational blogs from CCIT faculty and students at Cambridge College of Information Technology.',
       keywords: 'CCIT blog, technology articles, IT insights, education blog, tech trends',
+      canonical: `${BASE_URL}/blogs`
     }
   }
 ]
@@ -137,22 +149,34 @@ router.beforeEach((to, from, next) => {
     el.setAttribute('content', content)
   }
 
-  const { title, description, keywords } = to.meta
+  const { title, description, keywords, canonical } = to.meta
 
   // Standard SEO meta tags
   if (description) setMeta('description', description)
   if (keywords)    setMeta('keywords', keywords)
 
-  // Open Graph tags (for social media sharing)
-  setMeta('og:title',       title       || 'CCIT',        'property')
-  setMeta('og:description', description || '',            'property')
-  setMeta('og:url',         window.location.href,         'property')
-  setMeta('og:type',        'website',                    'property')
+  // Canonical URL
+  const canonicalHref = canonical || `${BASE_URL}${to.path}`
+  let canonicalTag = document.querySelector('link[rel="canonical"]')
+  if (!canonicalTag) {
+    canonicalTag = document.createElement('link')
+    canonicalTag.setAttribute('rel', 'canonical')
+    document.head.appendChild(canonicalTag)
+  }
+  canonicalTag.setAttribute('href', canonicalHref)
+
+  // Open Graph tags
+  setMeta('og:title',       title       || 'CCIT',       'property')
+  setMeta('og:description', description || '',           'property')
+  setMeta('og:url',         canonicalHref,               'property')
+  setMeta('og:type',        'website',                   'property')
+  setMeta('og:image',       'https://www.ccit.lk/logo.png', 'property')
 
   // Twitter Card tags
   setMeta('twitter:card',        'summary_large_image')
   setMeta('twitter:title',       title       || 'CCIT')
   setMeta('twitter:description', description || '')
+  setMeta('twitter:image',       'https://www.ccit.lk/logo.png')
 
   next()
 })
