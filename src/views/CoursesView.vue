@@ -168,7 +168,11 @@ export default {
         { id: 'recers', name: 'Recers' },
         { id: 'genius', name: 'Genius' },
         { id: 'experts', name: 'Experts' },
-        { id: 'kfs_ict', name: 'KFS_ICT' }
+        { id: 'cyberkids', name: 'CyberKids' },
+        { id:'technokids', name: 'TechnoKids'},
+        { id: 'webkids', name: 'WebKids'},
+        { id: 'edukids', name: 'EduKids'},
+        { id: 'brainkids', name: 'BrainKids'}
       ],
       courses: [
         {
@@ -275,9 +279,109 @@ export default {
         },
         {
           id: 6,
-          category: 'kfs_ict',
-          level: 'KFS_ICT',
-          title: 'GRADE 6 - GRADE 11',
+          category: 'cyberkids',
+          level: 'CyberKids',
+          title: 'GRADE 06',
+          description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
+          // price: 80000,
+          // installment: 'LKR 20,000 x 4 months',
+          features: [
+            'Theory',
+            'Practical',
+            'Study Guide',
+            'Exam Booster',
+            'Practical Book'
+          ]
+        },
+        {
+          id: 7,
+          category: 'pixelkids',
+          level: 'PixelKids',
+          title: 'GRADE 07',
+          description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
+          // price: 80000,
+          // installment: 'LKR 20,000 x 4 months',
+          features: [
+            'Theory',
+            'Practical',
+            'Study Guide',
+            'Exam Booster',
+            'Practical Book'
+          ]
+        },
+        {
+          id: 8,
+          category: 'technokids',
+          level: 'TechnoKids',
+          title: 'GRADE 08',
+          description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
+          // price: 80000,
+          // installment: 'LKR 20,000 x 4 months',
+          features: [
+            'Theory',
+            'Practical',
+            'Study Guide',
+            'Exam Booster',
+            'Practical Book'
+          ]
+        },
+        {
+          id: 8,
+          category: 'webkids',
+          level: 'WebKids',
+          title: 'GRADE 09',
+          description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
+          // price: 80000,
+          // installment: 'LKR 20,000 x 4 months',
+          features: [
+            'Theory',
+            'Practical',
+            'Study Guide',
+            'Exam Booster',
+            'Practical Book'
+          ]
+        },
+        {
+          id: 9,
+          category: 'edukids',
+          level: 'EduKids',
+          title: 'GRADE 10',
+          description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
+          duration: '12 Months',
+          image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
+          maxStudents: 35,
+          certification: 'CCIT Certificate',
+          // price: 80000,
+          // installment: 'LKR 20,000 x 4 months',
+          features: [
+            'Theory',
+            'Practical',
+            'Study Guide',
+            'Exam Booster',
+            'Practical Book'
+          ]
+        },
+        {
+          id: 10,
+          category: 'brainkids',
+          level: 'BrainKids',
+          title: 'GRADE 11',
           description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
           duration: '12 Months',
           image:'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
@@ -461,10 +565,29 @@ Contact us for more details!
   background: #2927b0;
 }
 
-.course-level.KFS_ICT {
+.course-level.CyberKids {
   background: #f77903;
 }
 
+.course-level.PixelKids {
+  background: #4CAF50;
+}
+
+.course-level.TechnoKids {
+  background: #FF9800;
+}
+
+.course-level.WebKids {
+  background: #F44336;
+}
+
+.course-level.EduKids {
+  background: #9C27B0;
+}
+
+.course-level.BrainKids {
+  background: #2927b0;
+}
 
 .course-duration {
   font-size: 0.9rem;
