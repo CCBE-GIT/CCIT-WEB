@@ -168,12 +168,16 @@
                   <label for="course" class="form-label">Course Interested In</label>
                   <select class="form-select" id="course" v-model="form.course">
                     <option value="">Select a course</option>
-                    <option value="fundamentals">Computer Fundamentals</option>
-                    <option value="python">Programming with Python</option>
-                    <option value="web">Web Development</option>
-                    <option value="fullstack">Full Stack Development</option>
-                    <option value="cyber">Cybersecurity</option>
-                    <option value="ccna">CISCO CCNA</option>
+                    <option value="fundamentals">GRADE 01 - Creators</option>
+                    <option value="python">GRADE 02 - Racers</option>
+                    <option value="web">GRADE 03 - Genius</option>
+                    <option value="fullstack">GRADE 04 / 05 - Experts</option>
+                    <option value="cyber">GRADE 06 - CyberKids</option>
+                    <option value="ccna">GRADE 07 - PixelKids</option>
+                    <option value="ccna">GRADE 08 - TechnoKids</option>
+                    <option value="ccna">GRADE 09 - WebKids</option>
+                    <option value="ccna">GRADE 10 - EduKids</option>
+                    <option value="ccna">GRADE 11 - BrainKids</option>
                   </select>
                 </div>
                 
