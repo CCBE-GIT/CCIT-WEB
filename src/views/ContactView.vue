@@ -168,16 +168,16 @@
                   <label for="course" class="form-label">Course Interested In</label>
                   <select class="form-select" id="course" v-model="form.course">
                     <option value="">Select a course</option>
-                    <option value="fundamentals">GRADE 01 - Creators</option>
-                    <option value="python">GRADE 02 - Racers</option>
-                    <option value="web">GRADE 03 - Genius</option>
-                    <option value="fullstack">GRADE 04 / 05 - Experts</option>
-                    <option value="cyber">GRADE 06 - CyberKids</option>
-                    <option value="ccna">GRADE 07 - PixelKids</option>
-                    <option value="ccna">GRADE 08 - TechnoKids</option>
-                    <option value="ccna">GRADE 09 - WebKids</option>
-                    <option value="ccna">GRADE 10 - EduKids</option>
-                    <option value="ccna">GRADE 11 - BrainKids</option>
+                    <option value="creators">GRADE 01 - Creators</option>
+                    <option value="racers">GRADE 02 - Racers</option>
+                    <option value="genius">GRADE 03 - Genius</option>
+                    <option value="experts">GRADE 04 / 05 - Experts</option>
+                    <option value="cyberkids">GRADE 06 - CyberKids</option>
+                    <option value="PixelKids">GRADE 07 - PixelKids</option>
+                    <option value="TechnoKids">GRADE 08 - TechnoKids</option>
+                    <option value="WebKids">GRADE 09 - WebKids</option>
+                    <option value="EduKids">GRADE 10 - EduKids</option>
+                    <option value="BrainKids">GRADE 11 - BrainKids</option>
                   </select>
                 </div>
                 
@@ -445,12 +445,16 @@ export default {
     
     getCourseText(courseValue) {
       const courses = {
-        'fundamentals': 'Computer Fundamentals',
-        'python': 'Programming with Python',
-        'web': 'Web Development',
-        'fullstack': 'Full Stack Development',
-        'cyber': 'Cybersecurity',
-        'ccna': 'CISCO CCNA'
+        'creators': 'GRADE 01 - Creators',
+        'racers': 'GRADE 02 - Racers',
+        'genius': 'GRADE 03 - Genius',
+        'experts': 'GRADE 04 / 05 - Experts',
+        'cyberkids': 'GRADE 06 - CyberKids',
+        'PixelKids': 'GRADE 07 - PixelKids',
+        'TechnoKids': 'GRADE 08 - TechnoKids',
+        'WebKids': 'GRADE 09 - WebKids',
+        'EduKids': 'GRADE 10 - EduKids',
+        'BrainKids': 'GRADE 11 - BrainKids',
       };
       return courses[courseValue] || courseValue || 'Not specified';
     }
