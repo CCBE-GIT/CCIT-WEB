@@ -671,10 +671,12 @@ export default {
 <style scoped>
 /* News Hero Section */
 .news-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
   position: relative;
   overflow: hidden;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .news-hero::before {
@@ -690,14 +692,16 @@ export default {
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
   position: relative;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -718,29 +722,34 @@ export default {
 
 .hero-icon i {
   font-size: 6rem;
-  color: #ff5f15;
-  /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); */
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Events Section - Simplified */
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
   margin-bottom: 3rem;
 }
 
 .event-card {
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
   height: 100%;
   cursor: pointer;
+  border: 1px solid var(--border-color);
 }
 
 .event-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 24px 56px rgba(255,95,21,0.14) !important;
+  border-color: rgba(255,95,21,0.2);
 }
 
 .event-image {

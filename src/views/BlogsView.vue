@@ -946,18 +946,22 @@ export default {
 <style scoped>
 /* Blog Hero Section - Simple style like Testimonials */
 .blog-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1056,9 +1060,9 @@ export default {
 
 .category-tab.active,
 .category-tab:hover {
-  background: #FFD700;
-  color: black;
-  border-color: #FFD700;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  border-color: transparent;
 }
 
 .category-tab.active i,
@@ -1074,9 +1078,10 @@ export default {
 
 /* Section Titles */
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   margin-bottom: 1rem;
 }
 
@@ -1086,9 +1091,7 @@ export default {
   font-weight: 600;
 }
 
-.text-gold {
-  color: #FFD700;
-}
+.text-gold { color: #FF5F15; }
 
 /* Featured Article Card */
 .featured-card {

@@ -146,6 +146,7 @@
                         :alt="moment.title"
                         class="moment-image"
                         loading="lazy"
+                        @error="handleImageError"
                       >
                       <div v-else class="moment-placeholder" :style="{ background: moment.gradient }">
                         <i :class="moment.icon"></i>
@@ -178,6 +179,7 @@
             :src="currentImage.url" 
             :alt="currentImage.title || 'Gallery image'"
             class="lightbox-image"
+            @error="handleImageError"
           >
           <div v-else class="lightbox-placeholder" :style="{ background: currentImage.gradient }">
             <i :class="currentImage.icon || 'fas fa-image'"></i>
@@ -214,12 +216,9 @@ export default {
       currentImageSet: [],
       currentImageIndex: 0,
       categories: [
-        // { label: 'All Photos', value: 'all' },
-        // { label: 'Campus', value: 'campus' },
-        // { label: 'Labs', value: 'labs' },
-        // { label: 'Events', value: 'events' },
-        // { label: 'Student Life', value: 'student-life' },
-        // { label: 'Graduation', value: 'graduation' }
+        { label: 'All Photos', value: 'all' },
+        { label: 'Campus', value: 'campus' },
+        { label: 'Events', value: 'events' }
       ],
       
       // UPDATED: allImages now with multiple images per item
@@ -227,7 +226,7 @@ export default {
         {
           title: "INTERNATIONAL WOMEN'S DAY 2026",
           description: 'International Women’s Day 2026 was celebrated at CCBE',
-          // category: 'campus',
+          category: 'events',
           icon: 'fas fa-leaf',
           gradient: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)',
           date: '2026',
@@ -342,10 +341,10 @@ export default {
           ]
         },
         // Campus Category - with multiple images
-        {
-          title: 'Cambrians Day',
-          description: 'Celebrating Unity, Talent & the Spirit of Cambrians',
-          // category: 'campus',
+          {
+            title: 'Cambrians Day',
+            description: 'Celebrating Unity, Talent & the Spirit of Cambrians',
+            category: 'events',
           icon: 'fas fa-university',
           gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           date: '2026',
@@ -532,7 +531,7 @@ export default {
         {
           title: 'Staff Wellness & Medical Screening Program',
           description: 'Caring for Our Team, Building a Healthier CCBE',
-          // category: 'campus',
+          category: 'campus',
           icon: 'fas fa-tree',
           gradient: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
           date: '2025',
@@ -628,7 +627,7 @@ export default {
         {
           title: 'A Decade of Dedication',
           description: 'CCBE - 10th Anniversary Celebration',
-          // category: 'campus',
+          category: 'events',
           icon: 'fas fa-book',
           gradient: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
           date: '2025',
@@ -696,7 +695,7 @@ export default {
         {
           title: 'කංචුක පූජාව, කිරිපිඬු දානය හා අෂ්ඨපාන පූජාව',
           description: 'ස්වර්ණමාලි මහා සෑය – අනුරාධපුරය',
-          // category: 'campus',
+          category: 'events',
           icon: 'fas fa-futbol',
           gradient: 'linear-gradient(135deg, #f12711 0%, #f5af19 100%)',
           date: '2025',
@@ -1007,13 +1006,16 @@ export default {
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  position: relative;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1576,15 +1578,16 @@ export default {
 }
 
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   margin-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .hero-icon {

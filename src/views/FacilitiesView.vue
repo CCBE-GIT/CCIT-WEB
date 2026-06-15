@@ -307,18 +307,22 @@ export default {
 
 <style scoped>
 .facilities-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .highlight {
-  background: linear-gradient(135deg,  #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -328,24 +332,31 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff5f15;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .facility-card {
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 20px;
   text-align: center;
   height: 100%;
-  transition: transform 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .facility-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(255,95,21,0.12) !important;
 }
 
 .facility-icon {
   font-size: 3rem;
-  color: #FFD700;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
 }
 
@@ -392,7 +403,7 @@ export default {
 
 .gallery-placeholder {
   height: 200px;
-  background: linear-gradient(135deg, black 0%, #FFD700 100%);
+  background: linear-gradient(135deg, #0f0f0f 0%, #FF5F15 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -455,15 +466,12 @@ export default {
 }
 
 .feature-badge {
-  width: 50px;
-  height: 50px;
-  background: #FFD700;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  width: 50px; height: 50px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
   flex-shrink: 0;
 }
 

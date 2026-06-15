@@ -382,12 +382,13 @@ export default {
 </script>
 
 <style scoped>
-/* Original styles remain exactly the same */
+/* ── About Hero ── */
 .about-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
   position: relative;
   overflow: hidden;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .particles-container {
@@ -455,13 +456,15 @@ export default {
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -490,18 +493,22 @@ export default {
 }
 
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
   margin-bottom: 3rem;
 }
 
 .value-card {
-  transition: transform 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  border-radius: 20px !important;
+  overflow: hidden;
 }
 
 .value-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(255,95,21,0.14) !important;
 }
 
 .value-card-image {
@@ -512,17 +519,23 @@ export default {
 
 .value-icon {
   font-size: 2.5rem;
-  color: #FFD700;
+  color: #FF5F15;
 }
 
 .team-avatar {
   font-size: 3rem;
-  color: #FFD700;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-accent {
-  color: #ff5f15;
-  font-weight: 600;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
 }
 
 .team-card {

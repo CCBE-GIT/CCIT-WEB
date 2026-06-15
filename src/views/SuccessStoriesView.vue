@@ -89,7 +89,7 @@
     </section>
 
     <!-- Career Transformation Stories -->
-    <section class="transformation-stories py-5 bg-light">
+    <section class="transformation-stories py-5 bg-secondary">
       <div class="container">
         <h2 class="section-title text-center mb-5">Career <span class="highlight">Transformations</span></h2>
         <div class="row">
@@ -146,7 +146,7 @@
     </section>
 
     <!-- Alumni Companies -->
-    <section class="alumni-companies py-5 bg-light">
+    <section class="alumni-companies py-5 bg-secondary">
       <div class="container">
         <h2 class="section-title text-center mb-5">Where Our <span class="highlight">Alumni Work</span></h2>
         <div class="row">
@@ -199,7 +199,7 @@
     </section>
 
     <!-- Alumni Spotlights -->
-    <section class="alumni-spotlights py-5 bg-light">
+    <section class="alumni-spotlights py-5 bg-secondary">
       <div class="container">
         <h2 class="section-title text-center mb-5">Alumni <span class="highlight">Spotlights</span></h2>
         <div class="row">
@@ -487,13 +487,16 @@ export default {
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  position: relative;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -807,15 +810,16 @@ export default {
 }
 
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   margin-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .hero-icon {

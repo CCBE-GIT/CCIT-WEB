@@ -465,18 +465,22 @@ export default {
 <style scoped>
 /* Your existing styles remain the same */
 .contact-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -486,7 +490,10 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff5f15;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contact-item {
@@ -496,14 +503,12 @@ export default {
 }
 
 .contact-icon {
-  width: 40px;
-  height: 40px;
-  background: #FFD700;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
   flex-shrink: 0;
 }
 
@@ -532,18 +537,20 @@ export default {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #FFD700;
-  color: white;
-  border-radius: 50%;
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, rgba(255,95,21,0.1), rgba(251,183,0,0.1));
+  border: 1px solid rgba(255,95,21,0.25);
+  color: #FF5F15;
+  border-radius: 12px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .social-link:hover {
-  background: black;
-  transform: translateY(-3px);
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-color: transparent;
+  color: #000;
+  transform: translateY(-3px) scale(1.08);
 }
 
 .contact-form .form-label {
@@ -572,24 +579,27 @@ export default {
 
 /* Primary button */
 .btn-primary-custom {
-  display: inline-block;
-  padding: 10px 26px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color:  #FFD700;       
-  color: black;                     
-  border: 2px solid  #FFD700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
-  transition: 0.3s ease;
-  text-align: center;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 8px 28px rgba(255,95,21,0.4);
 }
 
 .btn-primary-custom:hover {
-  background-color: black;      
-  border-color: #0b5ed7;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(255,95,21,0.6);
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 .map-container {
@@ -628,9 +638,10 @@ export default {
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #ff5f15 ;
-  color: black;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
   box-shadow: none;
+  font-weight: 700;
 }
 
 .accordion-button:focus {

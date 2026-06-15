@@ -686,10 +686,12 @@ export default {
 <style scoped>
 /* Careers Hero Section */
 .careers-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
   position: relative;
   overflow: hidden;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .careers-hero::before {
@@ -705,14 +707,16 @@ export default {
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
   position: relative;
 }
 
 .highlight {
-  background: linear-gradient(135deg,   #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -735,15 +739,18 @@ export default {
 
 .hero-icon i {
   font-size: 6rem;
-  color: #ff5f15;
-  /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); */
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Benefits Section */
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   margin-bottom: 3rem;
 }
 
@@ -768,22 +775,23 @@ export default {
 .benefit-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #FFD700;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF5F15, #FBB700, #FFCC00);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  border-radius: 2px;
 }
 
-.benefit-card:hover::before {
-  transform: scaleX(1);
-}
+.benefit-card:hover::before { transform: scaleX(1); }
 
 .benefit-icon {
   font-size: 3rem;
-  color: #FFD700;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
 }
 
@@ -821,12 +829,12 @@ export default {
 }
 
 .opening-type {
-  background: #FFD700;
-  color: black;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .opening-location {
@@ -861,9 +869,7 @@ export default {
   font-size: 0.9rem;
 }
 
-.detail-item i {
-  color: #FFD700;
-}
+.detail-item i { color: #FF5F15; }
 
 .opening-actions {
   display: flex;
@@ -872,33 +878,34 @@ export default {
 }
 
 .btn-accent {
-  background: #ff5f15;
-  color: black;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
   border: none;
   padding: 8px 20px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .btn-accent:hover {
-  background: #FFD700;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,95,21,0.4);
 }
 
 .btn-outline-accent {
-  border: 2px solid #FFD700;
-  color: black;
+  border: 2px solid #FF5F15;
+  color: #FF5F15;
   background: transparent;
   padding: 8px 20px;
-  border-radius: 25px;
-  font-weight: 600;
+  border-radius: 999px;
+  font-weight: 700;
   transition: all 0.3s ease;
 }
 
 .btn-outline-accent:hover {
-  background: black;
-  color: white;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-color: transparent;
+  color: #000;
   transform: translateY(-2px);
 }
 
@@ -914,24 +921,22 @@ export default {
 
 .step-number {
   position: absolute;
-  top: -15px;
-  left: 50%;
+  top: -15px; left: 50%;
   transform: translateX(-50%);
-  background: black;
-  color: white;
-  width: 30px;
-  height: 30px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  width: 32px; height: 32px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.1rem;
 }
 
 .step-icon {
   font-size: 2.5rem;
-  color: #FFD700;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
 }
 
@@ -973,11 +978,7 @@ export default {
 }
 
 .modal-header {
-  background: linear-gradient(
-    135deg,
-    black 0%,
-    black 100%
-  );
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a0000 100%);
   color: white;
   padding: 2rem;
   border-radius: 15px 15px 0 0;

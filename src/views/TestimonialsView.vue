@@ -280,7 +280,7 @@ export default {
       statistics: [
         {
           value: "95%",
-          label: "Graduate Employment Rate",
+          label: "Text",
           rating: 5
         },
         {
@@ -290,7 +290,7 @@ export default {
         },
         {
           value: "1000+",
-          label: "Successful Graduates",
+          label: "Text",
           rating: 5
         }
       ],
@@ -319,18 +319,18 @@ export default {
           rating: 4.8,
           reviews: 423
         },
-        {
-          icon: "fab fa-yelp",
-          name: "Yelp",
-          rating: 4.6,
-          reviews: 98
-        },
-        {
-          icon: "fas fa-graduation-cap",
-          name: "SwitchUp",
-          rating: 4.9,
-          reviews: 156
-        }
+        // {
+        //   icon: "fab fa-yelp",
+        //   name: "Yelp",
+        //   rating: 4.6,
+        //   reviews: 98
+        // },
+        // {
+        //   icon: "fas fa-graduation-cap",
+        //   name: "SwitchUp",
+        //   rating: 4.9,
+        //   reviews: 156
+        // }
       ]
     }
   }
@@ -339,18 +339,22 @@ export default {
 
 <style scoped>
 .testimonials-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -360,19 +364,25 @@ export default {
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff5f15;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .testimonial-card {
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 20px;
   height: 100%;
-  transition: transform 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
   position: relative;
+  border: 1px solid var(--border-color);
 }
 
 .testimonial-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(255,95,21,0.12) !important;
+  border-color: rgba(255,95,21,0.2);
 }
 
 .testimonial-rating {
@@ -380,7 +390,7 @@ export default {
 }
 
 .testimonial-rating i.text-gold {
-  color: #FFD700;
+  color: #FF5F15;
 }
 
 .testimonial-quote {
@@ -392,15 +402,11 @@ export default {
 }
 
 .author-avatar {
-  width: 50px;
-  height: 50px;
-  background: #ff5f15;
+  width: 50px; height: 50px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  color: #000; font-size: 2rem;
 }
 
 .author-name {
@@ -433,7 +439,7 @@ export default {
 
 .video-placeholder {
   height: 200px;
-  background: linear-gradient(135deg, black 0%, #ff5f15 100%);
+  background: linear-gradient(135deg, #0f0f0f 0%, #FF5F15 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,15 +496,11 @@ export default {
 }
 
 .parent-avatar {
-  width: 50px;
-  height: 50px;
-  background: #FFD700;
+  width: 50px; height: 50px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  color: #000; font-size: 2rem;
 }
 
 .parent-name {
@@ -525,9 +527,13 @@ export default {
 }
 
 .stat-number {
-  color: #ff5f15;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
@@ -542,9 +548,7 @@ export default {
   font-size: 0.9rem;
 }
 
-.stat-rating i.text-gold {
-  color: #FFD700;
-}
+.stat-rating i.text-gold { color: #FF5F15; }
 
 .platform-card {
   border-radius: 15px;
@@ -557,15 +561,11 @@ export default {
 }
 
 .platform-icon {
-  width: 40px;
-  height: 40px;
-  background: #ff5f15;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: #000; font-size: 1.2rem;
 }
 
 .platform-name {
@@ -579,9 +579,7 @@ export default {
   font-size: 0.9rem;
 }
 
-.platform-rating i.text-gold {
-  color: #FFD700;
-}
+.platform-rating i.text-gold { color: #FF5F15; }
 
 .rating-value {
   color: var(--text-secondary);
@@ -598,9 +596,10 @@ export default {
 }
 
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
   margin-bottom: 3rem;
 }
 

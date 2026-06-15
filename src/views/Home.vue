@@ -1,120 +1,150 @@
 <template>
   <div class="home-page">
-    <!-- Hero Section with Video Background -->
+
+    <!-- ══ HERO SECTION ══ -->
     <section class="hero-section">
       <!-- Video Background -->
       <div class="video-bg">
         <video ref="videoBg" autoplay muted loop playsinline webkit-playsinline>
           <source src="https://ik.imagekit.io/kp5tixhur/ccit-video/mixkit-little-girl-doing-homework-on-a-laptop-4757-hd-ready.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
       </div>
-      
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h1 class="hero-title">Shaping Your Future with <span class="highlight">CCIT</span></h1>
-            <p class="hero-subtitle">
-              The national IT school that hones your child's ICT skills with 
-              <strong class="highlight">100% PRACTICAL</strong> content that goes beyond the subject.
-            </p>
-            <div class="hero-buttons">
-              <router-link to="/courses" class="btn-primary-custom">
-                Explore Courses
-              </router-link>
-              <router-link to="/contact" class="btn-outline-primary-custom">
-                Contact Us
-              </router-link>
+
+      <!-- Decorative orbs -->
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-star"></i>
+            <span>Sri Lanka's #1 Practical IT School</span>
+          </div>
+          <h1 class="hero-title">
+            Shaping Your Future<br>
+            with <span class="hero-highlight">CCIT</span>
+          </h1>
+          <p class="hero-subtitle">
+            The national IT school that hones your child's ICT skills with
+            <strong class="hero-strong">100% PRACTICAL</strong> content
+            that goes beyond the subject.
+          </p>
+          <div class="hero-buttons">
+            <router-link to="/courses" class="btn-hero-primary">
+              <i class="fas fa-rocket"></i> Explore Courses
+            </router-link>
+            <router-link to="/contact" class="btn-hero-outline">
+              Contact Us <i class="fas fa-arrow-right"></i>
+            </router-link>
+          </div>
+
+          <!-- Quick stats row -->
+          <div class="hero-stats">
+            <div class="hero-stat" v-for="s in heroStats" :key="s.label">
+              <span class="hero-stat-number">{{ s.value }}</span>
+              <span class="hero-stat-label">{{ s.label }}</span>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="hero-image">
-              <div class="image-placeholder">
-                <i class="fas fa-laptop-code"></i>
-              </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-float-card">
+            <div class="float-icon-ring">
+              <i class="fas fa-laptop-code float-icon"></i>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ══ FEATURES SECTION ══ -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-overline">Why CCIT?</p>
+          <h2 class="section-title">Built for <span class="text-grad">Excellence</span></h2>
+          <p class="section-subtitle">We go beyond textbooks — every lesson is a real-world experience.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card" v-for="(feature, i) in features" :key="i">
+            <div class="feature-icon-wrap">
+              <i :class="feature.icon"></i>
+            </div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-desc">{{ feature.description }}</p>
+            <div class="feature-accent"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section py-5 bg-light">
-      <div class="container">
-        <h2 class="section-title text-center mb-5">Why Choose <span class="highlight">CCIT?</span></h2>
-        <div class="row">
-          <div class="col-md-4 mb-4" v-for="(feature, index) in features" :key="index">
-            <div class="feature-card card-theme">
-              <div class="feature-icon">
-                <i :class="feature.icon"></i>
-              </div>
-              <h3>{{ feature.title }}</h3>
-              <p>{{ feature.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ══ STATS BANNER ══ -->
     <StatsbannerPage></StatsbannerPage>
-    <!-- Courses Preview -->
-    <section class="courses-section py-5">
+
+    <!-- ══ COURSES SECTION ══ -->
+    <section class="courses-section">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Popular <span class="highlight">Courses</span></h2>
-        <div class="row">
-          <div class="col-md-4 mb-4" v-for="(course, index) in courses" :key="index">
-            <div class="course-card card-theme">
-              <div class="course-badge">{{ course.level }}</div>
-              <div class="course-image" style="margin: -2rem -2rem 1.5rem -2rem; overflow: hidden;">
-                <img 
-                  :src="course.image" 
-                  :alt="course.title" 
-                  class="img-fluid w-100"
-                  style="height: 200px; object-fit: cover;"
-                />
-              </div>
-              <h3>{{ course.title }}</h3>
-              <p>{{ course.description }}</p>
+        <div class="section-header">
+          <p class="section-overline">Our Programs</p>
+          <h2 class="section-title">Popular <span class="text-grad">Courses</span></h2>
+          <p class="section-subtitle">Tailored learning paths for every age group and skill level.</p>
+        </div>
+
+        <div class="courses-grid">
+          <div class="course-card" v-for="(course, i) in courses" :key="i">
+            <div class="course-image-wrap">
+              <img :src="course.image" :alt="course.title" class="course-img" loading="lazy" />
+              <div class="course-badge-overlay">{{ course.level }}</div>
+              <div class="course-img-shimmer"></div>
+            </div>
+            <div class="course-body">
+              <h3 class="course-title">{{ course.title }}</h3>
+              <p class="course-desc">{{ course.description }}</p>
               <ul class="course-features">
-                <li v-for="(feature, idx) in course.features" :key="idx">
-                  <i class="fas fa-check"></i> {{ feature }}
+                <li v-for="(f, idx) in course.features" :key="idx">
+                  <i class="fas fa-check"></i> {{ f }}
                 </li>
               </ul>
-              <!-- <router-link :to="`/courses#${course.id}`" class="btn btn-accent">
-                Learn More
-              </router-link> -->
             </div>
           </div>
+        </div>
+
+        <div class="courses-cta">
+          <router-link to="/courses" class="btn-see-all">
+            View All Courses <i class="fas fa-arrow-right"></i>
+          </router-link>
         </div>
       </div>
     </section>
 
-    <!-- Parent Testimonials -->
-    <section class="parent-testimonials py-5 bg-light">
+    <!-- ══ TESTIMONIALS ══ -->
+    <section class="testimonials-section">
       <div class="container">
-        <h2 class="section-title text-center mb-5">What <span class="highlight">Parents</span> Say</h2>
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <div class="parent-grid">
-              <div 
-                class="parent-card card-theme mb-4" 
-                v-for="(parent, index) in parentTestimonials" 
-                :key="index"
-              >
-                <div class="parent-quote-icon">
-                  <i class="fas fa-quote-right"></i>
-                </div>
-                <p class="parent-quote">"{{ parent.quote }}"</p>
-                <div class="parent-info d-flex align-items-center">
-                  <div class="parent-avatar me-3">
-                    <i :class="parent.avatar"></i>
-                  </div>
-                  <div>
-                    <h4 class="parent-name">{{ parent.name }}</h4>
-                    <p class="parent-child mb-0">Parent of {{ parent.childName }}</p>
-                    <p class="parent-course">{{ parent.childCourse }}</p>
-                  </div>
-                </div>
+        <div class="section-header">
+          <p class="section-overline">Real Stories</p>
+          <h2 class="section-title">What <span class="text-grad">Parents</span> Say</h2>
+          <p class="section-subtitle">Hear directly from the families who trust CCIT.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card" v-for="(p, i) in parentTestimonials" :key="i">
+            <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+            <p class="testimonial-text">"{{ p.quote }}"</p>
+            <div class="testimonial-footer">
+              <div class="testimonial-avatar">
+                <i :class="p.avatar"></i>
+              </div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">{{ p.name }}</span>
+                <span class="testimonial-sub">Parent of {{ p.childName }}</span>
+                <span class="testimonial-course">{{ p.childCourse }}</span>
               </div>
             </div>
           </div>
@@ -122,42 +152,52 @@
       </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section class="contact-cta py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="section-title mb-4">Ready to Start Your <span class="highlight">IT Journey?</span></h2>
-        <p class="mb-4 text-black">Contact us today to learn more about our programs and enrollment.</p>
-        <div class="cta-buttons">
-          <a :href="`tel:${mobile}`" class="btn btn-primary-custom1 btn-lg">
-            <i class="fas fa-phone"></i> Call Now
-          </a>
-          <a :href="`https://wa.me/${whatsapp.replace('+', '')}`" target="_blank" class="btn btn-success btn-lg">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-          <a :href="`mailto:${email}`" class="btn btn-outline-primary-custom1 btn-lg">
-            <i class="fas fa-envelope"></i> Email Us
-          </a>
+    <!-- ══ CONTACT CTA ══ -->
+    <section class="cta-section">
+      <div class="cta-glow-1"></div>
+      <div class="cta-glow-2"></div>
+      <div class="container cta-container">
+        <div class="cta-content">
+          <p class="section-overline" style="color: rgba(255,255,255,0.7);">Get Started Today</p>
+          <h2 class="cta-title">Ready to Start Your <span class="cta-highlight">IT Journey?</span></h2>
+          <p class="cta-subtitle">Contact us today to learn more about our programs and enrollment.</p>
+          <div class="cta-buttons">
+            <a :href="`tel:${mobile}`" class="cta-btn cta-btn-primary">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a :href="`https://wa.me/${whatsapp.replace('+', '')}`" target="_blank" class="cta-btn cta-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a :href="`mailto:${email}`" class="cta-btn cta-btn-outline">
+              <i class="fas fa-envelope"></i> Email Us
+            </a>
+          </div>
         </div>
       </div>
     </section>
+
   </div>
 </template>
+
 <script>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import StatsbannerPage from "./Statsbanner.vue";
+import StatsbannerPage from "./Statsbanner.vue"
 
 export default {
   name: 'HomeView',
-  components: {
-    StatsbannerPage,
-  },
+  components: { StatsbannerPage },
   setup() {
     const mobile = '0718864477'
     const whatsapp = '+94705205666'
     const email = 'email.ccit@gmail.com'
-    
     const videoBg = ref(null)
-    
+
+    const heroStats = ref([
+      { value: '500+', label: 'Students Trained' },
+      { value: '10+',  label: 'Expert Courses' },
+      { value: '5 Yrs',label: 'of Excellence' },
+    ])
+
     const features = ref([
       {
         icon: 'fas fa-laptop-code',
@@ -175,19 +215,19 @@ export default {
         description: 'Internationally recognized certifications upon course completion.'
       }
     ])
-    
+
     const courses = ref([
       {
         id: 'programming',
-        image:"https://ik.imagekit.io/kp5tixhur/ccit-web/1-1.jpg",
+        image: 'https://ik.imagekit.io/kp5tixhur/ccit-web/1-1.jpg',
         title: 'PER SCHOOLERS',
         level: 'Starters',
         description: 'AGE RANGE: 5 Years',
-        features: ['Basic Technology', 'Digital Typing', 'Digital Painting', 'Fun Activities','100% Practical Oriented']
+        features: ['Basic Technology', 'Digital Typing', 'Digital Painting', 'Fun Activities', '100% Practical Oriented']
       },
       {
         id: 'web-dev',
-        image:"https://ik.imagekit.io/kp5tixhur/ccit-web/5.jpg",
+        image: 'https://ik.imagekit.io/kp5tixhur/ccit-web/5.jpg',
         title: 'GRADE 04 & 05',
         level: 'Experts',
         description: 'AGE RANGE: 9 / 10 Years',
@@ -195,7 +235,7 @@ export default {
       },
       {
         id: 'cyber',
-        image:"https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg",
+        image: 'https://ik.imagekit.io/kp5tixhur/ccit-web/cursos-de-informatica1.jpg',
         title: 'GRADE 6 - GRADE 11',
         level: 'KFS_ICT',
         description: 'Cover: School Syllabus, Practical Activities and Written & Practical Tests',
@@ -203,611 +243,680 @@ export default {
       }
     ])
 
-    
-    
-    // Video background handling
+    const parentTestimonials = ref([
+      {
+        quote: "I've seen tremendous growth in my son's confidence and technical skills. The supportive environment and dedicated instructors made all the difference.",
+        name: 'Robert Chen', childName: 'Michael Chen',
+        childCourse: 'Web Development Program', avatar: 'fas fa-user-circle'
+      },
+      {
+        quote: "As a parent, I was concerned about my daughter's career choices. This institute provided her with practical skills and real-world experience. She's now thriving in her IT career.",
+        name: 'Linda Johnson', childName: 'Sarah Johnson',
+        childCourse: 'Full Stack Development', avatar: 'fas fa-user-circle'
+      },
+      {
+        quote: "The communication from instructors and staff is excellent. We always knew how our child was progressing. The career guidance was exceptional.",
+        name: 'David Patel', childName: 'Priya Patel',
+        childCourse: 'Python Programming', avatar: 'fas fa-user-circle'
+      },
+      {
+        quote: "Worth every penny. My son not only learned technical skills but also developed problem-solving abilities and professional etiquette.",
+        name: 'Maria Rodriguez', childName: 'Alex Rodriguez',
+        childCourse: 'IT Support Specialist Program', avatar: 'fas fa-user-circle'
+      }
+    ])
+
     const initVideoBg = () => {
       if (videoBg.value) {
-        videoBg.value.play().catch(() => {
-          console.log("Autoplay prevented, waiting for user interaction");
-        });
+        videoBg.value.play().catch(() => {})
       }
     }
-    
-    const handleResize = () => {
-      // Video will automatically adjust with CSS
-    }
-    
-    // Lifecycle hooks
+
     onMounted(() => {
-      // Initialize video background
-      setTimeout(() => {
-        initVideoBg()
-        window.addEventListener('resize', handleResize)
-      }, 100)
-      
-      // Try to autoplay video on user interaction
+      setTimeout(initVideoBg, 100)
       document.addEventListener('click', () => {
-        if (videoBg.value && videoBg.value.paused) {
-          videoBg.value.play().catch(console.error);
-        }
-      }, { once: true });
+        if (videoBg.value && videoBg.value.paused) videoBg.value.play().catch(() => {})
+      }, { once: true })
     })
-    
-    onBeforeUnmount(() => {
-      window.removeEventListener('resize', handleResize)
-    })
-    
-    return {
-      mobile,
-      whatsapp,
-      email,
-      features,
-      courses,
-      videoBg,
 
+    onBeforeUnmount(() => {})
 
-      parentTestimonials: [
-        {
-          quote: "I've seen tremendous growth in my son's confidence and technical skills. The supportive environment and dedicated instructors made all the difference.",
-          name: "Robert Chen",
-          childName: "Michael Chen",
-          childCourse: "Web Development Program",
-          avatar: "fas fa-user-circle"
-        },
-        {
-          quote: "As a parent, I was concerned about my daughter's career choices. This institute provided her with practical skills and real-world experience. She's now thriving in her IT career.",
-          name: "Linda Johnson",
-          childName: "Sarah Johnson",
-          childCourse: "Full Stack Development",
-          avatar: "fas fa-user-circle"
-        },
-        {
-          quote: "The communication from instructors and staff is excellent. We always knew how our child was progressing. The career guidance was exceptional.",
-          name: "David Patel",
-          childName: "Priya Patel",
-          childCourse: "Python Programming",
-          avatar: "fas fa-user-circle"
-        },
-        {
-          quote: "Worth every penny. My son not only learned technical skills but also developed problem-solving abilities and professional etiquette.",
-          name: "Maria Rodriguez",
-          childName: "Alex Rodriguez",
-          childCourse: "IT Support Specialist Program",
-          avatar: "fas fa-user-circle"
-        }
-      ],
-    }
-
-    
+    return { mobile, whatsapp, email, heroStats, features, courses, videoBg, parentTestimonials }
   }
 }
 </script>
 
 <style scoped>
-/* Hero Section */
+/* ══ HERO ══ */
 .hero-section {
-  padding: 100px 0;
-  background: black;
-  color: white;
   position: relative;
-  overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  background: #050505;
 }
 
-/* Video Background */
 .video-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 1;
-  pointer-events: none;
 }
-
 .video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
 }
-
 .video-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Dark overlay for better text readability */
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 2;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(94,0,0,0.82) 0%, rgba(0,0,0,0.68) 60%, rgba(0,0,0,0.55) 100%);
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+/* Decorative orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: rgba(255, 95, 21, 0.18);
+  top: -150px; left: -150px;
+}
+.hero-orb-2 {
+  width: 400px; height: 400px;
+  background: rgba(251, 183, 0, 0.12);
+  bottom: -100px; right: -100px;
+}
+
+.hero-container {
   position: relative;
   z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4rem;
+  padding: 8rem 2rem 5rem;
 }
 
-.highlight {
-  background: #ff5f15;
+.hero-content { max-width: 680px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(251,183,0,0.15);
+  border: 1px solid rgba(251,183,0,0.35);
+  color: #FBB700;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.hero-badge i { font-size: 0.75rem; }
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+
+.hero-highlight {
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 50%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  position: relative;
-  display: inline-block;
-  z-index: 3;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
   margin-bottom: 2rem;
-  position: relative;
-  z-index: 3;
+  max-width: 560px;
 }
-
-.hero-subtitle strong {
-  color: var(--accent-color);
-}
+.hero-strong { color: #FFCC00; font-weight: 700; }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 3;
+  margin-bottom: 2.5rem;
 }
 
-.parent-card {
-  padding: 2rem;
-  border-radius: 15px;
-  position: relative;
+.btn-hero-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.85rem 1.75rem;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000; font-size: 1rem; font-weight: 700;
+  border-radius: 999px; text-decoration: none;
+  box-shadow: 0 8px 32px rgba(255,95,21,0.45);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.btn-hero-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 40px rgba(255,95,21,0.6);
+  text-decoration: none; color: #000;
 }
 
-.parent-quote-icon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 4rem;
-  color: rgba(255, 95, 21, 0.1);
+.btn-hero-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.85rem 1.75rem;
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(8px);
+  color: #fff; font-size: 1rem; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px; text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-hero-outline:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+  text-decoration: none; color: #fff;
 }
 
-.parent-quote {
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-  position: relative;
-  z-index: 1;
-}
-
-.parent-avatar {
-  width: 50px;
-  height: 50px;
-  background: #FFD700;
-  border-radius: 50%;
+/* Hero Stats */
+.hero-stats {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
+  gap: 2rem;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+.hero-stat-number {
+  font-size: 1.75rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FF5F15, #FFCC00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
 }
 
-.parent-name {
-  color: var(--text-primary);
-  margin-bottom: 0.2rem;
-  font-size: 1.1rem;
-}
+/* Hero Visual / floating card */
+.hero-visual { display: flex; align-items: center; justify-content: center; }
 
-.parent-child {
-  color: #ff5f15;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.parent-course {
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  margin: 0;
-}
-
-/* Primary button */
-.btn-primary-custom {
-  display: inline-block;
-  padding: 10px 26px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);      
-  color: black;                     
-  border: 1px solid  #FFD700;
-  text-decoration: none;
-  transition: 0.3s ease;
-  text-align: center;
-}
-
-.btn-primary-custom:hover {
-  background: black;      
-  border-color: #0b5ed7;
-  text-decoration: none;
-  color: #fff;
-}
-
-.btn-primary-custom1 {
-  display: inline-block;
-  padding: 10px 26px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: #FFD700;      
-  color: black;                     
-  border: 1px solid  #FFD700;
-  text-decoration: none;
-  transition: 0.3s ease;
-  text-align: center;
-}
-
-.btn-primary-custom1:hover {
-  background-color: black;      
-  border-color: #0b5ed7;
-  text-decoration: none;
-  color: #fff;
-}
-
-/* Outline button */
-.btn-outline-primary-custom {
-  display: inline-block;
-  padding: 10px 26px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: transparent;
-  color: #FFD700;                 
-  border: 1px solid #FFD700;
-  text-decoration: none;
-  transition: 0.3s ease;
-  text-align: center;
-}
-
-.btn-outline-primary-custom:hover {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 50%, #FFD700 100%);      
-  color: black;
-  text-decoration: none;
-}
-
-.btn-outline-primary-custom1 {
-  display: inline-block;
-  padding: 10px 26px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: transparent;
-  color: black;                 
-  border: 1px solid #FFD700;
-  text-decoration: none;
-  transition: 0.3s ease;
-  text-align: center;
-}
-
-.btn-outline-primary-custom1:hover {
-  background-color: #FFD700;      
-  color: black;
-  text-decoration: none;
-}
-
-.hero-image {
-  text-align: center;
-  position: relative;
-  z-index: 3;
-}
-
-.image-placeholder {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 60px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.hero-float-card {
+  width: 220px; height: 220px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 32px;
+  display: flex; align-items: center; justify-content: center;
   animation: float 6s ease-in-out infinite;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 0 40px rgba(255,95,21,0.08);
+}
+
+.float-icon-ring {
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,95,21,0.2), rgba(251,183,0,0.2));
+  border: 2px solid rgba(251,183,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.float-icon {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(2deg); }
 }
 
-.image-placeholder i {
-  font-size: 8rem;
-  color: #ff5f15;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-}
-
-/* Container for hero content */
-.hero-section .container {
-  position: relative;
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 3;
 }
+.scroll-dot {
+  width: 6px; height: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.scroll-dot::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, #FF5F15, #FBB700);
+  border-radius: 3px;
+  animation: scrollAnim 1.8s ease-in-out infinite;
+}
+@keyframes scrollAnim {
+  0%   { top: -50%; }
+  100% { top: 100%; }
+}
 
-/* Section Titles */
-.section-title {
-  color: var(--text-primary);
+/* ══ FEATURES ══ */
+.features-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary, #fafafa);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.section-overline {
+  display: inline-block;
+  font-size: 0.78rem;
   font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FF5F15;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary, #0f0f0f);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.text-grad {
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-subtitle {
+  color: var(--text-secondary, #6b7280);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .feature-card {
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  height: 100%;
-  transition: transform 0.3s ease;
   position: relative;
+  background: var(--card-bg, #fff);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  text-align: center;
+  border: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
   overflow: hidden;
 }
 
 .feature-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(255,95,21,0.14);
+  border-color: rgba(255,95,21,0.2);
 }
 
-.feature-card::before {
-  content: '';
+.feature-accent {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #FFD700;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF5F15, #FBB700, #FFCC00);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transform-origin: left;
+  border-radius: 3px 3px 0 0;
+  transition: transform 0.4s ease;
+}
+.feature-card:hover .feature-accent { transform: scaleX(1); }
+
+.feature-icon-wrap {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, rgba(255,95,21,0.1), rgba(251,183,0,0.1));
+  border: 2px solid rgba(251,183,0,0.25);
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  color: #FF5F15;
+  margin: 0 auto 1.25rem;
+  transition: all 0.3s ease;
 }
 
-.feature-card:hover::before {
-  transform: scaleX(1);
+.feature-card:hover .feature-icon-wrap {
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #fff;
+  border-color: transparent;
+  transform: rotate(5deg) scale(1.05);
 }
 
-.feature-icon {
-  font-size: 3rem;
-  color: #FFD700;
-  margin-bottom: 1.5rem;
+.feature-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f0f0f);
+  margin-bottom: 0.75rem;
+}
+.feature-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.65;
+  margin: 0;
 }
 
-.feature-card h3 {
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+/* ══ COURSES ══ */
+.courses-section {
+  padding: 6rem 0;
+  background: var(--bg-primary, #fff);
 }
 
-.feature-card p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3rem;
 }
 
 .course-card {
-  padding: 2rem;
-  border-radius: 15px;
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+  background: var(--card-bg, #fff);
+  border-radius: 20px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
 }
-
 .course-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 24px 56px rgba(255,95,21,0.14);
+  border-color: rgba(255,95,21,0.2);
 }
 
-.course-badge {
+.course-image-wrap {
+  position: relative; overflow: hidden;
+}
+.course-img {
+  width: 100%; height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.course-card:hover .course-img { transform: scale(1.06); }
+
+.course-badge-overlay {
   position: absolute;
-  top: -10px;
-  right: 20px;
-  background: #FFD700;
-  color: black;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.8rem;
-  z-index: 1;
+  top: 12px; right: 12px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.course-card h3 {
-  color: var(--text-primary);
+.course-img-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,95,21,0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.course-card:hover .course-img-shimmer { opacity: 1; }
+
+.course-body { padding: 1.5rem; }
+
+.course-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary, #0f0f0f);
+  margin-bottom: 0.4rem;
+}
+.course-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #6b7280);
   margin-bottom: 1rem;
-  font-size: 1.8rem;
 }
-
-.course-card p {
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-}
-
 .course-features {
   list-style: none;
-  padding: 0;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.course-features li {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+  display: flex; align-items: center; gap: 8px;
+}
+.course-features i {
+  color: #FF5F15;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.courses-cta { text-align: center; }
+.btn-see-all {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  border: 2px solid #FF5F15;
+  color: #FF5F15;
+  font-weight: 700; font-size: 0.95rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-see-all:hover {
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-color: transparent;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,95,21,0.35);
+  text-decoration: none;
+}
+
+/* ══ TESTIMONIALS ══ */
+.testimonials-section {
+  padding: 6rem 0;
+  background: var(--bg-secondary, #fafafa);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  position: relative;
+  background: var(--card-bg, #fff);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF5F15, #FBB700, #FFCC00);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(255,95,21,0.12);
+  border-color: rgba(255,95,21,0.15);
+}
+.testimonial-card:hover::before { transform: scaleX(1); }
+
+.quote-mark {
+  font-size: 2.5rem;
+  color: rgba(255,95,21,0.12);
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+.testimonial-text {
+  font-size: 0.93rem;
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.7;
+  font-style: italic;
   margin-bottom: 1.5rem;
 }
-
-.course-features li {
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
+.testimonial-footer {
+  display: flex; align-items: center; gap: 1rem;
 }
-
-.course-features i {
-  color: #ff5f15;
-  margin-right: 10px;
+.testimonial-avatar {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.5rem;
+  flex-shrink: 0;
 }
+.testimonial-info { display: flex; flex-direction: column; }
+.testimonial-name  { font-weight: 700; color: var(--text-primary, #0f0f0f); font-size: 0.92rem; }
+.testimonial-sub   { font-size: 0.8rem; color: #FF5F15; font-weight: 600; }
+.testimonial-course{ font-size: 0.75rem; color: var(--text-muted, #9ca3af); }
 
-.btn-accent {
-  background: #FFD700;
-  color: black;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  margin-top: auto;
+/* ══ CTA ══ */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0000 0%, #3d0000 40%, #1a0000 100%);
+  padding: 6rem 0;
 }
-
-.btn-accent:hover {
-  background: black;
-  color: white;
-  transform: translateY(-2px);
+.cta-glow-1 {
+  position: absolute; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,95,21,0.25) 0%, transparent 70%);
+  top: -150px; left: -100px;
+  pointer-events: none;
 }
-
-.contact-cta {
-  background: linear-gradient(135deg, white 0%, white 100%);
-  color: white;
+.cta-glow-2 {
+  position: absolute; width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(251,183,0,0.2) 0%, transparent 70%);
+  bottom: -100px; right: -100px;
+  pointer-events: none;
 }
-
+.cta-container { position: relative; z-index: 1; }
+.cta-content { text-align: center; }
+.cta-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.cta-highlight {
+  background: linear-gradient(135deg, #FF5F15, #FFCC00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto; margin-right: auto;
+}
 .cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem; font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.cta-btn-primary {
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  box-shadow: 0 8px 28px rgba(255,95,21,0.45);
+}
+.cta-btn-primary:hover {
+  transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255,95,21,0.6);
+  text-decoration: none; color: #000;
+}
+.cta-btn-whatsapp {
+  background: #25d366; color: #fff;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+}
+.cta-btn-whatsapp:hover {
+  transform: translateY(-3px); box-shadow: 0 14px 40px rgba(37,211,102,0.55);
+  text-decoration: none; color: #fff;
+}
+.cta-btn-outline {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+}
+.cta-btn-outline:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+  text-decoration: none; color: #fff;
 }
 
-.btn-success {
-  background-color: #25d366 !important;
-  border-color: #25d366 !important;
+/* ══ Container ══ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .image-placeholder {
-    padding: 40px;
-    margin-top: 2rem;
-  }
-  
-  .image-placeholder i {
-    font-size: 5rem;
-  }
-  
-  /* Optimize video for mobile */
-  .video-bg video {
-    object-position: 50% 50%;
-  }
-  
-  /* Reduce overlay darkness for better visibility on mobile */
-  .video-overlay {
-    background: rgba(0, 0, 0, 0.45);
-  }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .btn-primary-custom,
-  .btn-outline-primary-custom,
-  .btn-primary-custom1,
-  .btn-outline-primary-custom1 {
-    padding: 8px 20px;
-    font-size: 1rem;
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  
-  .hero-buttons {
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 991px) {
-  .hero-image {
-    margin-top: 2rem;
+/* ══ Responsive ══ */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
     text-align: center;
+    padding: 7rem 1.5rem 4rem;
   }
-
-  .hero-title {
-    font-size: 2.8rem;
-  }
+  .hero-content { max-width: 100%; }
+  .hero-subtitle { max-width: 100%; }
+  .hero-buttons { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { display: none; }
 }
 
-/* Performance optimization for reduced motion */
+@media (max-width: 600px) {
+  .features-grid,
+  .courses-grid,
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .cta-btn { width: 100%; max-width: 300px; justify-content: center; }
+
+  .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .image-placeholder {
-    animation: none;
-  }
-  
-  .feature-card,
-  .course-card,
-  .btn-accent:hover {
-    transition: none;
-  }
-  
-  .video-bg video {
-    animation: none;
-  }
-}
-
-/* Landscape mode optimization */
-@media (max-height: 600px) and (orientation: landscape) {
-  .hero-section {
-    min-height: 600px;
-    padding: 60px 0;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* Prevent video from displaying on very small screens */
-@media (max-width: 360px) {
-  .video-bg {
-    display: none;
-  }
-  
-  .hero-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-  }
+  .feature-card, .course-card, .testimonial-card,
+  .btn-hero-primary, .btn-hero-outline,
+  .hero-float-card { transition: none; animation: none; }
 }
 </style>

@@ -1,141 +1,148 @@
 <template>
-  <footer class="footer-container">
-    <div class="footer-content">
-      <div class="mt-2">
-        <strong class="title-footer">Shaping Your Future with <span class="highlight">CCIT</span></strong>
-      </div>
-      <div class="mt-2">
-        <strong class="contact-info">
-          <span>Hot Line: <a :href="`tel:${mobile}`">{{ mobile }}</a> | Email: <a :href="`mailto:${email}`">{{ email }}</a></span>
-        </strong>
-      </div>
-      
-      <!-- Social Media Icons -->
-      <div class="social-media-section">
-        <div class="social-icons">
-          <a 
-            v-for="(social, index) in socialLinks" 
-            :key="index"
-            :href="social.url" 
-            :aria-label="social.name"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-icon"
-          >
-            <i :class="social.icon"></i>
+  <footer class="footer">
+    <!-- Decorative top glow line -->
+    <div class="footer-glow-line"></div>
+
+    <div class="footer-inner">
+
+      <!-- Brand strip -->
+      <div class="footer-brand-strip">
+        <p class="footer-tagline">
+          Shaping Your Future with <span class="footer-highlight">CCIT</span>
+        </p>
+        <p class="footer-contact-line">
+          <a :href="`tel:${mobile.replace(/\s/g,'')}`" class="footer-link">
+            <i class="fas fa-phone-alt"></i> {{ mobile }}
           </a>
-        </div>
+          <span class="footer-sep">·</span>
+          <a :href="`mailto:${email}`" class="footer-link">
+            <i class="fas fa-envelope"></i> {{ email }}
+          </a>
+        </p>
       </div>
-      
-      <div class="logos-container">
+
+      <!-- Social icons -->
+      <div class="social-row">
+        <a
+          v-for="(social, i) in socialLinks"
+          :key="i"
+          :href="social.url"
+          :aria-label="social.name"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+        >
+          <i :class="social.icon"></i>
+        </a>
+      </div>
+
+      <!-- Partner Logos -->
+      <div class="logos-panel">
         <div class="logos-grid">
-          <div class="logo-item" v-for="(logo, index) in logos" :key="index">
-            <img 
-              :src="logo.src" 
-              :alt="logo.alt" 
-              class="responsive-logo"
+          <div class="logo-tile" v-for="(logo, i) in logos" :key="i">
+            <img
+              :src="logo.src"
+              :alt="logo.alt"
+              class="partner-logo"
               :style="{
-                width: logo.width ? logo.width + 'px' : 'auto',
-                height: logo.height ? logo.height + 'px' : 'auto',
-                maxWidth: logo.width ? logo.width + 'px' : '100%',
-                maxHeight: logo.height ? logo.height + 'px' : '100%'
+                maxWidth: logo.width ? logo.width + 'px' : '140px',
+                maxHeight: logo.height ? logo.height + 'px' : '80px'
               }"
             />
           </div>
         </div>
       </div>
-      
-      <div class="footer-legal-section">
-        <div class="policy-links">
-          <button class="privacy-link" @click="openPopup('privacy')">Privacy Policy</button>
-          <span class="separator">|</span>
-          <button class="privacy-link" @click="openPopup('terms')">Terms of Service</button>
+
+      <!-- Legal -->
+      <div class="footer-legal">
+        <div class="legal-links">
+          <button class="legal-btn" @click="openPopup('privacy')">Privacy Policy</button>
+          <span class="legal-sep">|</span>
+          <button class="legal-btn" @click="openPopup('terms')">Terms of Service</button>
         </div>
+        <p class="footer-copy">
+          At Cambridge College of Information Technology, we are committed to providing students with the tools they need to succeed academically and beyond.<br />
+          Copyright © {{ currentYear }} Cambridge College of Information Technology. All rights reserved.
+        </p>
       </div>
-      
-      <div class="footer-text">
-        At Cambridge College of Information Technology, we are committed to providing students with the tools they need to succeed academically and beyond.
-        <br />Copyright © {{ currentYear }} Cambridge College of Information Technology. All rights reserved.
-      </div>
+
     </div>
 
-    <!-- Privacy Policy Popup -->
-    <div v-if="showPrivacyPopup" class="popup-overlay" @click="closePopup">
-      <div class="popup-content" @click.stop>
-        <div class="popup-header">
-          <h3>Privacy Policy</h3>
-          <button class="popup-close" @click="closePopup">&times;</button>
-        </div>
-        <div class="popup-body">
-          <h4>1. Information We Collect</h4>
-          <p>We collect information you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us. This may include:</p>
-          <ul>
-            <li>Name and contact information (email, phone number)</li>
-            <li>Payment information for course enrollment</li>
-            <li>Student performance and progress data</li>
-            <li>Communication preferences</li>
-          </ul>
-          
-          <h4>2. How We Use Your Information</h4>
-          <p>We use the information we collect to:</p>
-          <ul>
-            <li>Provide, maintain, and improve our services</li>
-            <li>Process transactions and send related information</li>
-            <li>Send you technical notices and support messages</li>
-            <li>Respond to your comments and questions</li>
-            <li>Monitor and analyze trends and usage</li>
-          </ul>
-          
-          <h4>3. Data Security</h4>
-          <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
-          
-          <h4>4. Your Rights</h4>
-          <p>You have the right to access, correct, or delete your personal information. Contact us at <strong>{{ email }}</strong> to exercise these rights.</p>
-          
-          <p class="policy-date">Last Updated: {{ currentYear }}</p>
+    <!-- ── Privacy Policy Popup ── -->
+    <transition name="popup-fade">
+      <div v-if="showPrivacyPopup" class="popup-overlay" @click="closePopup">
+        <div class="popup-box" @click.stop>
+          <div class="popup-head">
+            <h3>Privacy Policy</h3>
+            <button class="popup-close" @click="closePopup">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="popup-body">
+            <h4>1. Information We Collect</h4>
+            <p>We collect information you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us. This may include:</p>
+            <ul>
+              <li>Name and contact information (email, phone number)</li>
+              <li>Payment information for course enrollment</li>
+              <li>Student performance and progress data</li>
+              <li>Communication preferences</li>
+            </ul>
+            <h4>2. How We Use Your Information</h4>
+            <p>We use the information we collect to:</p>
+            <ul>
+              <li>Provide, maintain, and improve our services</li>
+              <li>Process transactions and send related information</li>
+              <li>Send you technical notices and support messages</li>
+              <li>Respond to your comments and questions</li>
+              <li>Monitor and analyze trends and usage</li>
+            </ul>
+            <h4>3. Data Security</h4>
+            <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+            <h4>4. Your Rights</h4>
+            <p>You have the right to access, correct, or delete your personal information. Contact us at <strong>{{ email }}</strong> to exercise these rights.</p>
+            <p class="policy-date">Last Updated: {{ currentYear }}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
 
-    <!-- Terms of Service Popup -->
-    <div v-if="showTermsPopup" class="popup-overlay" @click="closePopup">
-      <div class="popup-content" @click.stop>
-        <div class="popup-header">
-          <h3>Terms of Service</h3>
-          <button class="popup-close" @click="closePopup">&times;</button>
-        </div>
-        <div class="popup-body">
-          <h4>1. Acceptance of Terms</h4>
-          <p>By accessing and using CCIT services, you accept and agree to be bound by the terms and provision of this agreement.</p>
-          
-          <h4>2. Course Enrollment and Payment</h4>
-          <ul>
-            <li>Course fees must be paid in full before access is granted</li>
-            <li>Refunds are available within 7 days of enrollment, subject to our refund policy</li>
-            <li>Course materials are for personal use only</li>
-          </ul>
-          
-          <h4>3. Student Responsibilities</h4>
-          <ul>
-            <li>Maintain respectful behavior in all interactions</li>
-            <li>Complete assignments by specified deadlines</li>
-            <li>Adhere to academic integrity policies</li>
-            <li>Keep login credentials secure</li>
-          </ul>
-          
-          <h4>4. Intellectual Property</h4>
-          <p>All course materials, including videos, text, and code examples, are the intellectual property of CCIT and may not be redistributed without permission.</p>
-          
-          <h4>5. Limitation of Liability</h4>
-          <p>CCIT shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.</p>
-          
-          <h4>6. Modifications to Terms</h4>
-          <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of modified terms.</p>
-          
-          <p class="policy-date">Effective Date: {{ currentYear }}</p>
+    <!-- ── Terms of Service Popup ── -->
+    <transition name="popup-fade">
+      <div v-if="showTermsPopup" class="popup-overlay" @click="closePopup">
+        <div class="popup-box" @click.stop>
+          <div class="popup-head">
+            <h3>Terms of Service</h3>
+            <button class="popup-close" @click="closePopup">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="popup-body">
+            <h4>1. Acceptance of Terms</h4>
+            <p>By accessing and using CCIT services, you accept and agree to be bound by the terms and provision of this agreement.</p>
+            <h4>2. Course Enrollment and Payment</h4>
+            <ul>
+              <li>Course fees must be paid in full before access is granted</li>
+              <li>Refunds are available within 7 days of enrollment, subject to our refund policy</li>
+              <li>Course materials are for personal use only</li>
+            </ul>
+            <h4>3. Student Responsibilities</h4>
+            <ul>
+              <li>Maintain respectful behavior in all interactions</li>
+              <li>Complete assignments by specified deadlines</li>
+              <li>Adhere to academic integrity policies</li>
+              <li>Keep login credentials secure</li>
+            </ul>
+            <h4>4. Intellectual Property</h4>
+            <p>All course materials, including videos, text, and code examples, are the intellectual property of CCIT and may not be redistributed without permission.</p>
+            <h4>5. Limitation of Liability</h4>
+            <p>CCIT shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.</p>
+            <h4>6. Modifications to Terms</h4>
+            <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of modified terms.</p>
+            <p class="policy-date">Effective Date: {{ currentYear }}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </footer>
 </template>
 
@@ -146,512 +153,301 @@ export default {
   name: 'FooterComponent',
   setup() {
     const currentYear = ref(new Date().getFullYear())
-    const mobile = '+94 71 886 4477'
+    const mobile   = '+94 71 886 4477'
     const whatsapp = '+94 70 520 5666'
-    const email = 'email.ccit@gmail.com'
-    
+    const email    = 'email.ccit@gmail.com'
+
     const showPrivacyPopup = ref(false)
-    const showTermsPopup = ref(false)
-    
-    // Logo data with individual width and height
+    const showTermsPopup   = ref(false)
+
     const logos = ref([
-      {
-        src: require("@/assets/images/CCIT - logo.png"),
-        alt: 'CCIT Logo',
-        width: 180,
-        height: 150
-      },
-      {
-        src: require("@/assets/images/lable.jpeg"),
-        alt: 'English Qu Label',
-        width: 160,
-        height: 90
-      },
-      {
-        src: require("@/assets/images/IELTS_up.png"),
-        alt: 'IELTS Logo', 
-        width: 150,
-        height: 70
-      },
-      {
-        src: require("@/assets/images/CES.png"),
-        alt: 'Cambridge English School Logo',
-        width: 170,
-        height: 85
-      }
+      { src: require('@/assets/images/CCIT - logo.png'), alt: 'CCIT Logo',                    width: 180, height: 150 },
+      { src: require('@/assets/images/lable.jpeg'),       alt: 'English Qu Label',              width: 160, height: 90  },
+      { src: require('@/assets/images/IELTS_up.png'),     alt: 'IELTS Logo',                   width: 150, height: 70  },
+      { src: require('@/assets/images/CES.png'),          alt: 'Cambridge English School Logo', width: 170, height: 85  }
     ])
-    
-    // Social Media Links - Update these with your actual links
+
     const socialLinks = ref([
-      {
-        name: 'Facebook',
-        icon: 'fab fa-facebook-f',
-        url: 'https://www.facebook.com/share/1DEPXGQbA3/'
-      },
-      // {
-      //   name: 'Instagram',
-      //   icon: 'fab fa-instagram',
-      //   url: 'https://instagram.com/yourpage'
-      // },
-      // {
-      //   name: 'Twitter',
-      //   icon: 'fab fa-twitter',
-      //   url: 'https://twitter.com/yourpage'
-      // },
-      {
-        name: 'LinkedIn',
-        icon: 'fab fa-linkedin-in',
-        url: 'https://www.linkedin.com/company/cambridge-college-of-information-technology/'
-      },
-      {
-        name: 'YouTube',
-        icon: 'fab fa-youtube',
-        url: 'https://www.youtube.com/@Cambridigit'
-      },
-      {
-        name: 'WhatsApp',
-        icon: 'fab fa-whatsapp',
-        url: `https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`
-      }
+      { name: 'Facebook',  icon: 'fab fa-facebook-f',  url: 'https://www.facebook.com/share/1DEPXGQbA3/' },
+      { name: 'LinkedIn',  icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/company/cambridge-college-of-information-technology/' },
+      { name: 'YouTube',   icon: 'fab fa-youtube',     url: 'https://www.youtube.com/@Cambridigit' },
+      { name: 'WhatsApp',  icon: 'fab fa-whatsapp',    url: `https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}` }
     ])
-    
+
     const openPopup = (type) => {
-      if (type === 'privacy') {
-        showPrivacyPopup.value = true
-        showTermsPopup.value = false
-      } else if (type === 'terms') {
-        showTermsPopup.value = true
-        showPrivacyPopup.value = false
-      }
+      showPrivacyPopup.value = type === 'privacy'
+      showTermsPopup.value   = type === 'terms'
     }
-    
     const closePopup = () => {
       showPrivacyPopup.value = false
-      showTermsPopup.value = false
+      showTermsPopup.value   = false
     }
-    
-    return {
-      currentYear,
-      mobile,
-      whatsapp,
-      email,
-      logos,
-      socialLinks,
-      showPrivacyPopup,
-      showTermsPopup,
-      openPopup,
-      closePopup
-    }
+
+    return { currentYear, mobile, whatsapp, email, logos, socialLinks, showPrivacyPopup, showTermsPopup, openPopup, closePopup }
   }
 }
 </script>
 
 <style scoped>
-/* Main Footer Styling - Black Theme */
-.footer-container {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  color: #ffffff;
-  padding: 40px 20px 30px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ── Footer Shell ── */
+.footer {
+  position: relative;
+  background: linear-gradient(180deg, #0a0a0a 0%, #0f0000 60%, #0a0a0a 100%);
+  color: #fff;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
-.footer-content {
-  max-width: 1200px;
+.footer-glow-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #FF5F15 25%, #FBB700 50%, #FF5F15 75%, transparent 100%);
+}
+
+.footer-inner {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 3.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
 }
 
-.title-footer {
-  font-size: 28px;
-  display: block;
-  color: #ffffff;
-  font-weight: 700;
-  margin-bottom: 10px;
+/* ── Brand Strip ── */
+.footer-brand-strip { text-align: center; }
+
+.footer-tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
 }
 
-.contact-info {
-  font-size: 18px;
-  color: white;
-  font-weight: 500;
-  margin: 15px 0;
-  display: block;
-}
-
-.contact-info a {
-  color: #ff5f15;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+.footer-highlight {
+  background: linear-gradient(135deg, #FF5F15, #FBB700, #FFCC00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  position: relative;
-  display: inline-block;
 }
 
-/* Social Media Section */
-.social-media-section {
-  margin: 20px 0 30px;
+.footer-contact-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
 }
 
-.social-icons {
+.footer-link {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+.footer-link:hover { color: #FBB700; }
+.footer-link i { font-size: 0.85rem; color: #FF5F15; }
+
+.footer-sep { color: rgba(255,255,255,0.2); }
+
+/* ── Social Icons ── */
+.social-row {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: #ffffff;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.social-icon:hover {
-  background: #FFD700;
-  color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-  border-color: #FFD700;
-}
-
-/* Logos Container - White Box */
-.logos-container {
-  width: 100%;
-  background: white;
-  padding: 30px;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 30px auto;
-  max-width: 1000px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.social-icon:hover {
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-color: transparent;
+  color: #000;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(255,95,21,0.45);
+}
+
+/* ── Logos Panel ── */
+.logos-panel {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
 }
 
 .logos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 1.5rem;
   align-items: center;
 }
 
-.logo-item {
+.logo-tile {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 15px;
+  min-height: 100px;
+  padding: 1rem;
+  border-radius: 12px;
+  /* background: rgba(0,0,0,0.02); */
+  /* border: 1px solid rgba(0,0,0,0.05); */
   transition: all 0.3s ease;
 }
-
-.logo-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.logo-tile:hover {
+  background: rgba(255,95,21,0.04);
+  /* border-color: rgba(255,95,21,0.12); */
+  transform: translateY(-3px);
+  /* box-shadow: 0 6px 20px rgba(0,0,0,0.08); */
 }
 
-/* Responsive logo with custom width/height support */
-.responsive-logo {
+.partner-logo {
   object-fit: contain;
   transition: transform 0.3s ease;
 }
+.logo-tile:hover .partner-logo { transform: scale(1.06); }
 
-.logo-item:hover .responsive-logo {
-  transform: scale(1.08);
+/* ── Legal ── */
+.footer-legal { text-align: center; width: 100%; }
+
+.legal-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
 }
 
-/* Footer Legal Section */
-.footer-legal-section {
-  margin: 30px 0;
-  padding: 25px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Policy Links */
-.policy-links {
-  margin: 25px 0;
-}
-
-.privacy-link {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px 16px;
+.legal-btn {
+  background: none; border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.88rem; font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
+  padding: 4px 0;
+  transition: color 0.2s ease;
   position: relative;
 }
-
-.privacy-link:hover {
-  color: #FFD700;
-}
-
-.privacy-link::after {
+.legal-btn::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #FFD700;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: #FBB700;
+  transition: width 0.3s ease;
 }
+.legal-btn:hover { color: #FBB700; }
+.legal-btn:hover::after { width: 100%; }
 
-.privacy-link:hover::after {
-  width: 80%;
-}
+.legal-sep { color: rgba(255,255,255,0.2); font-size: 1rem; }
 
-.separator {
-  color: rgba(255, 255, 255, 0.3);
-  margin: 0 15px;
-  font-weight: 300;
-}
-
-/* Footer Text */
-.footer-text {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-top: 25px;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-}
-
-/* Popup Styles */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeIn 0.3s ease;
-}
-
-.popup-content {
-  background: #ffffff;
-  border-radius: 12px;
-  width: 90%;
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
   max-width: 700px;
-  max-height: 80vh;
+  margin: 0 auto;
+}
+
+/* ── Popup ── */
+.popup-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.popup-box {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%; max-width: 680px;
+  max-height: 85vh;
   overflow-y: auto;
-  animation: slideUp 0.3s ease;
   color: #212121;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
 }
 
-/* Popup Header */
-.popup-header {
-  background: black;
-  padding: 20px;
-  border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.popup-head {
+  background: linear-gradient(135deg, #0f0f0f, #1a0000);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 1;
+  border-radius: 20px 20px 0 0;
 }
-
-.popup-header h3 {
-  color: #FFD700;
+.popup-head h3 {
   margin: 0;
-  font-size: 24px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Popup Close Button */
 .popup-close {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.1);
+  border: none; border-radius: 8px;
+  color: #fff;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1rem;
+  transition: all 0.2s ease;
 }
-
 .popup-close:hover {
-  background: rgba(0, 0, 0, 0.08);
-  color: #FFD700;
+  background: rgba(255,95,21,0.3);
+  color: #FF5F15;
 }
 
-/* Popup Body */
 .popup-body {
-  padding: 25px;
+  padding: 1.75rem 1.5rem;
   text-align: left;
 }
-
 .popup-body h4 {
-  color: #FFD700;
-  margin: 20px 0 12px;
-  font-size: 18px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 5px;
+  color: #FF5F15;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f0f0f0;
 }
+.popup-body h4:first-child { margin-top: 0; }
+.popup-body p  { line-height: 1.6; color: #444; font-size: 0.9rem; margin-bottom: 0.75rem; }
+.popup-body ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.popup-body li { margin-bottom: 6px; line-height: 1.5; color: #444; font-size: 0.9rem; }
+.policy-date   { color: #aaa; font-style: italic; font-size: 0.82rem; margin-top: 1.5rem; }
 
-.popup-body p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #333;
-}
+/* ── Transitions ── */
+.popup-fade-enter-active, .popup-fade-leave-active { transition: opacity 0.3s ease; }
+.popup-fade-enter-from, .popup-fade-leave-to { opacity: 0; }
 
-.popup-body ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.popup-body li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-  color: #333;
-}
-
-.policy-date {
-  color: #777;
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  text-align: left;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .logos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .social-icons {
-    gap: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .title-footer {
-    font-size: 24px;
-  }
-  
-  .contact-info {
-    font-size: 16px;
-  }
-  
-  .logos-container {
-    padding: 25px;
-  }
-  
-  .logo-item {
-    min-height: 100px;
-    padding: 12px;
-  }
-  
-  .social-icons {
-    gap: 12px;
-  }
-  
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .logos-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 576px) {
-  .footer-container {
-    padding: 25px 15px;
-  }
-  
-  .title-footer {
-    font-size: 20px;
-  }
-  
-  .contact-info {
-    font-size: 15px;
-  }
-  
-  .logos-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .logo-item {
-    min-height: 90px;
-  }
-  
-  .social-icons {
-    gap: 10px;
-  }
-  
-  .social-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-  }
-  
-  .policy-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .separator {
-    display: none;
-  }
-  
-  .privacy-link {
-    padding: 10px 0;
-  }
+  .footer-tagline { font-size: 1.3rem; }
+  .logos-grid { grid-template-columns: 1fr; }
+  .logos-panel { padding: 1.5rem; }
+  .social-row { gap: 8px; }
+  .legal-links { flex-direction: column; gap: 0.5rem; }
+  .legal-sep { display: none; }
 }
 </style>

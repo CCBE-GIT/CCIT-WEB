@@ -49,5 +49,7 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Inter', 'Poppins', 'Segoe UI', Arial, sans-serif;
 }
+.btn { border-radius: 999px !important; }
 </style>

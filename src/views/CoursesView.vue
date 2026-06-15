@@ -470,30 +470,38 @@ Contact us for more details!
 
 <style scoped>
 .courses-hero {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
   color: white;
+  padding: 5rem 0;
+  border-bottom: 2px solid rgba(255,95,21,0.2);
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   margin-bottom: 3rem;
 }
 
 .hero-icon {
   font-size: 6rem;
-  color: #ff5f15;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff5f15 0%, #ff5f15 50%, #FFD700 100%);
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 60%, #FFCC00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -520,17 +528,20 @@ Contact us for more details!
 }
 
 .course-card {
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  border: 1px solid var(--border-color);
 }
 
 .course-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 24px 56px rgba(255,95,21,0.14) !important;
+  border-color: rgba(255,95,21,0.2);
 }
 
 .course-header {
-  background: black;
+  background: linear-gradient(135deg, #0f0f0f, #1a0000);
   color: white;
   padding: 15px;
   display: flex;
@@ -672,36 +683,41 @@ Contact us for more details!
 }
 
 .enrollment-cta {
-  background: linear-gradient(135deg, white 0%, white 100%);
-  color: black;
-  gap: 1rem;
+  background: linear-gradient(135deg, #0a0000 0%, #2a0000 50%, #0a0000 100%);
+  color: white;
+  padding: 5rem 0;
 }
+
+.enrollment-cta h2 { color: white; }
+.enrollment-cta p { color: rgba(255,255,255,0.7); }
 
 .cta-buttons {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   gap: 1rem;
 }
 
 .btn-primary-custom {
-  display: inline-block;
-  padding: 10px 26px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color:  #FFD700;       
-  color: black;                     
-  border: 1px solid  #FFD700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  color: #000;
+  border: none;
   text-decoration: none;
-  transition: 0.3s ease;
-  text-align: center;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 8px 28px rgba(255,95,21,0.45);
 }
 
 .btn-primary-custom:hover {
-  background-color: black;      
-  border-color: #0b5ed7;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(255,95,21,0.6);
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 768px) {

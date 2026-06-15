@@ -3,7 +3,11 @@ import webfontloader from 'webfontloader'
 export function loadFonts() {
   webfontloader.load({
     google: {
-      families: ['Roboto:100,300,400,500,700,900&display=swap'],
+      families: [
+        'Inter:300,400,500,600,700,800,900&display=swap',
+        'Poppins:400,500,600,700,800,900&display=swap',
+        'Roboto:100,300,400,500,700,900&display=swap'
+      ],
     },
     custom: {
       families: ['Font Awesome 6 Free', 'Font Awesome 6 Brands'],

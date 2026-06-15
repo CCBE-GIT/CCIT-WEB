@@ -1,164 +1,103 @@
 <template>
-  <nav class="navbar navbar-custom sticky-top">
-    <div class="container">
-      <!-- Logo on the left -->
-      <router-link class="navbar-brand" to="/">
+  <!-- Navbar -->
+  <nav class="navbar-custom" :class="{ 'scrolled': isScrolled }">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <router-link class="navbar-brand" to="/" @click="closeMenu">
         <div class="logo-container">
-          <img 
-            :src="logo" 
-            alt="CCIT Logo" 
-            class="logo-image"
-            loading="lazy"
-          />
+          <img :src="logo" alt="CCIT Logo" class="logo-image" loading="eager" />
           <div class="logo-text-container">
-            <h2 class="logo-text">CCIT</h2>
-            <small class="logo-subtext">Cambridge College of Information Technology</small>
+            <span class="logo-text">CCIT</span>
+            <span class="logo-subtext">Cambridge College of Information Technology</span>
           </div>
         </div>
       </router-link>
 
-      <!-- Make Payment Button - Top right -->
-      <button 
-        class="nav-btn btn-payment btn-payment-top"
-        @click="handlePayment"
-      >
-        <i class="fas fa-credit-card"></i> Make Payment
-      </button>
-      
-      <!-- Hamburger menu for mobile -->
-      <button 
-        class="navbar-toggler custom-toggler" 
-        type="button" 
-        @click="toggleMenu"
-        :aria-expanded="menuOpen"
-        aria-label="Toggle navigation"
-        aria-controls="navbarNav"
-      >
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-      
-      <!-- Navigation menu on the right -->
-      <div 
-        class="navbar-menu" 
-        :class="{ 'show': menuOpen }" 
-        id="navbarNav"
-      >
+      <!-- Desktop Nav -->
+      <div class="desktop-nav">
         <ul class="nav-list">
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/' }"
-            >
-              Home
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/about" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/about' }"
-            >
-              About
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/courses" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/courses' }"
-            >
-              Courses
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/facilities" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/facilities' }"
-            >
-              Facilities
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/news_event" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/news_event' }"
-            >
-              News & Events
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/gallery" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/gallery' }"
-            >
-              Gallery
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/careers" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/careers' }"
-            >
-              Careers
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/testimonials" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/testimonials' }"
-            >
-              Testimonials
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/blogs" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/blogs' }"
-            >
-              Blogs
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link 
-              class="nav-link" 
-              to="/contact" 
-              @click="closeMenu"
-              :class="{ 'active': $route.path === '/contact' }"
-            >
-              Contact
-            </router-link>
-          </li>
-          <!-- Make Payment Button - Mobile menu only -->
-          <li class="nav-item nav-item-payment-mobile">
-            <button 
-              class="nav-btn btn-payment btn-payment-mobile"
-              @click="handlePayment"
-            >
-              <i class="fas fa-credit-card"></i> Make Payment
-            </button>
+          <li v-for="link in navLinks" :key="link.to" class="nav-item">
+            <router-link
+              class="nav-link"
+              :to="link.to"
+              :class="{ 'active': $route.path === link.to }"
+            >{{ link.label }}</router-link>
           </li>
         </ul>
+
+        <button class="btn-payment" @click="handlePayment">
+          <i class="fas fa-credit-card"></i>
+          Make Payment
+        </button>
       </div>
+
+      <!-- Mobile Hamburger — always on top -->
+      <button
+        class="hamburger"
+        :class="{ 'open': menuOpen }"
+        @click="toggleMenu"
+        :aria-expanded="menuOpen.toString()"
+        aria-label="Toggle navigation"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
   </nav>
+
+  <!-- Mobile Drawer — rendered OUTSIDE the nav via Teleport to avoid z-index stacking context issues -->
+  <Teleport to="body">
+    <transition name="mobile-slide">
+      <div
+        v-if="menuOpen"
+        class="mobile-overlay"
+        id="mobile-menu"
+        role="dialog"
+        aria-label="Navigation menu"
+        @click.self="closeMenu"
+      >
+        <!-- Drawer panel -->
+        <div class="mobile-panel">
+
+          <!-- Panel Header -->
+          <div class="mobile-panel-head">
+            <img :src="logo" alt="CCIT Logo" class="mobile-logo-img" />
+            <button class="mobile-close-btn" @click="closeMenu" aria-label="Close menu">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <!-- Nav Links -->
+          <nav class="mobile-nav-body">
+            <ul class="mobile-nav-list">
+              <li v-for="link in navLinks" :key="link.to">
+                <router-link
+                  class="mobile-nav-link"
+                  :to="link.to"
+                  :class="{ 'active': $route.path === link.to }"
+                  @click="closeMenu"
+                >
+                  <span>{{ link.label }}</span>
+                  <i class="fas fa-chevron-right mobile-arrow"></i>
+                </router-link>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Payment Button -->
+          <div class="mobile-panel-foot">
+            <button class="btn-payment btn-payment-mobile" @click="handlePayment">
+              <i class="fas fa-credit-card"></i> Make Payment
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </Teleport>
 </template>
 
 <script>
@@ -167,73 +106,89 @@ export default {
   data() {
     return {
       logo: require('@/assets/images/CCIT - logo.png'),
-      menuOpen: false
+      menuOpen: false,
+      isScrolled: false,
+      navLinks: [
+        { to: '/',            label: 'Home' },
+        { to: '/about',       label: 'About' },
+        { to: '/courses',     label: 'Courses' },
+        { to: '/facilities',  label: 'Facilities' },
+        { to: '/news_event',  label: 'News & Events' },
+        { to: '/gallery',     label: 'Gallery' },
+        { to: '/careers',     label: 'Careers' },
+        { to: '/testimonials',label: 'Testimonials' },
+        { to: '/blogs',       label: 'Blogs' },
+        { to: '/contact',     label: 'Contact' },
+      ]
     }
   },
   methods: {
     toggleMenu() {
-      this.menuOpen = !this.menuOpen;
+      this.menuOpen = !this.menuOpen
+      // Lock / unlock body scroll
+      document.body.style.overflow = this.menuOpen ? 'hidden' : ''
     },
     closeMenu() {
-      this.menuOpen = false;
+      this.menuOpen = false
+      document.body.style.overflow = ''
     },
     handlePayment() {
-      // Close mobile menu first
-      this.closeMenu();
-      
-      // Then handle payment
-      this.makePayment();
+      this.closeMenu()
+      window.open('#Add gateway Link', '_blank')
     },
-    makePayment() {
-      // Example 1: Open payment gateway in new tab
-      window.open('#Add gateway Link', '_blank');
+    onScroll() {
+      this.isScrolled = window.scrollY > 20
+    },
+    onKeydown(e) {
+      if (e.key === 'Escape' && this.menuOpen) this.closeMenu()
     }
   },
   mounted() {
-    // Close menu when clicking outside on mobile
-    document.addEventListener('click', (event) => {
-      if (this.menuOpen && !event.target.closest('.navbar-custom')) {
-        this.closeMenu();
-      }
-    });
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && this.menuOpen) {
-        this.closeMenu();
-      }
-    });
+    window.addEventListener('scroll', this.onScroll, { passive: true })
+    document.addEventListener('keydown', this.onKeydown)
   },
   beforeUnmount() {
-    document.removeEventListener('click', this.closeMenu);
-    document.removeEventListener('keydown', this.closeMenu);
+    window.removeEventListener('scroll', this.onScroll)
+    document.removeEventListener('keydown', this.onKeydown)
+    // Restore scroll if component is destroyed while drawer is open
+    document.body.style.overflow = ''
   }
 }
 </script>
 
 <style scoped>
-/* Base Styles */
+/* ═══════════════════════════════════════════
+   NAVBAR  (sticky, high z-index)
+═══════════════════════════════════════════ */
 .navbar-custom {
-  background-color: var(--header-bg, #ffffff);
-  box-shadow: var(--shadow, 0 2px 10px rgba(0,0,0,0.1));
-  padding: 0.75rem 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1050;          /* above everything */
   width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.container {
+.navbar-custom.scrolled {
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.99);
+}
+
+/* ─── Container ─── */
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  width: 100%;
+  padding: 0.55rem 2rem;
+  gap: 1.5rem;
 }
 
-/* Logo Styles - Left Side */
+/* ─── Brand / Logo ─── */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -244,440 +199,369 @@ export default {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .logo-image {
-  height: 100px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
-
-.logo-image:hover {
-  transform: scale(1.05);
-}
+.logo-image:hover { transform: scale(1.04) rotate(-1deg); }
 
 .logo-text-container {
   display: flex;
   flex-direction: column;
+  line-height: 1;
 }
 
 .logo-text {
-  color: #ff5f15;
-  font-weight: 700;
-  margin: 0;
-  font-size: 1.75rem;
-  line-height: 1;
-  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .logo-subtext {
-  color: var(--text-secondary, #666);
-  font-size: 0.75rem;
+  font-size: 0.62rem;
   font-weight: 500;
-  margin-top: 0.25rem;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+  color: #6b7280;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
   white-space: nowrap;
 }
 
-/* Hamburger Menu - Hidden on Desktop */
-.custom-toggler {
-  display: none;
-  background: transparent;
-  border: 2px solid var(--primary-color, #007bff);
-  border-radius: 6px;
-  padding: 8px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-
-.custom-toggler:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-}
-
-.custom-toggler:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
-}
-
-.toggler-icon {
-  display: block;
-  width: 24px;
-  height: 3px;
-  background-color: var(--primary-color, #007bff);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(2) {
-  opacity: 0;
-}
-
-.custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-
-/* Navigation Menu - Right Side */
-.navbar-menu {
+/* ─── Desktop Nav ─── */
+.desktop-nav {
   display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
   justify-content: flex-end;
-  flex-grow: 1;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 0.1rem;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-.nav-item {
-  position: relative;
-}
+.nav-item { position: relative; }
 
-/* Regular Navigation Links */
 .nav-link {
-  color: var(--text-primary, #333);
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  transition: all 0.3s ease;
-  position: relative;
-  text-decoration: none;
   display: block;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  text-decoration: none;
   white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+  position: relative;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: var(--accent-color, #FFD700);
+  background: linear-gradient(90deg, #FF5F15, #FBB700);
+  border-radius: 2px;
   transition: width 0.3s ease;
 }
 
+.nav-link:hover        { color: #FF5F15; background: rgba(255, 95, 21, 0.05); }
+.nav-link.active       { color: #FF5F15; font-weight: 600; }
+
 .nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
+.nav-link.active::after { width: calc(100% - 1.4rem); }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--accent-color, #FFD700);
-}
-
-/* Active state for better UX */
-.nav-link.active {
-  font-weight: 600;
-}
-
-/* Payment Button Styles */
-.nav-btn {
-  background: linear-gradient(135deg, #FFD700 0%, #FFD700 80%);
-  color: black;
+/* ─── Payment Button ─── */
+.btn-payment {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.55rem 1.25rem;
+  background: linear-gradient(135deg, #FF5F15 0%, #FBB700 100%);
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: 700;
   border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 0.95rem;
+  border-radius: 999px;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(255, 95, 21, 0.35);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-payment:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 95, 21, 0.5);
+}
+
+.btn-payment:active { transform: translateY(0); }
+
+/* ─── Hamburger ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  gap: 5px;
+  background: transparent;
+  border: 2px solid rgba(255, 95, 21, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
   transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1051;  /* always on top, even above the overlay */
+}
+
+.hamburger:hover {
+  border-color: #FF5F15;
+  background: rgba(255, 95, 21, 0.07);
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #FF5F15;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+/* Animated X */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ═══════════════════════════════════════════
+   MOBILE OVERLAY  (teleported to <body>)
+   z-index below navbar (1050) won't work
+   — overlay must be BELOW 1050 or the navbar
+   must be on top. We keep overlay at 1040 and
+   the hamburger explicitly at 1051.
+═══════════════════════════════════════════ */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+/* ─── Drawer Panel ─── */
+.mobile-panel {
+  width: min(85vw, 360px);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Panel Header */
+.mobile-panel-head {
   display: flex;
   align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  margin-left: 0.5rem;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
 }
 
-.nav-btn:hover {
-  transform: translateY(-2px);
-  /* box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3); */
+.mobile-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
 }
 
-.nav-btn:active {
-  transform: translateY(0);
-}
-
-.nav-btn i {
-  font-size: 0.9rem;
-}
-
-.nav-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
-}
-
-/* Top-right payment button - shown on desktop, hidden on mobile */
-.btn-payment-top {
-  margin-left: auto;
-  margin-right: 0rem;
+.mobile-close-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 95, 21, 0.08);
+  border: 1.5px solid rgba(255, 95, 21, 0.2);
+  border-radius: 10px;
+  color: #FF5F15;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
-/* Mobile-only payment button - hidden on desktop, shown in mobile menu */
-.nav-item-payment-mobile {
-  display: none;
+.mobile-close-btn:hover {
+  background: linear-gradient(135deg, #FF5F15, #FBB700);
+  border-color: transparent;
+  color: #000;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
-
-/* Tablet (768px - 991px) */
-@media (max-width: 991px) {
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .logo-image {
-    height: 50px;
-  }
-  
-  .logo-text {
-    font-size: 1.5rem;
-  }
-  
-  .logo-subtext {
-    font-size: 0.7rem;
-  }
-  
-  .nav-list {
-    gap: 0.5rem;
-  }
-  
-  .nav-link {
-    font-size: 0.95rem;
-  }
-  
-  .nav-btn {
-    font-size: 0.9rem;
-    padding: 0.45rem 1rem;
-  }
+/* Panel Body */
+.mobile-nav-body {
+  flex: 1;
+  padding: 1rem 1rem;
+  overflow-y: auto;
 }
 
-/* Mobile (Below 768px) */
-@media (max-width: 767px) {
-  .custom-toggler {
-    display: flex;
-  }
-
-  /* Hide top-right button on mobile; show inside menu instead */
-  .btn-payment-top {
-    display: none;
-  }
-
-  /* Show payment button inside mobile menu */
-  .nav-item-payment-mobile {
-    display: block;
-  }
-
-  .btn-payment-mobile {
-    width: 100%;
-    justify-content: center;
-    padding: 0.75rem 1rem;
-    margin: 0.5rem 0 0 0;
-    font-size: 1.1rem;
-  }
-  
-  .navbar-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    z-index: 999;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .navbar-menu.show {
-    transform: translateX(0);
-  }
-  
-  .nav-list {
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .nav-item {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .nav-link {
-    padding: 0.75rem 1rem;
-    font-size: 1.1rem;
-    border-radius: 6px;
-  }
-  
-  .nav-link:hover,
-  .nav-link.active {
-    background-color: rgba(255, 165, 0, 0.1);
-  }
-  
-  .nav-link::after {
-    display: none;
-  }
-  
-  .logo-image {
-    height: 45px;
-  }
-  
-  .logo-text {
-    font-size: 1.3rem;
-  }
-  
-  .logo-subtext {
-    font-size: 0.65rem;
-  }
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-/* Small Mobile (Below 576px) */
-@media (max-width: 575px) {
-  .container {
-    padding: 0 0.75rem;
-  }
-  
-  .logo-container {
-    gap: 0.5rem;
-  }
-  
-  .logo-image {
-    height: 40px;
-  }
-  
-  .logo-text {
-    font-size: 1.2rem;
-  }
-  
-  .logo-subtext {
-    font-size: 0.6rem;
-  }
-  
-  .custom-toggler {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .toggler-icon {
-    width: 20px;
-    height: 2px;
-  }
-  
-  .nav-btn {
-    padding: 0.65rem 1rem;
-  }
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
-/* Extra Small Mobile (Below 400px) */
-@media (max-width: 399px) {
-  .logo-text {
-    font-size: 1.1rem;
-  }
-  
-  .logo-subtext {
-    font-size: 0.55rem;
-  }
-  
-  .logo-image {
-    height: 35px;
-  }
-  
-  .nav-link {
-    font-size: 1rem;
-  }
-  
-  .nav-btn {
-    font-size: 1rem;
-  }
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background: linear-gradient(135deg, rgba(255, 95, 21, 0.09), rgba(251, 183, 0, 0.07));
+  color: #FF5F15;
 }
 
-/* Accessibility improvements */
-.nav-link:focus {
-  outline: 2px solid var(--accent-color, #FFD700);
-  outline-offset: 4px;
-  border-radius: 4px;
+.mobile-nav-link.active { font-weight: 700; }
+
+.mobile-arrow {
+  font-size: 0.65rem;
+  opacity: 0.4;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.custom-toggler:focus-visible {
-  outline: 2px solid var(--accent-color, #FFD700);
-  outline-offset: 2px;
+.mobile-nav-link:hover .mobile-arrow {
+  transform: translateX(3px);
+  opacity: 0.75;
 }
 
-/* Reduced motion support */
+/* Panel Footer */
+.mobile-panel-foot {
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid #f0f0f0;
+  background: #fff;
+}
+
+.btn-payment-mobile {
+  width: 100%;
+  justify-content: center;
+  padding: 0.875rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(255, 95, 21, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   TRANSITIONS  (Teleport target = body)
+   Note: these are NOT scoped, they target
+   the teleported elements. Vue 3 Teleport
+   with scoped styles: the transition classes
+   must be kept generic here so the transition
+   root (mobile-overlay) gets them.
+═══════════════════════════════════════════ */
+.mobile-slide-enter-active {
+  transition: opacity 0.3s ease;
+}
+.mobile-slide-leave-active {
+  transition: opacity 0.25s ease;
+}
+.mobile-slide-enter-from,
+.mobile-slide-leave-to {
+  opacity: 0;
+}
+
+.mobile-slide-enter-active .mobile-panel {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.mobile-slide-leave-active .mobile-panel {
+  transition: transform 0.28s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.mobile-slide-enter-from .mobile-panel,
+.mobile-slide-leave-to .mobile-panel {
+  transform: translateX(100%);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .nav-list { gap: 0; }
+  .nav-link { font-size: 0.82rem; padding: 0.35rem 0.5rem; }
+}
+
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .hamburger   { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .nav-container { padding: 0.5rem 1rem; }
+  .logo-image    { height: 52px; }
+  .logo-text     { font-size: 1.4rem; }
+  .logo-subtext  { font-size: 0.55rem; }
+}
+
+/* ─── Accessibility ─── */
+.nav-link:focus-visible,
+.btn-payment:focus-visible,
+.hamburger:focus-visible,
+.mobile-close-btn:focus-visible {
+  outline: 2px solid #FF5F15;
+  outline-offset: 3px;
+}
+
+/* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   .navbar-custom,
   .nav-link,
-  .custom-toggler,
+  .hamburger,
+  .btn-payment,
   .logo-image,
-  .navbar-menu,
-  .toggler-icon,
-  .nav-btn {
+  .hamburger span,
+  .mobile-slide-enter-active,
+  .mobile-slide-leave-active,
+  .mobile-slide-enter-active .mobile-panel,
+  .mobile-slide-leave-active .mobile-panel {
     transition: none;
-  }
-  
-  .navbar-menu {
-    transition: none;
-  }
-  
-  .nav-btn:hover {
-    transform: none;
-  }
-}
-
-/* Print styles */
-@media print {
-  .navbar-custom {
-    position: static;
-    box-shadow: none;
-    background-color: white !important;
-  }
-  
-  .custom-toggler {
-    display: none !important;
-  }
-  
-  .navbar-menu {
-    display: flex !important;
-    position: static;
-    transform: none !important;
-    background: none !important;
-  }
-  
-  .nav-list {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-  
-  .nav-link {
-    color: black !important;
-  }
-  
-  .nav-btn {
-    display: none !important;
   }
 }
 </style>
