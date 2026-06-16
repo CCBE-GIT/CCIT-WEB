@@ -989,6 +989,7 @@ export default {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .modal-subtitle {
