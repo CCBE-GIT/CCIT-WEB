@@ -482,6 +482,7 @@ Contact us for more details!
   font-weight: 900;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
+  color: white;
 }
 
 .section-title {

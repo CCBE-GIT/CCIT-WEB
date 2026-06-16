@@ -493,6 +493,7 @@ export default {
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
   position: relative;
+  color: white;
 }
 
 .highlight {

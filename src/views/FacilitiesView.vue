@@ -319,6 +319,7 @@ export default {
   font-weight: 900;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
+  color: white;
 }
 
 .highlight {
