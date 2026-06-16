@@ -453,6 +453,7 @@ export default {
 .hero-title, .lead, .container {
   position: relative;
   z-index: 2;
+  
 }
 
 .hero-title {
@@ -461,6 +462,7 @@ export default {
   font-weight: 900;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
+  color: white;
 }
 
 .highlight {
