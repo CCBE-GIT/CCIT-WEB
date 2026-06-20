@@ -624,7 +624,7 @@ export default {
         );
 
         // Show success
-        toast.success("🎉 Application submitted successfully! Our HR team will review it shortly.", {
+        toast.success("Application submitted successfully! Our HR team will review it shortly.", {
           timeout: 8000,
           closeButton: true,
           icon: "fas fa-check-circle"
