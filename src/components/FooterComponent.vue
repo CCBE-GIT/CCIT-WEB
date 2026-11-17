@@ -217,7 +217,7 @@ export default {
     const showTermsPopup   = ref(false)
 
     const logos = ref([
-      { src: require('@/assets/images/CCIT - logo.png'), alt: 'CCIT Logo',                    width: 180, height: 150 },
+      { src: require('@/assets/images/CCIT_logo_footer.png'), alt: 'CCIT Logo',                    width: 180, height: 150 },
       { src: require('@/assets/images/lable.jpeg'),       alt: 'English Qu Label',              width: 160, height: 90  },
       { src: require('@/assets/images/IELTS_up.png'),     alt: 'IELTS Logo',                   width: 150, height: 70  },
       { src: require('@/assets/images/CES.png'),          alt: 'Cambridge English School Logo', width: 170, height: 85  }
@@ -236,7 +236,7 @@ export default {
       { label: 'Courses',     to: '/courses'   },
       { label: 'Facilities',  to: '/facilities'},
       { label: 'Gallery',     to: '/gallery'   },
-      { label: 'News & Events', to: '/news'    },
+      { label: 'News & Events', to: '/news_event'    },
       { label: 'Careers',     to: '/careers'   },
       { label: 'Contact',     to: '/contact'   },
     ])
@@ -356,10 +356,10 @@ export default {
   margin-bottom: 1.25rem;
 }
 .brand-logo {
-  width: 110px;
+  width: 120px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(255,95,21,0.15));
+  /*filter: drop-shadow(0 2px 8px rgba(255,95,21,0.15));*/
 }
 
 .brand-tagline {

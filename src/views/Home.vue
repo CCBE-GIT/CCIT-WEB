@@ -124,6 +124,68 @@
       </div>
     </section>
 
+    <!-- ══ NEWS & EVENTS ══ -->
+    <section class="news-section">
+      <div class="section-header container">
+        <p class="section-overline">Latest Updates</p>
+        <h2 class="section-title">News &amp; <span class="text-grad">Events</span></h2>
+        <p class="section-subtitle">Stay updated with the latest happenings at CCIT.</p>
+      </div>
+
+      <!-- Row 1 — scrolls LEFT -->
+      <div class="news-marquee-outer"
+           @mouseenter="pauseNews = true"
+           @mouseleave="pauseNews = false">
+        <div class="news-marquee-track" :class="{ paused: pauseNews }">
+          <div
+            class="news-card"
+            v-for="(ev, i) in [...homeEvents, ...homeEvents]"
+            :key="'ne-' + i"
+          >
+            <div class="news-card-img-wrap">
+              <img :src="ev.image" :alt="ev.title" class="news-card-img" loading="lazy" />
+              <span class="news-type-badge" :style="{ background: ev.color }">{{ ev.type }}</span>
+            </div>
+            <div class="news-card-body">
+              <p class="news-card-date"><i class="fas fa-calendar-alt"></i> {{ ev.date.month }}</p>
+              <h4 class="news-card-title">{{ ev.title }}</h4>
+              <p class="news-card-desc">{{ ev.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 — scrolls RIGHT (reverse direction) -->
+      <div class="news-marquee-outer news-marquee-outer--reverse"
+           @mouseenter="pauseNews = true"
+           @mouseleave="pauseNews = false">
+        <div class="news-marquee-track news-marquee-track--reverse" :class="{ paused: pauseNews }">
+          <div
+            class="news-card"
+            v-for="(ev, i) in [...homeEventsB, ...homeEventsB]"
+            :key="'ne2-' + i"
+          >
+            <div class="news-card-img-wrap">
+              <img :src="ev.image" :alt="ev.title" class="news-card-img" loading="lazy" />
+              <span class="news-type-badge" :style="{ background: ev.color }">{{ ev.type }}</span>
+            </div>
+            <div class="news-card-body">
+              <p class="news-card-date"><i class="fas fa-calendar-alt"></i> {{ ev.date.month }}</p>
+              <h4 class="news-card-title">{{ ev.title }}</h4>
+              <p class="news-card-desc">{{ ev.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="news-cta container">
+        <router-link to="/news_event" class="btn-see-all">
+          View All News &amp; Events <i class="fas fa-arrow-right"></i>
+        </router-link>
+      </div>
+    </section>
+
     <!-- ══ TESTIMONIALS ══ -->
     <section class="testimonials-section">
       <div class="section-header container">
@@ -275,6 +337,95 @@ export default {
     ])
 
     const pauseMarquee = ref(false)
+    const pauseNews    = ref(false)
+
+    // News & Events — Row 1 (5 cards)
+    const homeEvents = ref([
+      {
+        title: "International Women's Day 2026",
+        description: "Celebrated at CCIT, honoring the strength and achievements of women everywhere.",
+        date: { month: '2026' },
+        type: "Women's Day",
+        color: '#9C27B0',
+        image: 'https://ik.imagekit.io/kp5tixhur/WOMENS%20DAY%202026/post%201.jpeg'
+      },
+      {
+        title: 'Cambrians Day',
+        description: 'Celebrating Unity, Talent & the Spirit of Cambrians across all branches.',
+        date: { month: '2026' },
+        type: 'Teamwork',
+        color: '#4CAF50',
+        image: 'https://ik.imagekit.io/u3wbiya66/News%26Events/NE1.jpeg'
+      },
+      {
+        title: 'Staff Wellness & Medical Screening',
+        description: 'Caring for our team — building a healthier CCBE community.',
+        date: { month: '2026' },
+        type: 'Staff Wellness',
+        color: '#2196F3',
+        image: 'https://ik.imagekit.io/u3wbiya66/News%26Events/NE2.jpeg'
+      },
+      {
+        title: 'Cambrians Fit to Fight',
+        description: 'Standing together to support flood-affected communities.',
+        date: { month: '2025' },
+        type: 'Power of Unity',
+        color: '#FF9800',
+        image: 'https://ik.imagekit.io/u3wbiya66/News%26Events/NE3.jpeg'
+      },
+      {
+        title: "International Women's Day 2026",
+        description: 'A day to inspire and celebrate women at CCIT.',
+        date: { month: '2026' },
+        type: "Women's Day",
+        color: '#9C27B0',
+        image: 'https://ik.imagekit.io/kp5tixhur/WOMENS%20DAY%202026/post%203.jpeg'
+      }
+    ])
+
+    // News & Events — Row 2 (reverse row)
+    const homeEventsB = ref([
+      {
+        title: 'Religious Programme 2025',
+        description: 'Kandy Pooja, Kiribath Dana & Ashtapana Pooja — Anuradhapura.',
+        date: { month: '2025' },
+        type: 'Religious Programme',
+        color: '#F44336',
+        image: 'https://ik.imagekit.io/u3wbiya66/News%26Events/NE5.jpeg'
+      },
+      {
+        title: "International Women's Day 2026",
+        description: 'Celebrating the spirit of women at CCIT with warmth and pride.',
+        date: { month: '2026' },
+        type: "Women's Day",
+        color: '#9C27B0',
+        image: 'https://ik.imagekit.io/kp5tixhur/WOMENS%20DAY%202026/post%202.jpeg'
+      },
+      // {
+      //   title: 'CCIT Partners with Tech Giants',
+      //   description: 'New internship program launched for students across all IT courses.',
+      //   date: { month: '2024' },
+      //   type: 'Partnership',
+      //   color: '#FF5F15',
+      //   image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80'
+      // },
+      // {
+      //   title: 'New Cybersecurity Lab Inaugurated',
+      //   description: 'State-of-the-art lab to train the next generation of security professionals.',
+      //   date: { month: '2024' },
+      //   type: 'Facility',
+      //   color: '#607D8B',
+      //   image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80'
+      // },
+      {
+        title: 'Cambrians Day',
+        description: 'Staff from every branch united in one unforgettable celebration.',
+        date: { month: '2026' },
+        type: 'Teamwork',
+        color: '#4CAF50',
+        image: 'https://ik.imagekit.io/u3wbiya66/News%26Events/NE1.jpeg'
+      }
+    ])
 
     const initVideoBg = () => {
       if (videoBg.value) {
@@ -291,7 +442,7 @@ export default {
 
     onBeforeUnmount(() => {})
 
-    return { mobile, whatsapp, email, heroStats, features, courses, videoBg, parentTestimonials, pauseMarquee }
+    return { mobile, whatsapp, email, heroStats, features, courses, videoBg, parentTestimonials, pauseMarquee, homeEvents, homeEventsB, pauseNews }
   }
 }
 </script>
@@ -741,6 +892,141 @@ export default {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255,95,21,0.35);
   text-decoration: none;
+}
+
+/* ══ NEWS & EVENTS ══ */
+.news-section {
+  padding: 6rem 0 4rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ── Marquee outer wrapper (edge fade) ── */
+.news-marquee-outer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.news-marquee-outer--reverse { margin-top: 1.25rem; }
+
+/* ── Scrolling tracks ── */
+.news-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: news-scroll-left 36s linear infinite;
+}
+.news-marquee-track--reverse {
+  animation: news-scroll-right 36s linear infinite;
+}
+.news-marquee-track.paused,
+.news-marquee-track--reverse.paused {
+  animation-play-state: paused;
+}
+
+@keyframes news-scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes news-scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Individual card ── */
+.news-card {
+  flex-shrink: 0;
+  width: 300px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+.news-card:hover {
+  box-shadow: 0 12px 36px rgba(255,95,21,0.13);
+  border-color: rgba(255,95,21,0.25);
+  transform: translateY(-4px);
+}
+
+/* image */
+.news-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+}
+.news-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.news-card:hover .news-card-img { transform: scale(1.06); }
+
+.news-type-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 50px;
+  line-height: 1;
+}
+
+/* body */
+.news-card-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+.news-card-date {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin: 0 0 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.news-card-date i { color: #FF5F15; }
+.news-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.45rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-card-desc {
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* CTA */
+.news-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .news-card { width: 240px; }
+  .news-card-img-wrap { height: 140px; }
 }
 
 /* ══ TESTIMONIALS ══ */
