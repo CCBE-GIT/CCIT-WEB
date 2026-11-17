@@ -126,15 +126,23 @@
 
     <!-- ══ TESTIMONIALS ══ -->
     <section class="testimonials-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-overline">Real Stories</p>
-          <h2 class="section-title">What <span class="text-grad">Parents</span> Say</h2>
-          <p class="section-subtitle">Hear directly from the families who trust CCIT.</p>
-        </div>
+      <div class="section-header container">
+        <p class="section-overline">Real Stories</p>
+        <h2 class="section-title">What <span class="text-grad">Parents</span> Say</h2>
+        <p class="section-subtitle">Hear directly from the families who trust CCIT.</p>
+      </div>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card" v-for="(p, i) in parentTestimonials" :key="i">
+      <!-- Marquee track (duplicated for seamless loop) -->
+      <div class="marquee-outer"
+           @mouseenter="pauseMarquee = true"
+           @mouseleave="pauseMarquee = false">
+        <div class="marquee-track" :class="{ paused: pauseMarquee }">
+          <!-- render list twice for infinite loop -->
+          <div
+            class="testimonial-card"
+            v-for="(p, i) in [...parentTestimonials, ...parentTestimonials]"
+            :key="'t-' + i"
+          >
             <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
             <p class="testimonial-text">"{{ p.quote }}"</p>
             <div class="testimonial-footer">
@@ -266,6 +274,8 @@ export default {
       }
     ])
 
+    const pauseMarquee = ref(false)
+
     const initVideoBg = () => {
       if (videoBg.value) {
         videoBg.value.play().catch(() => {})
@@ -281,7 +291,7 @@ export default {
 
     onBeforeUnmount(() => {})
 
-    return { mobile, whatsapp, email, heroStats, features, courses, videoBg, parentTestimonials }
+    return { mobile, whatsapp, email, heroStats, features, courses, videoBg, parentTestimonials, pauseMarquee }
   }
 }
 </script>
@@ -735,25 +745,63 @@ export default {
 
 /* ══ TESTIMONIALS ══ */
 .testimonials-section {
-  padding: 6rem 0;
+  padding: 6rem 0 5rem;
   background: var(--bg-secondary, #fafafa);
+  overflow: hidden;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* ── Marquee outer: fade edges ── */
+.marquee-outer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3rem;
+  /* soft fade masks on both sides */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+}
+
+/* ── Scrolling track ── */
+.marquee-track {
+  display: flex;
   gap: 1.5rem;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+.marquee-track.paused {
+  animation-play-state: paused;
 }
 
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Cards ── */
 .testimonial-card {
   position: relative;
+  flex-shrink: 0;
+  width: 320px;
   background: var(--card-bg, #fff);
   border-radius: 20px;
   padding: 2rem;
   border: 1px solid var(--border-color, #e5e7eb);
   box-shadow: 0 2px 16px rgba(0,0,0,0.05);
-  transition: all 0.35s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
+  cursor: default;
 }
 .testimonial-card::before {
   content: '';
@@ -762,43 +810,51 @@ export default {
   height: 3px;
   background: linear-gradient(90deg, #FF5F15, #FBB700, #FFCC00);
   transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.4s ease;
 }
 .testimonial-card:hover {
-  transform: translateY(-6px);
   box-shadow: 0 16px 48px rgba(255,95,21,0.12);
-  border-color: rgba(255,95,21,0.15);
+  border-color: rgba(255,95,21,0.2);
 }
 .testimonial-card:hover::before { transform: scaleX(1); }
 
 .quote-mark {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: rgba(255,95,21,0.12);
   margin-bottom: 0.75rem;
   line-height: 1;
 }
 .testimonial-text {
-  font-size: 0.93rem;
+  font-size: 0.9rem;
   color: var(--text-secondary, #6b7280);
-  line-height: 1.7;
+  line-height: 1.75;
   font-style: italic;
   margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .testimonial-footer {
   display: flex; align-items: center; gap: 1rem;
 }
 .testimonial-avatar {
-  width: 48px; height: 48px;
+  width: 44px; height: 44px;
   background: linear-gradient(135deg, #FF5F15, #FBB700);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.5rem;
+  color: #fff; font-size: 1.3rem;
   flex-shrink: 0;
 }
-.testimonial-info { display: flex; flex-direction: column; }
-.testimonial-name  { font-weight: 700; color: var(--text-primary, #0f0f0f); font-size: 0.92rem; }
-.testimonial-sub   { font-size: 0.8rem; color: #FF5F15; font-weight: 600; }
-.testimonial-course{ font-size: 0.75rem; color: var(--text-muted, #9ca3af); }
+.testimonial-info { display: flex; flex-direction: column; gap: 1px; }
+.testimonial-name  { font-weight: 700; color: var(--text-primary, #0f0f0f); font-size: 0.9rem; }
+.testimonial-sub   { font-size: 0.78rem; color: #FF5F15; font-weight: 600; }
+.testimonial-course{ font-size: 0.72rem; color: var(--text-muted, #9ca3af); }
+
+@media (max-width: 600px) {
+  .testimonial-card { width: 270px; }
+}
 
 /* ══ CTA ══ */
 .cta-section {
@@ -905,8 +961,7 @@ export default {
 
 @media (max-width: 600px) {
   .features-grid,
-  .courses-grid,
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .courses-grid { grid-template-columns: 1fr; }
 
   .cta-buttons { flex-direction: column; align-items: center; }
   .cta-btn { width: 100%; max-width: 300px; justify-content: center; }
