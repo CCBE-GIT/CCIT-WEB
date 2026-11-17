@@ -149,7 +149,7 @@ export default {
             'Unlimited bandwidth'
           ]
         },
-        {
+        /*{
           icon: 'fas fa-book',
           title: 'Digital Library',
           description: 'Access to extensive digital resources and learning materials.',
@@ -159,7 +159,7 @@ export default {
             'Coding platforms access',
             'Research databases'
           ]
-        },
+        },*/
         {
           icon: 'fas fa-project-diagram',
           title: 'Project Labs',
@@ -171,7 +171,7 @@ export default {
             'Meeting rooms'
           ]
         },
-        {
+        /*{
           icon: 'fas fa-robot',
           title: 'Specialized Labs',
           description: 'Dedicated labs for networking, cybersecurity, and hardware.',
@@ -181,8 +181,8 @@ export default {
             'Hardware workshop',
             'Server room'
           ]
-        },
-        {
+        },*/
+        /*{
           icon: 'fas fa-users',
           title: 'Student Lounge',
           description: 'Comfortable spaces for relaxation and informal learning.',
@@ -192,7 +192,7 @@ export default {
             'Group study spaces',
             'Entertainment zone'
           ]
-        }
+        }*/
       ],
       galleryItems: [
         {
@@ -215,16 +215,16 @@ export default {
           title: 'Collaboration Space',
           description: 'Area for group projects and team discussions'
         },
-        {
+        /*{
           icon: 'fas fa-book-open',
           title: 'Library Corner',
           description: 'Quiet study area with reference materials'
-        },
-        {
+        },*/
+        /*{
           icon: 'fas fa-coffee',
           title: 'Student Lounge',
           description: 'Relaxation area for breaks and informal meetings'
-        }
+        }*/ 
       ],
       resources: [
         {
