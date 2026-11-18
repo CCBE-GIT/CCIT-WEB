@@ -195,32 +195,56 @@
       </div>
     </section>
 
-    <!-- Values (unchanged) -->
+    <!-- Values - MARQUEE -->
     <section class="values py-5 bg-light">
       <div class="container">
-        <h2 class="section-title text-center mb-5">
+        <h2 class="section-title text-center mb-2">
           Our <span class="highlight">Core Values</span>
         </h2>
-        <div class="row">
+        <p class="text-center values-sub mb-0">The principles that guide everything we do at CCIT</p>
+      </div>
+
+      <!-- Row 1 — scrolls LEFT -->
+      <div class="cv-marquee-outer"
+           @mouseenter="pauseValues = true"
+           @mouseleave="pauseValues = false">
+        <div class="cv-marquee-track" :class="{ paused: pauseValues }">
           <div
-            class="col-md-4 mb-4"
-            v-for="(value, index) in values"
-            :key="index"
+            class="cv-card"
+            v-for="(value, i) in [...values, ...values]"
+            :key="'cv1-' + i"
           >
-            <div class="value-card card-theme text-center p-4 h-100 text-black">
-              <div class="value-card-image" v-if="value.image">
-                <img 
-                  :src="value.image" 
-                  :alt="value.title" 
-                  class="img-fluid w-100"
-                  style="height: 160px; object-fit: cover;"
-                />
-              </div>
-              <div class="value-icon mb-3">
-                <i :class="value.icon"></i>
-              </div>
-              <h3>{{ value.title }}</h3>
-              <p>{{ value.description }}</p>
+            <div class="cv-card-img-wrap" v-if="value.image">
+              <img :src="value.image" :alt="value.title" class="cv-card-img" loading="lazy" />
+              <div class="cv-card-img-overlay"></div>
+            </div>
+            <div class="cv-card-body">
+              <div class="cv-icon" v-if="value.icon"><i :class="value.icon"></i></div>
+              <h3 class="cv-title">{{ value.title }}</h3>
+              <p class="cv-desc">{{ value.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 — scrolls RIGHT (reversed order) -->
+      <div class="cv-marquee-outer cv-marquee-outer--reverse"
+           @mouseenter="pauseValues = true"
+           @mouseleave="pauseValues = false">
+        <div class="cv-marquee-track cv-marquee-track--reverse" :class="{ paused: pauseValues }">
+          <div
+            class="cv-card"
+            v-for="(value, i) in [...[...values].reverse(), ...[...values].reverse()]"
+            :key="'cv2-' + i"
+          >
+            <div class="cv-card-img-wrap" v-if="value.image">
+              <img :src="value.image" :alt="value.title" class="cv-card-img" loading="lazy" />
+              <div class="cv-card-img-overlay"></div>
+            </div>
+            <div class="cv-card-body">
+              <div class="cv-icon" v-if="value.icon"><i :class="value.icon"></i></div>
+              <h3 class="cv-title">{{ value.title }}</h3>
+              <p class="cv-desc">{{ value.description }}</p>
             </div>
           </div>
         </div>
@@ -263,6 +287,7 @@ export default {
       logo: require("@/assets/images/CCIT - logo.png"),
       particles: [],
       particleCount: 30,
+      pauseValues: false,
       values: [
         {
           //icon: "fas fa-hands-helping",
@@ -502,23 +527,137 @@ export default {
   margin-bottom: 3rem;
 }
 
+/* ── Core Values Marquee ── */
+.values {
+  overflow: hidden;
+}
+
+.values-sub {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+/* Outer wrapper — edge fade masks */
+.cv-marquee-outer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2.5rem;
+  mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+}
+.cv-marquee-outer--reverse { margin-top: 1rem; }
+
+/* Scrolling tracks */
+.cv-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: cv-scroll-left 30s linear infinite;
+}
+.cv-marquee-track--reverse {
+  animation: cv-scroll-right 30s linear infinite;
+}
+.cv-marquee-track.paused,
+.cv-marquee-track--reverse.paused {
+  animation-play-state: paused;
+}
+
+@keyframes cv-scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes cv-scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Individual card */
+.cv-card {
+  flex-shrink: 0;
+  width: 280px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+.cv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(255,95,21,0.14);
+  border-color: rgba(255,95,21,0.25);
+}
+
+/* image */
+.cv-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+}
+.cv-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  display: block;
+}
+.cv-card:hover .cv-card-img { transform: scale(1.07); }
+
+.cv-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(255,95,21,0.18) 100%);
+  pointer-events: none;
+}
+
+/* body */
+.cv-card-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+  text-align: center;
+}
+.cv-icon {
+  font-size: 2rem;
+  color: #FF5F15;
+  margin-bottom: 0.6rem;
+}
+.cv-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.5rem;
+  line-height: 1.35;
+}
+.cv-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* keep old rules for any other usage */
 .value-card {
   transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
   border-radius: 20px !important;
   overflow: hidden;
 }
-
 .value-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 50px rgba(255,95,21,0.14) !important;
 }
-
 .value-card-image {
   margin: -1.5rem -1.5rem 1rem -1.5rem;
   overflow: hidden;
   border-radius: 12px 12px 0 0;
 }
-
 .value-icon {
   font-size: 2.5rem;
   color: #FF5F15;
