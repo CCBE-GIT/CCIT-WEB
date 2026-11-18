@@ -129,34 +129,75 @@
       </div>
     </section>
 
-    <!-- Student Life Gallery - UPDATED -->
+    <!-- Student Life Gallery - MARQUEE -->
     <section class="student-life py-5">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Student <span class="highlight">Life</span></h2>
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <div class="student-life-grid">
-              <div class="row">
-                <div class="col-md-4 col-6 mb-3" v-for="(moment, index) in studentLife" :key="index">
-                  <div class="moment-card" @click="openLightbox(moment.images, 0)">
-                    <div class="moment-image-container">
-                      <img 
-                        v-if="moment.images && moment.images[0]"
-                        :src="moment.images[0].url"
-                        :alt="moment.title"
-                        class="moment-image"
-                        loading="lazy"
-                        @error="handleImageError"
-                      >
-                      <div v-else class="moment-placeholder" :style="{ background: moment.gradient }">
-                        <i :class="moment.icon"></i>
-                      </div>
-                      <div v-if="moment.images && moment.images.length > 1" class="moment-count">
-                        +{{ moment.images.length }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <h2 class="section-title text-center mb-2">Student <span class="highlight">Life</span></h2>
+        <p class="text-center student-life-sub mb-0">A glimpse into everyday moments at CCIT</p>
+      </div>
+
+      <!-- Row 1 — scrolls LEFT -->
+      <div class="sl-marquee-outer"
+           @mouseenter="pauseStudentLife = true"
+           @mouseleave="pauseStudentLife = false">
+        <div class="sl-marquee-track" :class="{ paused: pauseStudentLife }">
+          <div
+            class="sl-photo-card"
+            v-for="(moment, i) in [...studentLifeRow1, ...studentLifeRow1]"
+            :key="'slr1-' + i"
+            @click="openLightbox(moment.images, 0)"
+          >
+            <div class="sl-photo-wrap">
+              <img
+                v-if="moment.images && moment.images[0]"
+                :src="moment.images[0].url"
+                :alt="moment.title"
+                class="sl-photo-img"
+                loading="lazy"
+                @error="handleImageError"
+              />
+              <div v-else class="sl-photo-placeholder" :style="{ background: moment.gradient }">
+                <i :class="moment.icon"></i>
+              </div>
+              <div class="sl-photo-overlay">
+                <span class="sl-photo-title"><i :class="moment.icon"></i> {{ moment.title }}</span>
+                <span v-if="moment.images && moment.images.length > 1" class="sl-photo-count">
+                  +{{ moment.images.length }} photos
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 — scrolls RIGHT -->
+      <div class="sl-marquee-outer sl-marquee-outer--reverse"
+           @mouseenter="pauseStudentLife = true"
+           @mouseleave="pauseStudentLife = false">
+        <div class="sl-marquee-track sl-marquee-track--reverse" :class="{ paused: pauseStudentLife }">
+          <div
+            class="sl-photo-card"
+            v-for="(moment, i) in [...studentLifeRow2, ...studentLifeRow2]"
+            :key="'slr2-' + i"
+            @click="openLightbox(moment.images, 0)"
+          >
+            <div class="sl-photo-wrap">
+              <img
+                v-if="moment.images && moment.images[0]"
+                :src="moment.images[0].url"
+                :alt="moment.title"
+                class="sl-photo-img"
+                loading="lazy"
+                @error="handleImageError"
+              />
+              <div v-else class="sl-photo-placeholder" :style="{ background: moment.gradient }">
+                <i :class="moment.icon"></i>
+              </div>
+              <div class="sl-photo-overlay">
+                <span class="sl-photo-title"><i :class="moment.icon"></i> {{ moment.title }}</span>
+                <span v-if="moment.images && moment.images.length > 1" class="sl-photo-count">
+                  +{{ moment.images.length }} photos
+                </span>
               </div>
             </div>
           </div>
@@ -928,6 +969,93 @@ export default {
             // }
           ]
         }
+      ],
+
+      // ── Student Life Marquee rows ──
+      pauseStudentLife: false,
+
+      // Row 1 (scrolls left) — 4 cards
+      studentLifeRow1: [
+        {
+          title: 'Campus Events',
+          icon: 'fas fa-calendar-alt',
+          gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
+          images: [{ url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/6.jpeg' }]
+        },
+        {
+          title: 'Fun Moments',
+          icon: 'fas fa-laugh',
+          gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+          images: [
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/7.jpeg' },
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/1.jpeg' },
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/2.jpeg' }
+          ]
+        },
+        {
+          title: 'Music Club',
+          icon: 'fas fa-headphones',
+          gradient: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+          images: [
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/5.jpeg' },
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/8.jpeg' }
+          ]
+        },
+        {
+          title: 'Gaming Zone',
+          icon: 'fas fa-gamepad',
+          gradient: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
+          images: [{ url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/9.jpeg' }]
+        },
+        {
+          title: 'Coffee Breaks',
+          icon: 'fas fa-coffee',
+          gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+          images: [{ url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/4.jpeg' }]
+        }
+      ],
+
+      // Row 2 (scrolls right) — 4 cards
+      studentLifeRow2: [
+        {
+          title: 'Food & Dining',
+          icon: 'fas fa-pizza-slice',
+          gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+          images: [
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/3.jpeg' },
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/7.jpeg' }
+          ]
+        },
+        {
+          title: 'Fun Moments',
+          icon: 'fas fa-laugh',
+          gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+          images: [
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/1.jpeg' },
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/2.jpeg' }
+          ]
+        },
+        {
+          title: 'Campus Events',
+          icon: 'fas fa-calendar-alt',
+          gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)',
+          images: [{ url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/6.jpeg' }]
+        },
+        {
+          title: 'Music Club',
+          icon: 'fas fa-headphones',
+          gradient: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+          images: [
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/8.jpeg' },
+            { url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/5.jpeg' }
+          ]
+        },
+        {
+          title: 'Gaming Zone',
+          icon: 'fas fa-gamepad',
+          gradient: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
+          images: [{ url: 'https://ik.imagekit.io/kp5tixhur/ccit-web/ccit-student/9.jpeg' }]
+        }
       ]
     }
   },
@@ -1444,9 +1572,127 @@ export default {
   transform: translateX(5px);
 }
 
-.student-life-grid {
-  margin: 0 -0.5rem;
+/* ── Student Life Marquee ── */
+.student-life {
+  overflow: hidden;
+  background: #f9fafb;
 }
+
+.student-life-sub {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+/* Outer wrapper — edge fade masks */
+.sl-marquee-outer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+  mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+}
+.sl-marquee-outer--reverse { margin-top: 1rem; }
+
+/* Scrolling tracks */
+.sl-marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: sl-scroll-left 28s linear infinite;
+}
+.sl-marquee-track--reverse {
+  animation: sl-scroll-right 28s linear infinite;
+}
+.sl-marquee-track.paused,
+.sl-marquee-track--reverse.paused {
+  animation-play-state: paused;
+}
+
+@keyframes sl-scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes sl-scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Individual photo card */
+.sl-photo-card {
+  flex-shrink: 0;
+  width: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.sl-photo-card:hover {
+  box-shadow: 0 12px 32px rgba(255,95,21,0.18);
+  transform: translateY(-4px);
+}
+
+/* image wrapper */
+.sl-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.sl-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  display: block;
+}
+.sl-photo-card:hover .sl-photo-img { transform: scale(1.08); }
+
+/* gradient placeholder */
+.sl-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+/* hover overlay */
+.sl-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.70) 0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.9rem 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sl-photo-card:hover .sl-photo-overlay { opacity: 1; }
+
+.sl-photo-title {
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sl-photo-title i { color: #FBB700; }
+
+.sl-photo-count {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.72rem;
+  margin-top: 3px;
+}
+
+/* keep old .moment-* rules for lightbox compatibility */
+.student-life-grid { margin: 0 -0.5rem; }
 
 .moment-card {
   cursor: pointer;
@@ -1454,10 +1700,7 @@ export default {
   overflow: hidden;
   transition: transform 0.3s ease;
 }
-
-.moment-card:hover {
-  transform: scale(1.05);
-}
+.moment-card:hover { transform: scale(1.05); }
 
 .moment-placeholder {
   height: 150px;
