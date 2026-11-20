@@ -5,9 +5,13 @@
     <section class="hero-section">
       <!-- Video Background -->
       <div class="video-bg">
-        <video ref="videoBg" autoplay muted loop playsinline webkit-playsinline>
-          <source src="https://ik.imagekit.io/kp5tixhur/ccit-video/mixkit-little-girl-doing-homework-on-a-laptop-4757-hd-ready.mp4" type="video/mp4">
-        </video>
+        <img
+          class="hero-gif"
+          src="https://ik.imagekit.io/kp5tixhur/ccit-video/CCIT%20Students_%20Animated%20Tech%20Journey.gif?updatedAt=1795169218442"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+        />
         <div class="video-overlay"></div>
       </div>
 
@@ -48,13 +52,13 @@
           </div>
         </div>
 
-        <div class="hero-visual">
+        <!-- <div class="hero-visual">
           <div class="hero-float-card">
             <div class="float-icon-ring">
               <i class="fas fa-laptop-code float-icon"></i>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- Scroll indicator -->
@@ -250,7 +254,7 @@
 </template>
 
 <script>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
 import StatsbannerPage from "./Statsbanner.vue"
 
 export default {
@@ -260,7 +264,7 @@ export default {
     const mobile = '0718864477'
     const whatsapp = '+94705205666'
     const email = 'email.ccit@gmail.com'
-    const videoBg = ref(null)
+    //const videoBg = ref(null)
 
     const heroStats = ref([
       { value: '500+', label: 'Students Trained' },
@@ -427,22 +431,9 @@ export default {
       }
     ])
 
-    const initVideoBg = () => {
-      if (videoBg.value) {
-        videoBg.value.play().catch(() => {})
-      }
-    }
+    // GIF background needs no play logic
 
-    onMounted(() => {
-      setTimeout(initVideoBg, 100)
-      document.addEventListener('click', () => {
-        if (videoBg.value && videoBg.value.paused) videoBg.value.play().catch(() => {})
-      }, { once: true })
-    })
-
-    onBeforeUnmount(() => {})
-
-    return { mobile, whatsapp, email, heroStats, features, courses, videoBg, parentTestimonials, pauseMarquee, homeEvents, homeEventsB, pauseNews }
+    return { mobile, whatsapp, email, heroStats, features, courses, parentTestimonials, pauseMarquee, homeEvents, homeEventsB, pauseNews }
   }
 }
 </script>
@@ -463,14 +454,15 @@ export default {
   inset: 0;
   z-index: 1;
 }
-.video-bg video {
+.video-bg .hero-gif {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
+  display: block;
 }
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(94,0,0,0.82) 0%, rgba(0,0,0,0.68) 60%, rgba(0,0,0,0.55) 100%);
+  background: linear-gradient(135deg, rgba(94,0,0,0.82) 0%, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.55) 0%);
 }
 
 /* Decorative orbs */
